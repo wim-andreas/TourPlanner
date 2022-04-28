@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wimfra.tourplanner.TourPlannerController">
+   <children>
+      <BorderPane layoutX="100.0" layoutY="63.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Import" />
+                    <MenuItem mnemonicParsing="false" text="Export" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <left>
+            <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="250.0" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
+               <content>
+                  <VBox>
+                     <children>
+                        <HBox alignment="CENTER_RIGHT">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tours">
+                                 <font>
+                                    <Font name="Calibri" size="18.0" />
+                                 </font>
+                              </Text>
+                               <Region HBox.hgrow="ALWAYS" />
+                              <Button mnemonicParsing="false" text="+" />
+                              <Button mnemonicParsing="false" text="-">
+                               <HBox.margin>
+                                   <Insets left="5.0" />
+                               </HBox.margin>
+                              </Button>
+                               <Button mnemonicParsing="false" text="Edit">
+                                   <HBox.margin>
+                                       <Insets left="5.0" />
+                                   </HBox.margin>
+                               </Button>
+                           </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </HBox>
+                         <Separator prefWidth="200.0" />
+                        <TextField promptText="Search...">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </left>
+         <center>
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
+              <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" style="-fx-background-color: #fff;">
+                  <padding>
+                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </padding>
+                  <children>
+                  <Text fx:id="currentTourName" strokeType="OUTSIDE" strokeWidth="0.0">
+                      <font>
+                          <Font name="System Bold" size="16.0" />
+                      </font>
+                  </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title:">
+                           <VBox.margin>
+                              <Insets top="-20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Text>
+                  <TabPane prefHeight="200.0" tabClosingPolicy="UNAVAILABLE">
+                      <tabs>
+                          <Tab closable="false" text="Route">
+                              <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: #C8C8C8; -fx-background-color: #fff;">
+                                      <children>
+                                          <ImageView fx:id="currentTourImage" fitHeight="150.0" fitWidth="200.0" layoutX="-15.0" layoutY="-23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                      </children></AnchorPane>
+                              </content>
+                          </Tab>
+                          <Tab closable="false" text="Description">
+                              <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: #C8C8C8; -fx-background-color: #fff;">
+                                      <children>
+                                          <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="-48.0" prefWidth="200.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                              <Text strokeType="OUTSIDE" strokeWidth="0.0">
+                                                  <font>
+                                                      <Font size="14.0" />
+                                                  </font>
+                                              </Text>
+                                              <padding>
+                                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                              </padding>
+                                          </ScrollPane>
+                                      </children>
+                                  </AnchorPane>
+                              </content>
+                          </Tab>
+                      </tabs>
+                  </TabPane>
+                      <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0">
+                          <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tour-Logs:">
+                                  <font>
+                                      <Font name="Calibri" size="14.0" />
+                                  </font>
+                              </Text>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <TextField promptText="Search..."  />
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Button mnemonicParsing="false" text="+" />
+                              <Button mnemonicParsing="false" text="-">
+                                  <HBox.margin>
+                                      <Insets left="5.0" />
+                                  </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" text="Edit">
+                                  <HBox.margin>
+                                      <Insets left="5.0" />
+                                  </HBox.margin>
+                              </Button>
+                          </children>
+                      </HBox>
+                        <TableView prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="Date" />
+                            <TableColumn prefWidth="75.0" text="Time" />
+                            <TableColumn prefWidth="75.0" text="Difficulty" />
+                            <TableColumn prefWidth="75.0" text="Total Time" />
+                            <TableColumn prefWidth="75.0" text="Rating" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                  </children>
+                  </VBox>
+              </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
