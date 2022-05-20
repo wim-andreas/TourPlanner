@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.text.Text?>
-<?import javafx.scene.text.Font?>
-
-<?import javafx.geometry.Insets?>
-<ScrollPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.wimfra.tourplanner.TourPlannerController"
-            fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="250.0" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="250.0" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wimfra.tourplanner.TourPlannerController">
         <content>
             <VBox>
                 <children>
@@ -25,7 +17,7 @@
                                 </font>
                             </Text>
                             <Region HBox.hgrow="ALWAYS" />
-                            <Button mnemonicParsing="false" onAction="#AddTourOnButtonClick" text="➕"  />
+                            <Button mnemonicParsing="false" onAction="#AddTourOnButtonClick" text="➕" />
                             <Button mnemonicParsing="false" onAction="#DeleteTourOnButtonClick" text="➖">
                                 <HBox.margin>
                                     <Insets left="5.0" />
