@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="250.0" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wimfra.tourplanner.TourPlannerController">
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="250.0" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wimfra.tourplanner.view.TourPlannerController">
         <content>
             <VBox>
                 <children>
@@ -17,8 +17,8 @@
                                 </font>
                             </Text>
                             <Region HBox.hgrow="ALWAYS" />
-                            <Button mnemonicParsing="false" onAction="#AddTourOnButtonClick" text="➕" />
-                            <Button mnemonicParsing="false" onAction="#DeleteTourOnButtonClick" text="➖">
+                            <Button mnemonicParsing="false" text="➕" />
+                            <Button mnemonicParsing="false"  text="➖">
                                 <HBox.margin>
                                     <Insets left="5.0" />
                                 </HBox.margin>
@@ -40,12 +40,13 @@
                         </padding>
                     </HBox>
                     <Separator prefWidth="200.0" />
-                    <TextField promptText="Search...">
+                    <TextField  fx:id="tourListSearch" promptText="Search...">
                         <VBox.margin>
                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                         </VBox.margin>
                     </TextField>
-                    <ListView fx:id="TourList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                    <Button prefWidth="100" onAction="#searchAction" text="Search" alignment="CENTER"/>
+                    <ListView fx:id="tourList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
                 </children>
             </VBox>
         </content>

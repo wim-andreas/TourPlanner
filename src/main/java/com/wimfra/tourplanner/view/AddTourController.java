@@ -1,4 +1,4 @@
-package com.wimfra.tourplanner.controllers;
+package com.wimfra.tourplanner.view;
 
 import com.wimfra.tourplanner.TourPlannerApplication;
 import javafx.application.Application;
