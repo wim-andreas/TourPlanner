@@ -46,7 +46,7 @@
                         </VBox.margin>
                     </TextField>
                     <Button prefWidth="100" onAction="#searchAction" text="Search" alignment="CENTER"/>
-                    <ListView fx:id="tourList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                    <ListView fx:id="tourListView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
                 </children>
             </VBox>
         </content>

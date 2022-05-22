@@ -25,7 +25,7 @@ import java.util.ResourceBundle;
 public class TourPlannerController implements Initializable {
 
     public TextField tourListSearch;
-    public ListView<Tour> tourList;
+    public ListView<Tour> tourListView;
 
     private ObservableList<Tour> mediaItems;
     private Tour currentItem;
@@ -35,6 +35,10 @@ public class TourPlannerController implements Initializable {
 
 
     public void searchAction(ActionEvent actionEvent) {
+        mediaItems.clear();
+
+        List<Tour> items = manager.Search(tourListSearch.textProperty().getValue(), false);
+        mediaItems.addAll(items);
     }
 
 
@@ -50,12 +54,12 @@ public class TourPlannerController implements Initializable {
     private void SetupListView(){
         mediaItems = FXCollections.observableArrayList();
         mediaItems.addAll(manager.GetTours());
-        tourList.setItems(mediaItems);
+        tourListView.setItems(mediaItems);
     }
 
     private void FormatCells(){
         //format cells to show name
-        tourList.setCellFactory((param -> new ListCell<Tour>(){
+        tourListView.setCellFactory((param -> new ListCell<Tour>(){
             @Override
             protected void updateItem(Tour item, boolean empty){
                 super.updateItem(item,empty);
@@ -72,11 +76,11 @@ public class TourPlannerController implements Initializable {
 
     }
     private void SetCurrentItem(){
-        tourList.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldvalue, newvalue) -> {
+        tourListView.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldvalue, newvalue) -> {
             if ((newvalue != null) && (oldvalue != newvalue)){
                 currentItem = newvalue;
             }
         }));
     }
-
+//TODO list-viw auslagern, dass es ohne fehler funktioniert
 }
