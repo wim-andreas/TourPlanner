@@ -8,11 +8,10 @@ public class TourDAO {
     private DataAccess dataAccess;
 
     public TourDAO(){
-        dataAccess = new Database(); {
-        }
+        dataAccess = new DBService();
     }
 
     public List<Tour> GetTours(){
-        return dataAccess.GetTours();
+        return dataAccess.getTours();
     }
 }

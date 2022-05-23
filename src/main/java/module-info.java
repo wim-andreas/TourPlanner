@@ -2,6 +2,7 @@ module com.wimfra.tourplanner {
     requires javafx.controls;
     requires javafx.fxml;
     requires lombok;
+    requires java.sql;
 
 
     opens com.wimfra.tourplanner to javafx.fxml;
