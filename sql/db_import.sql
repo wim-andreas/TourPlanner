@@ -127,7 +127,7 @@ COPY public.logs (log_id, tour_id, date, "time", comment, diffculty, total_time,
 -- Data for Name: tours; Type: TABLE DATA; Schema: public; Owner: swe2user
 --
 
-COPY public.tours (tour_id, name, description, from_where, to_where, transportation, distance, "time", route_info) FROM stdin;
+COPY public.tours (tour_id, tour_name, description, from_where, to_where, transportation, distance, duration, route_info) FROM stdin;
 \.
 
 

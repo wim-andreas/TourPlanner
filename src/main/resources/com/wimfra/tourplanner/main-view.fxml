@@ -6,60 +6,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml" fx:controller="com.wimfra.tourplanner.view.TourPlannerController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml" fx:controller="com.wimfra.tourplanner.view.MainWindowController">
    <children>
       <BorderPane layoutX="100.0" layoutY="63.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <fx:include source="menubar-view.fxml"></fx:include>
          </top>
          <left>
-
-             <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="250.0" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER" >
-                 <content>
-                     <VBox>
-                         <children>
-                             <HBox alignment="CENTER_RIGHT">
-                                 <children>
-                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tours">
-                                         <font>
-                                             <Font name="Calibri" size="18.0" />
-                                         </font>
-                                     </Text>
-                                     <Region HBox.hgrow="ALWAYS" />
-                                     <Button mnemonicParsing="false" text="➕" />
-                                     <Button mnemonicParsing="false"  text="➖">
-                                         <HBox.margin>
-                                             <Insets left="5.0" />
-                                         </HBox.margin>
-                                         <tooltip>
-                                             <Tooltip text="Delete a tour" />
-                                         </tooltip>
-                                     </Button>
-                                     <Button mnemonicParsing="false" text="Edit">
-                                         <HBox.margin>
-                                             <Insets left="5.0" />
-                                         </HBox.margin>
-                                         <tooltip>
-                                             <Tooltip text="Edit a tour" />
-                                         </tooltip>
-                                     </Button>
-                                 </children>
-                                 <padding>
-                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </padding>
-                             </HBox>
-                             <Separator prefWidth="200.0" />
-                             <TextField  fx:id="tourListSearch" promptText="Search...">
-                                 <VBox.margin>
-                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                             </TextField>
-                             <Button prefWidth="100" onAction="#searchAction" text="Search" alignment="CENTER"/>
-                             <ListView fx:id="tourListView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                         </children>
-                     </VBox>
-                 </content>
-             </ScrollPane>
+             <fx:include source="tour-list-view.fxml"></fx:include>
          </left>
          <center>
             <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
@@ -74,14 +28,6 @@
                           <Font name="System Bold" size="16.0" />
                       </font>
                   </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title:">
-                           <VBox.margin>
-                              <Insets top="-20.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font name="Calibri" size="14.0" />
-                           </font>
-                        </Text>
                       <fx:include source="route-view.fxml"></fx:include>
                       <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0">
                           <children>

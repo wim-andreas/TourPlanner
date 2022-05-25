@@ -1,28 +1,23 @@
 package com.wimfra.tourplanner.view;
 
-import com.wimfra.tourplanner.TourPlannerApplication;
 import com.wimfra.tourplanner.businesslayer.JavaAppManager;
 import com.wimfra.tourplanner.businesslayer.JavaAppManagerFactory;
 import com.wimfra.tourplanner.models.Tour;
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class TourPlannerController implements Initializable {
+public class TourListController implements Initializable {
 
     public TextField tourListSearch;
     public ListView<Tour> tourListView;
@@ -31,7 +26,6 @@ public class TourPlannerController implements Initializable {
     private Tour currentItem;
 
     private JavaAppManager manager;
-
 
 
     public void searchAction(ActionEvent actionEvent) {
@@ -51,36 +45,37 @@ public class TourPlannerController implements Initializable {
         SetCurrentItem();
     }
 
-    private void SetupListView(){
+    private void SetupListView() {
         mediaItems = FXCollections.observableArrayList();
         mediaItems.addAll(manager.GetTours());
         tourListView.setItems(mediaItems);
     }
 
-    private void FormatCells(){
+    private void FormatCells() {
         //format cells to show name
-        tourListView.setCellFactory((param -> new ListCell<Tour>(){
+        tourListView.setCellFactory((param -> new ListCell<Tour>() {
             @Override
-            protected void updateItem(Tour item, boolean empty){
-                super.updateItem(item,empty);
+            protected void updateItem(Tour item, boolean empty) {
+                super.updateItem(item, empty);
 
-                if ( empty || (item == null) || (item.getTourname() == null)){
+                if (empty || (item == null) || (item.getTour_name() == null)) {
                     setText(null);
-                }
-                else{
-                    setText(item.getTourname());
+                } else {
+                    setText(item.getTour_name());
                 }
             }
         }));
 
 
     }
-    private void SetCurrentItem(){
+
+    private void SetCurrentItem() {
         tourListView.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldvalue, newvalue) -> {
-            if ((newvalue != null) && (oldvalue != newvalue)){
+            if ((newvalue != null) && (oldvalue != newvalue)) {
                 currentItem = newvalue;
             }
         }));
     }
-//TODO list-viw auslagern, dass es ohne fehler funktioniert
 }
+//TODO list-viw auslagern, dass es ohne fehler funktioniert
+

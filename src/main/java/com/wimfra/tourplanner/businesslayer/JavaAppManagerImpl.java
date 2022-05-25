@@ -23,12 +23,12 @@ TourDAO tourDAO = new TourDAO();
         if(caseSensitive){
             return items
                     .stream()
-                    .filter(x -> x.getTourname().contains(tourname))
+                    .filter(x -> x.getTour_name().contains(tourname))
                     .collect(Collectors.toList());
         }
         return items
                 .stream()
-                .filter(x -> x.getTourname().toLowerCase().contains(tourname.toLowerCase()))
+                .filter(x -> x.getTour_name().toLowerCase().contains(tourname.toLowerCase()))
                 .collect(Collectors.toList());
     }
 }

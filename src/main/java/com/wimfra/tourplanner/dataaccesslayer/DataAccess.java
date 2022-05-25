@@ -5,6 +5,6 @@ import com.wimfra.tourplanner.models.Tour;
 import java.util.List;
 
 public interface DataAccess {
-    public List<Tour> GetTours();
+    public List<Tour> getTours();
 
 }

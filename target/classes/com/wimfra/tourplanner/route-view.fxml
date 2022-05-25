@@ -10,7 +10,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
-<TabPane prefHeight="200.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane prefHeight="200.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wimfra.tourplanner.view.RouteController">
     <tabs>
         <Tab closable="false" text="Route">
             <content>
@@ -20,12 +20,12 @@
                     </children></AnchorPane>
             </content>
         </Tab>
-        <Tab closable="false" text="Description">
+        <Tab closable="false" text="Description" fx:id="description_tab">
             <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: #C8C8C8; -fx-background-color: #fff;">
                     <children>
                         <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="-48.0" prefWidth="200.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                            <Text strokeType="OUTSIDE" strokeWidth="0.0">
+                            <Text strokeType="OUTSIDE" strokeWidth="0.0" fx:id="description">
                                 <font>
                                     <Font size="14.0" />
                                 </font>
