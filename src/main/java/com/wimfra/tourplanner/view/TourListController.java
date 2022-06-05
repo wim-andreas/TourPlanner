@@ -30,9 +30,15 @@ public class TourListController implements Initializable {
 
     public void searchAction(ActionEvent actionEvent) {
         mediaItems.clear();
-
         List<Tour> items = manager.Search(tourListSearch.textProperty().getValue(), false);
         mediaItems.addAll(items);
+    }
+
+    public void clearAction(ActionEvent actionEvent) {
+        mediaItems.clear();
+        tourListSearch.setText("");
+        mediaItems.addAll(manager.GetTours());
+        tourListView.setItems(mediaItems);
     }
 
 
@@ -77,5 +83,5 @@ public class TourListController implements Initializable {
         }));
     }
 }
-//TODO list-viw auslagern, dass es ohne fehler funktioniert
+
 
