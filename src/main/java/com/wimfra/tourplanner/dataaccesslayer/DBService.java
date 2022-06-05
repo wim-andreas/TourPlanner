@@ -39,17 +39,17 @@ public class DBService implements DataAccess {
             ResultSet resultSet = preparedStatement.executeQuery();
             List<Tour> allTours = new ArrayList<>();
             while (resultSet.next()) {
-                allTours.add(Tour.builder()
-                        .tour_id(resultSet.getInt(1))
-                        .tour_name(resultSet.getString(2))
-                        .description(resultSet.getString(3))
-                        .from_where(resultSet.getString(4))
-                        .to_where(resultSet.getString(5))
-                        .transportation(resultSet.getString(6))
-                        .distance(resultSet.getDouble(7))
-                        .duration(resultSet.getString(8))
-                        .route_info(resultSet.getString(9))
-                        .build());
+                allTours.add(new Tour(
+                        resultSet.getInt(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getString(5),
+                        resultSet.getString(6),
+                        resultSet.getDouble(7),
+                        resultSet.getString(8),
+                        resultSet.getString(9)
+                        ));
             }
             resultSet.close();
             preparedStatement.close();
