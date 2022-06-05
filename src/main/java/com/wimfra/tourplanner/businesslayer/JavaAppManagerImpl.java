@@ -8,7 +8,7 @@ import com.wimfra.tourplanner.models.Tour;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class JavaAppManagerImpl implements  JavaAppManager{
+public class JavaAppManagerImpl implements JavaAppManager{
 TourDAO tourDAO = new TourDAO();
 
     @Override

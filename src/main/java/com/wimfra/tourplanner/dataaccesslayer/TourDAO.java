@@ -5,13 +5,13 @@ import com.wimfra.tourplanner.models.Tour;
 import java.util.List;
 
 public class TourDAO {
-    private DataAccess dataAccess;
+    private DataAccess databaseAccess;
 
     public TourDAO(){
-        dataAccess = new DBService();
+        databaseAccess = new DBService();
     }
 
     public List<Tour> GetTours(){
-        return dataAccess.getTours();
+        return databaseAccess.getTours();
     }
 }

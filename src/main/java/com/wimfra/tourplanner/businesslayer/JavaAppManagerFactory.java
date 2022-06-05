@@ -9,6 +9,5 @@ public final class JavaAppManagerFactory {
             manager = new JavaAppManagerImpl();
         }
         return manager;
-
     }
 }
