@@ -26,8 +26,6 @@ public class RouteController implements Initializable {
     private ObservableList<Tour> mediaItems;
     private Tour currentItem;
 
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         manager = JavaAppManagerFactory.GetManager();

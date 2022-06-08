@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 
 public class TourListController implements Initializable {
 
-    private TourListViewModel tourListViewModel = new TourListViewModel();
+    private final TourListViewModel tourListViewModel;
 
     // references used to setup data binding
     public ListView<Tour> tourListView;
@@ -23,6 +23,10 @@ public class TourListController implements Initializable {
 
     private ObservableList<Tour> tourItems;
     private Tour currentItem;
+
+    public TourListController(TourListViewModel tourListViewModel) {
+        this.tourListViewModel = tourListViewModel;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
