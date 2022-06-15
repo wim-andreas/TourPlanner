@@ -1,12 +1,15 @@
 package com.wimfra.tourplanner.view;
 
+import com.wimfra.tourplanner.TourPlannerApplication;
 import com.wimfra.tourplanner.models.Tour;
 import com.wimfra.tourplanner.viewmodel.TourListViewModel;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -14,6 +17,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.w3c.dom.events.MouseEvent;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
