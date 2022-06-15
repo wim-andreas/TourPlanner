@@ -7,4 +7,6 @@ import java.util.List;
 public interface JavaAppManager {
     List<Tour> GetTours();
     List<Tour> Search(String tourname, boolean caseSensitive);
+    Tour GetSingleTour(int id);
+    void AddTourWindow();
 }

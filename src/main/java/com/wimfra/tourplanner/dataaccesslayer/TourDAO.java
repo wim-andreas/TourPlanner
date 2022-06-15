@@ -14,4 +14,8 @@ public class TourDAO {
     public List<Tour> GetTours(){
         return databaseAccess.getTours();
     }
+
+    public Tour GetSingleTour(int id){
+        return databaseAccess.getSingleTour(id);
+    }
 }
