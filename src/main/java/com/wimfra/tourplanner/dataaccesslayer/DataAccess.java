@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface DataAccess {
     public List<Tour> getTours();
+    public Tour getSingleTour(int id);
 
 }

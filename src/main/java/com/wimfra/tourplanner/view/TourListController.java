@@ -2,6 +2,7 @@ package com.wimfra.tourplanner.view;
 
 import com.wimfra.tourplanner.models.Tour;
 import com.wimfra.tourplanner.viewmodel.TourListViewModel;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,6 +10,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import org.w3c.dom.events.MouseEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -29,6 +33,8 @@ public class TourListController implements Initializable {
         SetupListView();
         FormatCells();
         SetCurrentItem();
+
+
 
         // Bindings with TourListViewModels
         tourListSearch.textProperty().bindBidirectional(tourListViewModel.getCurrentSearchText());
@@ -74,6 +80,21 @@ public class TourListController implements Initializable {
             }
         }));
     }
+
+    public void onMouseClickGetTour(javafx.scene.input.MouseEvent mouseEvent) {
+        int id = tourListView.getSelectionModel().getSelectedItem().getTour_id();
+
+        Tour tour =  tourListViewModel.getSingleTour(id);
+
+        System.out.println(tour.getTour_name());
+    }
+
+    public void addNewTourWindow(ActionEvent actionEvent)  {
+        tourListViewModel.addNewTourWindow();
+        }
+
+
 }
+
 
 

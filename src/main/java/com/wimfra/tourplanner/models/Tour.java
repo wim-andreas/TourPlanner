@@ -3,7 +3,7 @@ package com.wimfra.tourplanner.models;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-
+@Builder
 public class Tour {
 
     public Tour(String tour_name) {
