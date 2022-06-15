@@ -1,6 +1,7 @@
 package com.wimfra.tourplanner.view;
 
 import com.wimfra.tourplanner.viewmodel.AddTourViewModel;
+
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -23,6 +24,9 @@ public class AddTourController {
     public TextField distanceTextField;
     public TextField infoTextField;
     public TextArea descriptionTextArea;
+
+    public AddTourController(AddTourViewModel addTourViewModel) {
+    }
 
     public void addNewTour(ActionEvent actionEvent) {
 
@@ -49,6 +53,7 @@ public class AddTourController {
 
         Stage stage = (Stage) addNewTourBtn.getScene().getWindow();
         stage.close();
+
 
 
     }
