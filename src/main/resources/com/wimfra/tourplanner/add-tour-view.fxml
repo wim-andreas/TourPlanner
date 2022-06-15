@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="250.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="250.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wimfra.tourplanner.view.AddTourController">
     <children>
         <BorderPane prefHeight="500.0" prefWidth="350.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <center>
@@ -98,7 +98,7 @@
                                         <Insets right="15.0" />
                                     </HBox.margin>
                                 </Button>
-                                <Button layoutX="295.0" layoutY="10.0" mnemonicParsing="false" text="Save" />
+                                <Button fx:id="addNewTourBtn" onAction="#addNewTour" layoutX="295.0" layoutY="10.0" mnemonicParsing="false" text="Add Tour" />
                             </children>
                         </HBox>
                     </children>

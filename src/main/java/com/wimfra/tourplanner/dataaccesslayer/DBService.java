@@ -46,7 +46,7 @@ public class DBService implements DataAccess {
                         resultSet.getString(4),
                         resultSet.getString(5),
                         resultSet.getString(6),
-                        resultSet.getDouble(7),
+                        resultSet.getString(7),
                         resultSet.getString(8),
                         resultSet.getString(9)
                         ));
@@ -78,7 +78,7 @@ public class DBService implements DataAccess {
                         .from_where(resultSet.getString(4))
                         .to_where(resultSet.getString(5))
                         .transportation(resultSet.getString(6))
-                        .distance(resultSet.getDouble(7))
+                        .distance(resultSet.getString(7))
                         .duration(resultSet.getString(8))
                         .route_info(resultSet.getString(9))
                         .build();
@@ -93,6 +93,61 @@ public class DBService implements DataAccess {
             e.printStackTrace();
         }
         return null;
+
+    }
+
+    @Override
+    public Tour addNewTour(List<String> data) {
+        try {
+            Connection connection = DBService.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO tours(tour_name, description, from_where, to_where, transportation, distance, duration, route_info) VALUES(?,?,?,?,?,?,?,?);");
+            preparedStatement.setString(1, data.get(0));
+            preparedStatement.setString(2, data.get(1));
+            preparedStatement.setString(3, data.get(2));
+            preparedStatement.setString(4, data.get(3));
+            preparedStatement.setString(5, data.get(4));
+            preparedStatement.setString(6, data.get(5));
+            preparedStatement.setString(7, data.get(6));
+            preparedStatement.setString(8, data.get(7));
+
+
+            int rows = preparedStatement.executeUpdate();
+            if (rows == 0) {
+                return null;
+            }
+
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException ignored) {
+
+        }
+        return null;
+    }
+
+    @Override
+    public boolean deleteTour(int tour_id) {
+        try {
+            Connection connection = DBService.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM tours WHERE tour_id = ?;");
+            preparedStatement.setInt(1, tour_id);
+
+            int rows = preparedStatement.executeUpdate();
+
+            preparedStatement.close();
+            connection.close();
+
+            if (rows == 0) {
+                return false;
+            }
+
+            preparedStatement.close();
+            connection.close();
+
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
 
     }
 }

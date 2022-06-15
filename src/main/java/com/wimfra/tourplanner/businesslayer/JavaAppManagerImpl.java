@@ -58,4 +58,30 @@ TourDAO tourDAO = new TourDAO();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
     }
+
+    @Override
+    public void EditTourWindow() {
+        FXMLLoader fxmlLoader = new FXMLLoader(TourPlannerApplication.class.getResource("edit-tour-view.fxml"));
+        Scene scene = null;
+        Stage stage = new Stage();
+        try {
+            scene = new Scene(fxmlLoader.load(), 820, 640);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.setTitle("Edit a tour");
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.show();
+    }
+
+    @Override
+    public void AddNewTour(List<String> data) {
+        tourDAO.AddNewTour(data);
+
+    }
+    @Override
+    public void DeleteTour(int tour_id) {
+        tourDAO.DeleteTour(tour_id);
+    }
 }

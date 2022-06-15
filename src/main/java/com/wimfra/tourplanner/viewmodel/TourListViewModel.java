@@ -51,5 +51,10 @@ public class TourListViewModel {
         manager.AddTourWindow();
     }
 
+    public void editTourWindow() { manager.EditTourWindow();
+    }
 
+    public void deleteTour(int tour_id) {
+        manager.DeleteTour(tour_id);
+    }
 }

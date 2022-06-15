@@ -10,9 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.w3c.dom.events.MouseEvent;
@@ -28,6 +27,9 @@ public class TourListController implements Initializable {
     // references used to setup data binding
     public ListView<Tour> tourListView;
     public TextField tourListSearch;
+    public Button addTourBtn;
+
+    public int tour_id;
 
     private ObservableList<Tour> tourItems;
     private Tour currentItem;
@@ -37,8 +39,6 @@ public class TourListController implements Initializable {
         SetupListView();
         FormatCells();
         SetCurrentItem();
-
-
 
         // Bindings with TourListViewModels
         tourListSearch.textProperty().bindBidirectional(tourListViewModel.getCurrentSearchText());
@@ -86,18 +86,42 @@ public class TourListController implements Initializable {
     }
 
     public void onMouseClickGetTour(javafx.scene.input.MouseEvent mouseEvent) {
-        int id = tourListView.getSelectionModel().getSelectedItem().getTour_id();
 
-        Tour tour =  tourListViewModel.getSingleTour(id);
+    if(tourListView.getSelectionModel().getSelectedItem() == null){
 
-        System.out.println(tour.getTour_name());
+      }
+    else{
+       tour_id = tourListView.getSelectionModel().getSelectedItem().getTour_id();
+    }
+/*
+       Tour tour =  tourListViewModel.getSingleTour(id);
+
+        System.out.println(tour.getTour_name());*/
     }
 
     public void addNewTourWindow(ActionEvent actionEvent)  {
         tourListViewModel.addNewTourWindow();
+        SetupListView();
+        FormatCells();
+        SetCurrentItem();
+
         }
 
+    public void editTourWindow(ActionEvent actionEvent) {
+        tourListViewModel.editTourWindow();
+        SetupListView();
+        FormatCells();
+        SetCurrentItem();
 
+    }
+
+    public void deleteTour(ActionEvent actionEvent) {
+        tourListViewModel.deleteTour(tour_id);
+        SetupListView();
+        FormatCells();
+        SetCurrentItem();
+
+    }
 }
 
 

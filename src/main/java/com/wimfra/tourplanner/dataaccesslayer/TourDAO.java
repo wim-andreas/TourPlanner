@@ -18,4 +18,12 @@ public class TourDAO {
     public Tour GetSingleTour(int id){
         return databaseAccess.getSingleTour(id);
     }
+
+    public void AddNewTour(List<String> data) {
+        databaseAccess.addNewTour(data);
+    }
+
+    public void DeleteTour(int tour_id) {
+        databaseAccess.deleteTour(tour_id);
+    }
 }
