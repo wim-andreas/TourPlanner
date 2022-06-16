@@ -1,6 +1,7 @@
 package com.wimfra.tourplanner.view;
 
 import com.wimfra.tourplanner.viewmodel.MainWindowViewModel;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -29,11 +30,6 @@ public class MainWindowController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-
-
-
-
-
 
 
 }

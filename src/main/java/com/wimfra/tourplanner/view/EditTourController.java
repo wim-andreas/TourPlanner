@@ -2,6 +2,7 @@ package com.wimfra.tourplanner.view;
 
 import com.wimfra.tourplanner.models.Tour;
 import com.wimfra.tourplanner.viewmodel.EditTourViewModel;
+import com.wimfra.tourplanner.viewmodel.MainWindowViewModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -16,7 +17,8 @@ import java.util.ResourceBundle;
 
 public class EditTourController implements Initializable {
 
-    private EditTourViewModel editTourViewModel = new EditTourViewModel();
+    private final EditTourViewModel editTourViewModel;
+
 
     public TextField nameTextField;
     public TextField fromTextField;
@@ -28,6 +30,10 @@ public class EditTourController implements Initializable {
     public TextArea descriptionTextArea;
 
     public Button editTourBtn;
+
+    public EditTourController(EditTourViewModel editTourViewModel) {
+        this.editTourViewModel = editTourViewModel;
+    }
 
 
 //Todo über die Controller factory eine verbindung aufbauen, sodass eine selected Tour bearbeitet werden kann
@@ -44,7 +50,6 @@ public class EditTourController implements Initializable {
         data.add(5,distanceTextField.getText());
         data.add(6,durationTextField.getText());
         data.add(7,infoTextField.getText());
-
 
         editTourViewModel.editTourData(data, id);
         Stage stage = (Stage) editTourBtn.getScene().getWindow();

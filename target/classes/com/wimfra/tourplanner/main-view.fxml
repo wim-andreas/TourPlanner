@@ -52,7 +52,7 @@
                               </Button>
                           </children>
                       </HBox>
-                       <fx:include source="details-view.fxml"></fx:include>
+                       <fx:include source="log-view.fxml"></fx:include>
                   </children>
                   </VBox>
               </content>
