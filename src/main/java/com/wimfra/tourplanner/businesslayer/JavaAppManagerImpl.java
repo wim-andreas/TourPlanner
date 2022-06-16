@@ -2,6 +2,7 @@ package com.wimfra.tourplanner.businesslayer;
 
 
 
+import com.wimfra.tourplanner.FXMLDependencyInjection;
 import com.wimfra.tourplanner.TourPlannerApplication;
 import com.wimfra.tourplanner.dataaccesslayer.TourDAO;
 import com.wimfra.tourplanner.models.Tour;
@@ -12,6 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 public class JavaAppManagerImpl implements JavaAppManager{
@@ -45,11 +47,10 @@ TourDAO tourDAO = new TourDAO();
 
     @Override
     public void AddTourWindow() {
-        FXMLLoader fxmlLoader = new FXMLLoader(TourPlannerApplication.class.getResource("add-tour-view.fxml"));
         Scene scene = null;
         Stage stage = new Stage();
         try {
-            scene = new Scene(fxmlLoader.load(), 820, 640);
+            scene = new Scene(FXMLDependencyInjection.load("add-tour-view.fxml", Locale.GERMAN));
         } catch (IOException e) {
             e.printStackTrace();
         }
