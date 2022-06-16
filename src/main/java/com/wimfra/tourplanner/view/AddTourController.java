@@ -64,6 +64,15 @@ public class AddTourController implements Initializable {
         data.add(6,durationTextField.getText());
         data.add(7,infoTextField.getText());
 
+        addTourViewModel.addNewTour(data);
+
+        clearTextFields();
+
+        Stage stage = (Stage) addNewTourBtn.getScene().getWindow();
+        stage.close();
+    }
+
+    public void clearTextFields(){
         nameTextField.clear();
         descriptionTextArea.clear();
         fromTextField.clear();
@@ -73,9 +82,6 @@ public class AddTourController implements Initializable {
         durationTextField.clear();
         infoTextField.clear();
 
-        addTourViewModel.addNewTour(data);
 
-        Stage stage = (Stage) addNewTourBtn.getScene().getWindow();
-        stage.close();
     }
 }

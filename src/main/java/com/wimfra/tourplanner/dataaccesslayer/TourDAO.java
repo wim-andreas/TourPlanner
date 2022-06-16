@@ -26,4 +26,8 @@ public class TourDAO {
     public void DeleteTour(int tour_id) {
         databaseAccess.deleteTour(tour_id);
     }
+
+    public void EditTourData(List<String> data, int id) {
+        databaseAccess.editTourData(data, id);
+    }
 }
