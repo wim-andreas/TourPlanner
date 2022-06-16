@@ -150,4 +150,39 @@ public class DBService implements DataAccess {
         return false;
 
     }
+
+    @Override
+    public boolean editTourData(List<String> data, int id) {
+        try {
+            Connection connection = DBService.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE tours SET tour_name = ?, description= ?, from_where = ?, to_where = ?, transportation = ?, distance = ?, duration = ?, route_info = ?  WHERE tour_id = ?;");
+
+            preparedStatement.setString(1, data.get(0));
+            preparedStatement.setString(2, data.get(1));
+            preparedStatement.setString(3, data.get(2));
+            preparedStatement.setString(4, data.get(3));
+            preparedStatement.setString(5, data.get(4));
+            preparedStatement.setString(6, data.get(5));
+            preparedStatement.setString(7, data.get(6));
+            preparedStatement.setString(8, data.get(7));
+            preparedStatement.setInt(9,id);
+
+
+            int rows = preparedStatement.executeUpdate();
+
+            preparedStatement.close();
+            connection.close();
+
+            if (rows == 0) {
+                return false;
+            }
+
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return true;
+    }
 }

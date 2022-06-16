@@ -11,4 +11,6 @@ public interface DataAccess {
     public Tour addNewTour(List<String> data);
 
     public boolean deleteTour(int tour_id);
+
+    boolean editTourData(List<String> data, int id);
 }

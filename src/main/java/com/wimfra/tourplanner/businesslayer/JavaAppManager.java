@@ -12,4 +12,5 @@ public interface JavaAppManager {
     void EditTourWindow();
     void AddNewTour(List<String> data);
     void DeleteTour(int tour_id);
+    void EditTourData(List<String> data, int id);
 }
