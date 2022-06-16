@@ -7,6 +7,7 @@ import com.wimfra.tourplanner.models.Tour;
 import com.wimfra.tourplanner.viewmodel.RouteViewModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -21,26 +22,25 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RouteController implements Initializable {
+    private RouteViewModel routeViewModel;
 
-
-    private JavaAppManager manager;
-
-    private RouteViewModel routeViewModel = new RouteViewModel();
-
+    @FXML
     public Tab description_tab;
+    @FXML
     public Text description;
+    @FXML
     public ListView<Tour> tourListView;
-
     private ObservableList<Tour> mediaItems;
     private Tour currentItem;
 
-    public RouteController() throws IOException {
+    public RouteController(RouteViewModel routeViewModel) {
+        this.routeViewModel = routeViewModel;
     }
 
-    @Override
+    @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        manager = JavaAppManagerFactory.GetManager();
-        loadDescription();
+        //manager = JavaAppManagerFactory.GetManager();
+        //loadDescription();
     }
 
     private void loadDescription() {

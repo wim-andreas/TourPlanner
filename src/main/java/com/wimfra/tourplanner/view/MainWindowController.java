@@ -22,6 +22,9 @@ public class MainWindowController implements Initializable {
         return mainWindowViewModel;
     }
 
+    @FXML void initialize() {
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
