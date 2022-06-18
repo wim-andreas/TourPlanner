@@ -96,11 +96,9 @@ public class TourListController implements Initializable {
       }
     else{
        tour_id = tourListView.getSelectionModel().getSelectedItem().getTour_id();
+       // tourListViewModel.getSingleTour(tour_id);
     }
-/*
-       Tour tour =  tourListViewModel.getSingleTour(id);
 
-        System.out.println(tour.getTour_name());*/
     }
 
     public void addNewTourWindow(ActionEvent actionEvent)  {

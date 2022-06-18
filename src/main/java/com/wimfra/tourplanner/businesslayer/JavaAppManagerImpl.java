@@ -84,4 +84,9 @@ TourDAO tourDAO = new TourDAO();
     public void DeleteTour(int tour_id) {
         tourDAO.DeleteTour(tour_id);
     }
+
+    @Override
+    public void EditTourData(List<String> data, int id) {
+        tourDAO.EditTourData(data, id);
+    }
 }

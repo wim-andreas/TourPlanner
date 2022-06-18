@@ -3,22 +3,21 @@ package com.wimfra.tourplanner.view;
 import com.wimfra.tourplanner.view.AddTourController;
 import com.wimfra.tourplanner.view.MainWindowController;
 import com.wimfra.tourplanner.view.TourListController;
-import com.wimfra.tourplanner.viewmodel.AddTourViewModel;
-import com.wimfra.tourplanner.viewmodel.MainWindowViewModel;
-import com.wimfra.tourplanner.viewmodel.RouteViewModel;
-import com.wimfra.tourplanner.viewmodel.TourListViewModel;
+import com.wimfra.tourplanner.viewmodel.*;
 
 public class ControllerFactory {
     private final MainWindowViewModel mainWindowViewModel;
     private final AddTourViewModel addTourViewModel;
     private final TourListViewModel tourListViewModel;
     private final RouteViewModel routeViewModel;
+    private final EditTourViewModel editTourViewModel;
 
     public ControllerFactory() {
         this.addTourViewModel = new AddTourViewModel();
         this.tourListViewModel = new TourListViewModel();
         this.routeViewModel = new RouteViewModel();
-        this.mainWindowViewModel = new MainWindowViewModel(addTourViewModel, tourListViewModel);
+        this.editTourViewModel = new EditTourViewModel();
+        this.mainWindowViewModel = new MainWindowViewModel(addTourViewModel, tourListViewModel, editTourViewModel);
     }
 
     //
@@ -39,6 +38,9 @@ public class ControllerFactory {
         }
         else if(controllerClass == RouteController.class){
             return new RouteController(this.routeViewModel);
+        }
+        else if(controllerClass == EditTourController.class){
+            return new EditTourController(this.editTourViewModel);
         }
 
         throw new IllegalArgumentException("Unknown controller class: " + controllerClass);
