@@ -4,6 +4,7 @@ import com.wimfra.tourplanner.models.Tour;
 import com.wimfra.tourplanner.viewmodel.EditTourViewModel;
 import com.wimfra.tourplanner.viewmodel.MainWindowViewModel;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -19,25 +20,51 @@ public class EditTourController implements Initializable {
 
     private final EditTourViewModel editTourViewModel;
 
+    @FXML
     public TextField nameTextField;
+    @FXML
     public TextField fromTextField;
+    @FXML
     public TextField toTextField;
+    @FXML
     public TextField transportationTextField;
+    @FXML
     public TextField durationTextField;
+    @FXML
     public TextField distanceTextField;
+    @FXML
     public TextField infoTextField;
+    @FXML
     public TextArea descriptionTextArea;
-
+    @FXML
     public Button editTourBtn;
+    @FXML
+    public Button closeTourBtn;
 
     public EditTourController(EditTourViewModel editTourViewModel) {
         this.editTourViewModel = editTourViewModel;
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        nameTextField.textProperty().bindBidirectional(editTourViewModel.nameProperty());
+        fromTextField.textProperty().bindBidirectional(editTourViewModel.fromProperty());
+        toTextField.textProperty().bindBidirectional(editTourViewModel.toProperty());
+        transportationTextField.textProperty().bindBidirectional(editTourViewModel.transportationProperty());
+        durationTextField.textProperty().bindBidirectional(editTourViewModel.durationProperty());
+        distanceTextField.textProperty().bindBidirectional(editTourViewModel.distanceProperty());
+        infoTextField.textProperty().bindBidirectional(editTourViewModel.infoProperty());
+        descriptionTextArea.textProperty().bindBidirectional(editTourViewModel.descriptionProperty());
+        descriptionTextArea.setWrapText(true);
 
-//Todo über die Controller factory eine verbindung aufbauen, sodass eine selected Tour bearbeitet werden kann
+        editTourBtn.setOnAction(event->editTourData());
+        closeTourBtn.setOnAction(event->editTourData());
 
-    public void editTourData(ActionEvent actionEvent){
+        Tour tour = editTourViewModel.getSingleTour(3);
+        loadTourData(tour);
+    }
+
+    public void editTourData(){
         //Get Selected Tour ID
         int id = 1;
         List<String> data = new ArrayList();
@@ -51,8 +78,7 @@ public class EditTourController implements Initializable {
         data.add(7,infoTextField.getText());
 
         editTourViewModel.editTourData(data, id);
-        Stage stage = (Stage) editTourBtn.getScene().getWindow();
-        stage.close();
+        closeCurrentWindow();
     }
 
     public void loadTourData(Tour tour){
@@ -66,9 +92,20 @@ public class EditTourController implements Initializable {
         descriptionTextArea.setText(tour.getDescription());
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Tour tour = editTourViewModel.getSingleTour(3);
-        loadTourData(tour);
+    public void clearTextFields(){
+        nameTextField.clear();
+        descriptionTextArea.clear();
+        fromTextField.clear();
+        toTextField.clear();
+        transportationTextField.clear();
+        distanceTextField.clear();
+        durationTextField.clear();
+        infoTextField.clear();
+    }
+
+    private void closeCurrentWindow() {
+        clearTextFields();
+        Stage stage = (Stage) editTourBtn.getScene().getWindow();
+        stage.close();
     }
 }

@@ -17,13 +17,13 @@
                             </font>
                         </Text>
                         <Region HBox.hgrow="ALWAYS" />
-                        <Button fx:id="addTourBtn" mnemonicParsing="false" onAction="#addNewTourWindow" text="➕" />
-                        <Button fx:id="deleteTourBtn" mnemonicParsing="false" onAction="#deleteTour" text="➖">
+                        <Button fx:id="addTourBtn" mnemonicParsing="false" text="➕" />
+                        <Button fx:id="deleteTourBtn" mnemonicParsing="false" text="➖">
                             <HBox.margin>
                                 <Insets left="5.0" />
                             </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" text="🛠" onAction="#editTourWindow">
+                        <Button mnemonicParsing="false" fx:id="editTourBtn" text="🛠">
                             <HBox.margin>
                                 <Insets left="5.0" />
                             </HBox.margin>
@@ -43,11 +43,11 @@
                     </VBox.margin>
                 </TextField>
                 <HBox>
-                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchAction" prefWidth="100" text="Search" HBox.hgrow="ALWAYS">
+                <Button fx:id="searchButton" mnemonicParsing="false" prefWidth="100" text="Search" HBox.hgrow="ALWAYS">
                   <HBox.margin>
                      <Insets bottom="10.0" left="10.0" right="10.0" />
                   </HBox.margin></Button>
-                <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearAction" prefWidth="100" text="Clear">
+                <Button fx:id="clearButton" mnemonicParsing="false" prefWidth="100" text="Clear">
                   <HBox.margin>
                      <Insets bottom="10.0" left="10.0" right="10.0" />
                   </HBox.margin></Button>

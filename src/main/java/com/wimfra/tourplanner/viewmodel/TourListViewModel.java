@@ -14,18 +14,17 @@ import java.util.List;
 
 public class TourListViewModel {
     // gets the connection to the business layer
-    private JavaAppManager manager = JavaAppManagerFactory.GetManager();
+    private JavaAppManager appManager = JavaAppManagerFactory.GetManager();
     private ManageTourService tourService = new ManageTourServiceImpl();
 
     // different properties for bindings
-    private final StringProperty currentSearchText = new SimpleStringProperty("");
+    private final StringProperty currentSearchText = new SimpleStringProperty();
     private final ObservableList<Tour> tourItems = FXCollections.observableArrayList();
 
     // getter and setter for the properties
     public StringProperty getCurrentSearchText(){
         return this.currentSearchText;
     }
-
     public List<Tour> getTourItems(){
         return tourService.getTours();
     }
@@ -42,10 +41,10 @@ public class TourListViewModel {
     }
 
     public void addNewTourWindow(){
-        manager.AddTourWindow();
+        appManager.addTourWindow();
     }
 
-    public void editTourWindow() { manager.EditTourWindow();
+    public void editTourWindow() { appManager.editTourWindow();
     }
 
     public void deleteTour(int tour_id) {

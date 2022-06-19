@@ -7,6 +7,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -25,9 +26,20 @@ public class TourListController implements Initializable {
     private final TourListViewModel tourListViewModel;
 
     // references used to setup data binding
+    @FXML
     public ListView<Tour> tourListView;
+    @FXML
     public TextField tourListSearch;
+    @FXML
     public Button addTourBtn;
+    @FXML
+    public Button editTourBtn;
+    @FXML
+    public Button deleteTourBtn;
+    @FXML
+    public Button searchButton;
+    @FXML
+    public Button clearButton;
 
     public int tour_id;
 
@@ -44,16 +56,24 @@ public class TourListController implements Initializable {
         FormatCells();
         SetCurrentItem();
 
-        // Bindings with TourListViewModels
+        // Bindings with TourListViewModel
         tourListSearch.textProperty().bindBidirectional(tourListViewModel.getCurrentSearchText());
+
+        // Setting events that happen on button press
+        addTourBtn.setOnAction(event->addNewTourWindow());
+        editTourBtn.setOnAction(event->editTourWindow());
+        deleteTourBtn.setOnAction(event->deleteTour());
+        searchButton.setOnAction(event->searchAction());
+        clearButton.setOnAction(event->clearAction());
+        tourListView.setOnMouseClicked(event->onMouseClickGetTour());
     }
 
-    public void searchAction(ActionEvent actionEvent) {
+    public void searchAction() {
         tourItems.clear();
         tourItems.addAll(tourListViewModel.searchAction());
     }
 
-    public void clearAction(ActionEvent actionEvent) {
+    public void clearAction() {
         tourItems.clear();
         tourListSearch.setText("");
         tourItems.addAll(tourListViewModel.getTourItems());
@@ -89,40 +109,37 @@ public class TourListController implements Initializable {
         }));
     }
 
-    public void onMouseClickGetTour(javafx.scene.input.MouseEvent mouseEvent) {
+    public void onMouseClickGetTour(/*javafx.scene.input.MouseEvent mouseEvent*/) {
 
     if(tourListView.getSelectionModel().getSelectedItem() == null){
 
       }
     else{
        tour_id = tourListView.getSelectionModel().getSelectedItem().getTour_id();
-       // tourListViewModel.getSingleTour(tour_id);
+       tourListViewModel.getSingleTour(tour_id);
     }
 
     }
 
-    public void addNewTourWindow(ActionEvent actionEvent)  {
+    public void addNewTourWindow()  {
         tourListViewModel.addNewTourWindow();
         SetupListView();
         FormatCells();
         SetCurrentItem();
+    }
 
-        }
-
-    public void editTourWindow(ActionEvent actionEvent) {
+    public void editTourWindow() {
         tourListViewModel.editTourWindow();
         SetupListView();
         FormatCells();
         SetCurrentItem();
-
     }
 
-    public void deleteTour(ActionEvent actionEvent) {
+    public void deleteTour() {
         tourListViewModel.deleteTour(tour_id);
         SetupListView();
         FormatCells();
         SetCurrentItem();
-
     }
 }
 

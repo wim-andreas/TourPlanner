@@ -2,7 +2,6 @@ package com.wimfra.tourplanner.dataaccesslayer;
 
 import com.wimfra.tourplanner.models.Tour;
 
-import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +30,8 @@ public class DBService implements DataAccess {
         }
         return null;
     }
+
+    //TODO: Adjust prepared Statements to the correct datatypes - right now they are not working properly.
 
     @Override
     public List<Tour> getTours() {
@@ -87,14 +88,12 @@ public class DBService implements DataAccess {
                 preparedStatement.close();
                 connection.close();
                 return tour;
-
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
-
     }
 
     @Override
@@ -177,7 +176,6 @@ public class DBService implements DataAccess {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
 
         return true;
     }

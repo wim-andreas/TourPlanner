@@ -5,6 +5,6 @@ import com.wimfra.tourplanner.models.Tour;
 import java.util.List;
 
 public interface JavaAppManager {
-    void AddTourWindow();
-    void EditTourWindow();
+    void addTourWindow();
+    void editTourWindow();
 }

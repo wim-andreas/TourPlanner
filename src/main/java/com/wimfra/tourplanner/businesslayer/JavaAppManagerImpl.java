@@ -20,7 +20,7 @@ public class JavaAppManagerImpl implements JavaAppManager{
     private TourDAO tourDAO = new TourDAO();
 
     @Override
-    public void AddTourWindow() {
+    public void addTourWindow() {
         Scene scene = null;
         Stage stage = new Stage();
         try {
@@ -35,7 +35,7 @@ public class JavaAppManagerImpl implements JavaAppManager{
     }
 
     @Override
-    public void EditTourWindow() {
+    public void editTourWindow() {
         Scene scene = null;
         Stage stage = new Stage();
         try {
