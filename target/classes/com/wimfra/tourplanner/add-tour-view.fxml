@@ -93,12 +93,12 @@
                         </TextArea>
                         <HBox alignment="TOP_RIGHT" prefWidth="200.0">
                             <children>
-                                <Button mnemonicParsing="false" text="Cancel">
+                                <Button fx:id="closeWindowBtn" mnemonicParsing="false" text="Cancel">
                                     <HBox.margin>
                                         <Insets right="15.0" />
                                     </HBox.margin>
                                 </Button>
-                                <Button fx:id="addNewTourBtn" onAction="#addNewTour" layoutX="295.0" layoutY="10.0" mnemonicParsing="false" text="Add Tour" />
+                                <Button fx:id="addNewTourBtn" layoutX="295.0" layoutY="10.0" mnemonicParsing="false" text="Add Tour" />
                             </children>
                         </HBox>
                     </children>

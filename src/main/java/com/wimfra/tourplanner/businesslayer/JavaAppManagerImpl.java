@@ -17,33 +17,7 @@ import java.util.Locale;
 import java.util.stream.Collectors;
 
 public class JavaAppManagerImpl implements JavaAppManager{
-TourDAO tourDAO = new TourDAO();
-
-    @Override
-    public List<Tour> GetTours() {
-        return tourDAO.GetTours();
-    }
-
-    @Override
-    public List<Tour> Search(String tourname, boolean caseSensitive) {
-        List<Tour>items = GetTours();
-
-        if(caseSensitive){
-            return items
-                    .stream()
-                    .filter(x -> x.getTour_name().contains(tourname))
-                    .collect(Collectors.toList());
-        }
-        return items
-                .stream()
-                .filter(x -> x.getTour_name().toLowerCase().contains(tourname.toLowerCase()))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public Tour GetSingleTour(int id) {
-        return tourDAO.GetSingleTour(id);
-    }
+    private TourDAO tourDAO = new TourDAO();
 
     @Override
     public void AddTourWindow() {
@@ -75,18 +49,5 @@ TourDAO tourDAO = new TourDAO();
         stage.show();
     }
 
-    @Override
-    public void AddNewTour(List<String> data) {
-        tourDAO.AddNewTour(data);
-    }
 
-    @Override
-    public void DeleteTour(int tour_id) {
-        tourDAO.DeleteTour(tour_id);
-    }
-
-    @Override
-    public void EditTourData(List<String> data, int id) {
-        tourDAO.EditTourData(data, id);
-    }
 }

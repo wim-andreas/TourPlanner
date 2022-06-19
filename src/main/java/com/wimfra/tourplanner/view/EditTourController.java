@@ -19,7 +19,6 @@ public class EditTourController implements Initializable {
 
     private final EditTourViewModel editTourViewModel;
 
-
     public TextField nameTextField;
     public TextField fromTextField;
     public TextField toTextField;
@@ -69,7 +68,7 @@ public class EditTourController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Tour tour = editTourViewModel.getSingleTour(1);
+        Tour tour = editTourViewModel.getSingleTour(3);
         loadTourData(tour);
     }
 }

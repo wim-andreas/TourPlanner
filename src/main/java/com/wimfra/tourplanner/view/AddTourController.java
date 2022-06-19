@@ -16,10 +16,13 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class AddTourController implements Initializable {
+
+    private final AddTourViewModel addTourViewModel;
+
     @FXML
     public Button addNewTourBtn;
     @FXML
-    private final AddTourViewModel addTourViewModel;
+    public Button closeWindowBtn;
     @FXML
     public TextField nameTextField;
     @FXML
@@ -41,7 +44,7 @@ public class AddTourController implements Initializable {
         this.addTourViewModel = addTourViewModel;
     }
 
-    // creating the bidirectional databinding
+    // creating the (bidirectional) databinding
     @FXML @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         nameTextField.textProperty().bindBidirectional(addTourViewModel.nameProperty());
@@ -51,23 +54,19 @@ public class AddTourController implements Initializable {
         durationTextField.textProperty().bindBidirectional(addTourViewModel.durationProperty());
         distanceTextField.textProperty().bindBidirectional(addTourViewModel.distanceProperty());
         infoTextField.textProperty().bindBidirectional(addTourViewModel.infoProperty());
+        descriptionTextArea.textProperty().bindBidirectional(addTourViewModel.descriptionProperty());
+        descriptionTextArea.setWrapText(true);
+        addNewTourBtn.setOnAction(event-> addNewTour());
+        closeWindowBtn.setOnAction(event-> closeCurrentWindow());
     }
 
-    public void addNewTour(ActionEvent actionEvent) {
-        List<String> data = new ArrayList();
-        data.add(0,nameTextField.getText());
-        data.add(1,descriptionTextArea.getText());
-        data.add(2,fromTextField.getText());
-        data.add(3,toTextField.getText());
-        data.add(4,transportationTextField.getText());
-        data.add(5,distanceTextField.getText());
-        data.add(6,durationTextField.getText());
-        data.add(7,infoTextField.getText());
+    public void addNewTour() {
+        addTourViewModel.addNewTour();
+        closeCurrentWindow();
+    }
 
-        addTourViewModel.addNewTour(data);
-
+    private void closeCurrentWindow() {
         clearTextFields();
-
         Stage stage = (Stage) addNewTourBtn.getScene().getWindow();
         stage.close();
     }
@@ -81,7 +80,5 @@ public class AddTourController implements Initializable {
         distanceTextField.clear();
         durationTextField.clear();
         infoTextField.clear();
-
-
     }
 }

@@ -2,6 +2,7 @@ package com.wimfra.tourplanner.dataaccesslayer;
 
 import com.wimfra.tourplanner.models.Tour;
 
+import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -110,16 +111,11 @@ public class DBService implements DataAccess {
             preparedStatement.setString(7, data.get(6));
             preparedStatement.setString(8, data.get(7));
 
-
-            int rows = preparedStatement.executeUpdate();
-            if (rows == 0) {
-                return null;
-            }
-
+            preparedStatement.execute();
             preparedStatement.close();
             connection.close();
         } catch (SQLException ignored) {
-
+            ignored.printStackTrace();
         }
         return null;
     }
