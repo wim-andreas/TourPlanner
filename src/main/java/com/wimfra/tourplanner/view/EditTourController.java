@@ -1,9 +1,9 @@
 package com.wimfra.tourplanner.view;
 
+import com.wimfra.tourplanner.mediator.Mediator;
+import com.wimfra.tourplanner.mediator.MediatorFactory;
 import com.wimfra.tourplanner.models.Tour;
 import com.wimfra.tourplanner.viewmodel.EditTourViewModel;
-import com.wimfra.tourplanner.viewmodel.MainWindowViewModel;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -19,6 +19,7 @@ import java.util.ResourceBundle;
 public class EditTourController implements Initializable {
 
     private final EditTourViewModel editTourViewModel;
+    private final Mediator mediator;
 
     @FXML
     public TextField nameTextField;
@@ -43,6 +44,7 @@ public class EditTourController implements Initializable {
 
     public EditTourController(EditTourViewModel editTourViewModel) {
         this.editTourViewModel = editTourViewModel;
+        this.mediator = MediatorFactory.getMediator();
     }
 
     @Override
@@ -58,15 +60,14 @@ public class EditTourController implements Initializable {
         descriptionTextArea.setWrapText(true);
 
         editTourBtn.setOnAction(event->editTourData());
-        closeTourBtn.setOnAction(event->editTourData());
+        closeTourBtn.setOnAction(event->closeCurrentWindow());
 
-        Tour tour = editTourViewModel.getSingleTour(1);
+        Tour tour = editTourViewModel.getSingleTour(mediator.getTourID());
         loadTourData(tour);
     }
 
     public void editTourData(){
         //Get Selected Tour ID
-        int id = 1;
         List<String> data = new ArrayList();
         data.add(0,nameTextField.getText());
         data.add(1,descriptionTextArea.getText());
@@ -77,7 +78,7 @@ public class EditTourController implements Initializable {
         data.add(6,durationTextField.getText());
         data.add(7,infoTextField.getText());
 
-        editTourViewModel.editTourData(data, id);
+        editTourViewModel.editTourData(data, mediator.getTourID());
         closeCurrentWindow();
     }
 

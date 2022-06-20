@@ -44,7 +44,8 @@ public class TourListViewModel {
         appManager.addTourWindow();
     }
 
-    public void editTourWindow() { appManager.editTourWindow();
+    public void editTourWindow() {
+        appManager.editTourWindow();
     }
 
     public void deleteTour(int tour_id) {
