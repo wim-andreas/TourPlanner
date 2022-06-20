@@ -7,4 +7,5 @@ import java.util.List;
 public interface JavaAppManager {
     void addTourWindow();
     void editTourWindow();
+    void openLogWindow();
 }

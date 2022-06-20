@@ -49,5 +49,21 @@ public class JavaAppManagerImpl implements JavaAppManager{
         stage.show();
     }
 
+    @Override
+    public void openLogWindow() {
+        Scene scene = null;
+        Stage stage = new Stage();
+        try {
+            scene = new Scene(FXMLDependencyInjection.load("add-log-view.fxml", Locale.GERMAN));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.setTitle("Add a new tour-log");
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.show();
+
+    }
+
 
 }

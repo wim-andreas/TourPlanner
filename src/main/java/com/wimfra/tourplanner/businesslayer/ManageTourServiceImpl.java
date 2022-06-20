@@ -20,18 +20,20 @@ public class ManageTourServiceImpl implements ManageTourService {
 
     @Override
     public List<Tour> search(String tourname, boolean caseSensitive) {
-        List<Tour>items = getTours();
-
-        if(caseSensitive){
+        List<Tour> items = getTours();
+        if (tourname != null) {
+            if (caseSensitive) {
+                return items
+                        .stream()
+                        .filter(x -> x.getTour_name().contains(tourname))
+                        .collect(Collectors.toList());
+            }
             return items
                     .stream()
-                    .filter(x -> x.getTour_name().contains(tourname))
+                    .filter(x -> x.getTour_name().toLowerCase().contains(tourname.toLowerCase()))
                     .collect(Collectors.toList());
         }
-        return items
-                .stream()
-                .filter(x -> x.getTour_name().toLowerCase().contains(tourname.toLowerCase()))
-                .collect(Collectors.toList());
+        return items;
     }
 
     @Override

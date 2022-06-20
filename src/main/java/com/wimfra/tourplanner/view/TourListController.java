@@ -55,12 +55,14 @@ public class TourListController implements Initializable {
         SetupListView();
         FormatCells();
         SetCurrentItem();
+        Tooltip tooltip = new Tooltip("Add a new tour");
 
         // Bindings with TourListViewModel
         tourListSearch.textProperty().bindBidirectional(tourListViewModel.getCurrentSearchText());
 
         // Setting events that happen on button press
         addTourBtn.setOnAction(event->addNewTourWindow());
+        addTourBtn.setTooltip(tooltip);
         editTourBtn.setOnAction(event->editTourWindow());
         deleteTourBtn.setOnAction(event->deleteTour());
         searchButton.setOnAction(event->searchAction());
