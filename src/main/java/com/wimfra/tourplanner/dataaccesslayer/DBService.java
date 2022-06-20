@@ -1,5 +1,7 @@
 package com.wimfra.tourplanner.dataaccesslayer;
 
+import com.wimfra.tourplanner.businesslayer.parsing.ParserService;
+import com.wimfra.tourplanner.businesslayer.parsing.ParserServiceImpl;
 import com.wimfra.tourplanner.models.Tour;
 
 import java.sql.*;
@@ -11,8 +13,10 @@ public class DBService implements DataAccess {
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/postgres";
     private static final String USER = "swe2user";
     private static final String PW = "swe2pw";
+    private final ParserService parserService;
 
     public DBService() {
+        this.parserService = new ParserServiceImpl();
     }
 
     public static DBService getInstance() {
@@ -106,10 +110,9 @@ public class DBService implements DataAccess {
             preparedStatement.setString(3, data.get(2));
             preparedStatement.setString(4, data.get(3));
             preparedStatement.setString(5, data.get(4));
-            preparedStatement.setString(6, data.get(5));
+            preparedStatement.setDouble(6, parserService.parseStringIntoDouble(data.get(5)));
             preparedStatement.setString(7, data.get(6));
             preparedStatement.setString(8, data.get(7));
-
             preparedStatement.execute();
             preparedStatement.close();
             connection.close();
