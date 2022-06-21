@@ -2,10 +2,8 @@ package com.wimfra.tourplanner.viewmodel;
 
 import com.wimfra.tourplanner.businesslayer.JavaAppManager;
 import com.wimfra.tourplanner.businesslayer.JavaAppManagerFactory;
-import com.wimfra.tourplanner.models.Tour;
 
 public class MainWindowViewModel {
-
     private AddTourViewModel addTourViewModel;
     private TourListViewModel tourListViewModel;
     private EditTourViewModel editTourViewModel;
@@ -18,7 +16,6 @@ public class MainWindowViewModel {
         this.tourListViewModel = tourListViewModel;
         this.editTourViewModel = editTourViewModel;
         this.addLogViewModel = addLogViewModel;
-
     }
 
     private void selectTour(){

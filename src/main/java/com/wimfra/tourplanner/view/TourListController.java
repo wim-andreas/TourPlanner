@@ -1,31 +1,25 @@
 package com.wimfra.tourplanner.view;
 
-import com.wimfra.tourplanner.TourPlannerApplication;
+import com.wimfra.tourplanner.mediator.Mediator;
+import com.wimfra.tourplanner.mediator.MediatorFactory;
+import com.wimfra.tourplanner.mediator.MediatorImpl;
 import com.wimfra.tourplanner.models.Tour;
 import com.wimfra.tourplanner.viewmodel.TourListViewModel;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.text.Font;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import org.w3c.dom.events.MouseEvent;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class TourListController implements Initializable {
 
     private final TourListViewModel tourListViewModel;
+    private final Mediator mediator;
 
-    // references used to setup data binding
+    // references used to Setup data binding
     @FXML
     public ListView<Tour> tourListView;
     @FXML
@@ -42,12 +36,12 @@ public class TourListController implements Initializable {
     public Button clearButton;
 
     public int tour_id;
-
     private ObservableList<Tour> tourItems;
     private Tour currentItem;
 
     public TourListController(TourListViewModel tourListViewModel) {
         this.tourListViewModel = tourListViewModel;
+        this.mediator = MediatorFactory.getMediator();
     }
 
     @Override
@@ -67,7 +61,7 @@ public class TourListController implements Initializable {
         deleteTourBtn.setOnAction(event->deleteTour());
         searchButton.setOnAction(event->searchAction());
         clearButton.setOnAction(event->clearAction());
-        tourListView.setOnMouseClicked(event->onMouseClickGetTour());
+        tourListView.setOnMouseClicked(event-> setCurrentlySelectedTour());
     }
 
     public void searchAction() {
@@ -111,16 +105,9 @@ public class TourListController implements Initializable {
         }));
     }
 
-    public void onMouseClickGetTour(/*javafx.scene.input.MouseEvent mouseEvent*/) {
-
-    if(tourListView.getSelectionModel().getSelectedItem() == null){
-
-      }
-    else{
-       tour_id = tourListView.getSelectionModel().getSelectedItem().getTour_id();
-       tourListViewModel.getSingleTour(tour_id);
-    }
-
+    public void setCurrentlySelectedTour() {
+        this.tour_id = tourListView.getSelectionModel().getSelectedItem().getTour_id();
+        this.mediator.setTourID(this.tour_id);
     }
 
     public void addNewTourWindow()  {
@@ -138,7 +125,7 @@ public class TourListController implements Initializable {
     }
 
     public void deleteTour() {
-        tourListViewModel.deleteTour(tour_id);
+        tourListViewModel.deleteTour(mediator.getTourID());
         SetupListView();
         FormatCells();
         SetCurrentItem();

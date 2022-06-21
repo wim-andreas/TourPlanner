@@ -4,9 +4,9 @@ import com.wimfra.tourplanner.businesslayer.JavaAppManager;
 import com.wimfra.tourplanner.businesslayer.JavaAppManagerFactory;
 import com.wimfra.tourplanner.businesslayer.ManageTourService;
 import com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl;
-import javafx.beans.property.ReadOnlyObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import com.wimfra.tourplanner.businesslayer.parsing.ParserService;
+import com.wimfra.tourplanner.businesslayer.parsing.ParserServiceImpl;
+import javafx.beans.property.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +26,7 @@ public class AddTourViewModel {
     // gets the connection to the business layer
     private JavaAppManager manager = JavaAppManagerFactory.GetManager();
     private ManageTourService tourService = new ManageTourServiceImpl();
+    private ParserService parserService = new ParserServiceImpl();
 
     // access to the properties
     public StringProperty nameProperty() {
