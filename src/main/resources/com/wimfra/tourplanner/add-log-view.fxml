@@ -23,7 +23,7 @@
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
-                                    <TextField fx:id="dateTextField" prefHeight="26.0" prefWidth="102.0">
+                                    <TextField fx:id="dateTextField" editable="false" focusTraversable="false" prefHeight="26.0" prefWidth="102.0">
                                  <VBox.margin>
                                     <Insets bottom="1.0" />
                                  </VBox.margin>
@@ -36,7 +36,7 @@
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
-                              <TextField fx:id="timeTextField1" prefHeight="26.0" prefWidth="102.0">
+                              <TextField fx:id="timeTextField" editable="false" focusTraversable="false" prefHeight="26.0" prefWidth="102.0">
                                  <VBox.margin>
                                     <Insets bottom="2.0" />
                                  </VBox.margin>
@@ -56,7 +56,7 @@
                                 <Insets bottom="5.0" />
                             </VBox.margin>
                         </Text>
-                  <ChoiceBox prefWidth="150.0" fx:id="difficultyChoiceBox" >
+                  <ChoiceBox fx:id="difficultyChoiceBox" prefWidth="150.0">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
@@ -72,7 +72,7 @@
                             </VBox.margin>
                         </TextField>
                   <Text layoutX="20.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating" />
-                  <Spinner />
+                  <Spinner fx:id="ratingSpinner" />
                         <Text layoutX="20.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment">
                             <VBox.margin>
                                 <Insets bottom="5.0" />
@@ -85,12 +85,12 @@
                         </TextArea>
                         <HBox alignment="TOP_RIGHT" prefWidth="200.0">
                             <children>
-                                <Button mnemonicParsing="false" text="Cancel">
+                                <Button fx:id="closeWindowBtn" mnemonicParsing="false" text="Cancel">
                                     <HBox.margin>
                                         <Insets right="15.0" />
                                     </HBox.margin>
                                 </Button>
-                                <Button fx:id="addNewTourBtn" layoutX="295.0" layoutY="10.0" mnemonicParsing="false" text="Add Tour" />
+                                <Button fx:id="addNewLogBtn" layoutX="295.0" layoutY="10.0" mnemonicParsing="false" text="Add Log" />
                             </children>
                         </HBox>
                     </children>
