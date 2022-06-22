@@ -160,7 +160,7 @@ public class DBService implements DataAccess {
             preparedStatement.setString(3, data.get(2));
             preparedStatement.setString(4, data.get(3));
             preparedStatement.setString(5, data.get(4));
-            preparedStatement.setString(6, data.get(5));
+            preparedStatement.setDouble(6, parserService.parseStringIntoDouble(data.get(5)));
             preparedStatement.setString(7, data.get(6));
             preparedStatement.setString(8, data.get(7));
             preparedStatement.setInt(9,id);

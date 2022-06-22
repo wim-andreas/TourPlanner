@@ -46,9 +46,7 @@ public class TourListController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        SetupListView();
-        FormatCells();
-        SetCurrentItem();
+        updateTourListView();
         Tooltip tooltip = new Tooltip("Add a new tour");
 
         // Bindings with TourListViewModel
@@ -112,20 +110,20 @@ public class TourListController implements Initializable {
 
     public void addNewTourWindow()  {
         tourListViewModel.addNewTourWindow();
-        SetupListView();
-        FormatCells();
-        SetCurrentItem();
+        updateTourListView();
     }
 
     public void editTourWindow() {
         tourListViewModel.editTourWindow();
-        SetupListView();
-        FormatCells();
-        SetCurrentItem();
+        updateTourListView();
     }
 
     public void deleteTour() {
         tourListViewModel.deleteTour(mediator.getTourID());
+        updateTourListView();
+    }
+
+    private void updateTourListView() {
         SetupListView();
         FormatCells();
         SetCurrentItem();
