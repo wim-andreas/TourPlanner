@@ -37,7 +37,7 @@ public class AddLogViewModel {
     public StringProperty commentProperty() { return comment;
     }
 
-    public void addNewLog(String dif, String rat) {
+    public void addNewLog(String dif, String rat, int tourID) {
 
             List<String> data = new ArrayList();
             data.add(0, dateProperty().get());
@@ -46,6 +46,7 @@ public class AddLogViewModel {
             data.add(3, dif);
             data.add(4, totalTimeProperty().get());
             data.add(5, rat);
+            data.add(6, String.valueOf(tourID));
             manageTourLogService.addNewLog(data);
         }
     }

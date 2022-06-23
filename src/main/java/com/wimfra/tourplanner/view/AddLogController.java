@@ -1,5 +1,7 @@
 package com.wimfra.tourplanner.view;
 
+import com.wimfra.tourplanner.mediator.Mediator;
+import com.wimfra.tourplanner.mediator.MediatorFactory;
 import com.wimfra.tourplanner.viewmodel.AddLogViewModel;
 
 import javafx.fxml.FXML;
@@ -35,8 +37,11 @@ public class AddLogController implements Initializable {
     @FXML
     public Button closeWindowBtn;
 
+    private Mediator mediator;
+
     public AddLogController(AddLogViewModel addLogViewModel) {
         this.addLogViewModel = addLogViewModel;
+        this.mediator = MediatorFactory.getMediator();
     }
 
     @Override
@@ -54,7 +59,6 @@ public class AddLogController implements Initializable {
         setUpSpinner();
         setUpDate();
         setUpTime();
-        //ratingSpinner.increment(1);
         addNewLogBtn.setOnAction(event->addNewLog());
         closeWindowBtn.setOnAction(event->closeCurrentWindow());
 
@@ -63,7 +67,7 @@ public class AddLogController implements Initializable {
     public void addNewLog() {
         String dif = difficultyChoiceBox.getSelectionModel().getSelectedItem().toString();
         String rat = ratingSpinner.getValue().toString();
-        addLogViewModel.addNewLog(dif, rat);
+        addLogViewModel.addNewLog(dif, rat, mediator.getTourID());
         closeCurrentWindow();
     }
 
@@ -87,11 +91,7 @@ public class AddLogController implements Initializable {
         timeTextField.setText(formattedTime);
     }
 
-    private void addNewLog1() {
-        System.out.println(difficultyChoiceBox.getSelectionModel().getSelectedItem());
-        System.out.println(ratingSpinner.getValue());
 
-    }
 
     public void setUpChoiceBox(){
         difficultyChoiceBox.getItems().add("beginner");
@@ -118,6 +118,5 @@ public class AddLogController implements Initializable {
     private void setUpSpinner() {
         SpinnerValueFactory.IntegerSpinnerValueFactory integerSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,5,1);
         ratingSpinner.setValueFactory(integerSpinnerValueFactory);
-      //ratingSpinner.getValueFactory().setValue(4);
     }
 }

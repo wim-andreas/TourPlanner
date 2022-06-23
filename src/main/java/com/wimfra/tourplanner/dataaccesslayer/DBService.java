@@ -221,7 +221,7 @@ public class DBService implements DataAccess {
         try {
             Connection connection = DBService.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO logs(tour_id, date_, time_, comment_, difficulty, total_time, rating) VALUES(?,?,?,?,?,?,?);");
-            preparedStatement.setInt(1, 1);
+            preparedStatement.setInt(1, Integer.parseInt(data.get(6)));
             preparedStatement.setString(2, data.get(0));
             preparedStatement.setString(3, data.get(1));
             preparedStatement.setString(4, data.get(2));
