@@ -18,7 +18,6 @@ public class AddLogController implements Initializable {
 
     private final AddLogViewModel addLogViewModel;
 
-
     @FXML
     public ChoiceBox difficultyChoiceBox;
     @FXML

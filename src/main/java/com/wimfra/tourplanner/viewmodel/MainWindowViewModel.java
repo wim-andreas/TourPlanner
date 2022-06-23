@@ -10,24 +10,20 @@ public class MainWindowViewModel {
     private AddLogViewModel addLogViewModel;
     private RouteViewModel routeViewModel;
     private LogViewModel logViewModel;
+    private EditLogViewModel editLogViewModel;
 
     private JavaAppManager appManager = JavaAppManagerFactory.GetManager();
 
-    public MainWindowViewModel(AddTourViewModel addTourViewModel,TourListViewModel tourListViewModel, EditTourViewModel editTourViewModel, AddLogViewModel addLogViewModel, RouteViewModel routeViewModel, LogViewModel logViewModel) {
+    public MainWindowViewModel(AddTourViewModel addTourViewModel,TourListViewModel tourListViewModel, EditTourViewModel editTourViewModel, AddLogViewModel addLogViewModel, RouteViewModel routeViewModel, LogViewModel logViewModel, EditLogViewModel editLogViewModel) {
         this.addTourViewModel = addTourViewModel;
         this.tourListViewModel = tourListViewModel;
         this.editTourViewModel = editTourViewModel;
         this.addLogViewModel = addLogViewModel;
         this.routeViewModel = routeViewModel;
         this.logViewModel = logViewModel;
+        this.editLogViewModel = editLogViewModel;
     }
 
 
-    public void openLogWindow() {
-        appManager.openLogWindow();
-    }
 
-    public void loadTourDescription(){
-
-    }
 }

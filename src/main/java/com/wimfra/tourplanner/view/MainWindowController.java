@@ -16,12 +16,6 @@ public class MainWindowController implements Initializable {
 
 
 
-
-
-
-    @FXML
-    public Button addLogBtn;
-
     private final MainWindowViewModel mainWindowViewModel;
 
     public MainWindowController(MainWindowViewModel mainWindowViewModel) {
@@ -36,13 +30,11 @@ public class MainWindowController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        addLogBtn.setOnAction(event->openLogWindow());
+
 
     }
 
-    public void openLogWindow(){
-        mainWindowViewModel.openLogWindow();
-    }
+
 
 
 }

@@ -16,4 +16,19 @@ private final LogDAO logDAO = new LogDAO();
     public void addNewLog(List<String> data) {
         logDAO.AddNewLog(data);
     }
+
+    @Override
+    public void deleteLog(int logID) {
+        logDAO.DeleteLog(logID);
+    }
+
+    @Override
+    public List<String> getSingleLog(int logID) {
+        return logDAO.GetSingleLog(logID);
+    }
+
+    @Override
+    public void editLogData(List<String> data, int logID) {
+        logDAO.EditLogData(data, logID);
+    }
 }

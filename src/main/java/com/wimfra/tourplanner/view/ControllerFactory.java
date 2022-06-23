@@ -13,6 +13,7 @@ public class ControllerFactory {
     private final EditTourViewModel editTourViewModel;
     private final AddLogViewModel addLogViewModel;
     private final LogViewModel logViewModel;
+    private final EditLogViewModel editLogViewModel;
 
     public ControllerFactory() {
         this.addTourViewModel = new AddTourViewModel();
@@ -21,7 +22,8 @@ public class ControllerFactory {
         this.editTourViewModel = new EditTourViewModel();
         this.addLogViewModel = new AddLogViewModel();
         this.logViewModel = new LogViewModel();
-        this.mainWindowViewModel = new MainWindowViewModel(addTourViewModel, tourListViewModel, editTourViewModel, addLogViewModel, routeViewModel, logViewModel);
+        this.editLogViewModel = new EditLogViewModel();
+        this.mainWindowViewModel = new MainWindowViewModel(addTourViewModel, tourListViewModel, editTourViewModel, addLogViewModel, routeViewModel, logViewModel, editLogViewModel);
     }
 
     //
@@ -51,6 +53,9 @@ public class ControllerFactory {
         }
         else if(controllerClass == LogViewController.class){
             return new LogViewController(this.logViewModel);
+        }
+        else if(controllerClass == EditLogController.class){
+            return new EditLogController(this.editLogViewModel);
         }
 
         throw new IllegalArgumentException("Unknown controller class: " + controllerClass);

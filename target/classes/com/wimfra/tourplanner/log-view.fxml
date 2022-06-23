@@ -5,8 +5,34 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-<TableView  fx:id="tbData" prefHeight="200.0" prefWidth="200.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wimfra.tourplanner.view.LogViewController">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wimfra.tourplanner.view.LogViewController">
+<HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" >
+    <children>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tour-Logs:">
+            <font>
+                <Font name="Calibri" size="14.0" />
+            </font>
+        </Text>
+        <Region HBox.hgrow="ALWAYS" />
+        <TextField promptText="Search..." />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button  fx:id="addLogBtn" mnemonicParsing="false" text="➕" />
+        <Button fx:id="deleteLogBtn" mnemonicParsing="false" text="➖">
+            <HBox.margin>
+                <Insets left="5.0" />
+            </HBox.margin>
+        </Button>
+        <Button fx:id="editLogBtn" mnemonicParsing="false" text="🛠">
+            <HBox.margin>
+                <Insets left="5.0" />
+            </HBox.margin>
+        </Button>
+    </children>
+</HBox>
+<TableView  fx:id="logData" prefHeight="200.0" prefWidth="200.0" >
     <columns>
         <TableColumn fx:id="tourNameColumn" prefWidth="75.0" text="TourName" />
         <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Date" />
@@ -20,3 +46,4 @@
         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
     </columnResizePolicy>
 </TableView>
+</VBox>

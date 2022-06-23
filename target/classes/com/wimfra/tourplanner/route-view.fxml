@@ -10,7 +10,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
-<TabPane prefHeight="200.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wimfra.tourplanner.view.RouteController">
+<TabPane fx:id="tabPane" prefHeight="200.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wimfra.tourplanner.view.RouteController">
     <tabs>
         <Tab closable="false" text="Route">
             <content>

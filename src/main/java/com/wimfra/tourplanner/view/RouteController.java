@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 
 import javafx.scene.control.Tab;
 
+import javafx.scene.control.TabPane;
 import javafx.scene.text.Text;
 
 
@@ -31,21 +32,25 @@ public class RouteController implements Initializable {
     @FXML
     public Text description;
 
+    @FXML
+    public TabPane tabPane;
+
+    private Mediator mediator;
+
 
     public RouteController(RouteViewModel routeViewModel) {
         this.routeViewModel = routeViewModel;
+        this.mediator = MediatorFactory.getMediator();
 
     }
 
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadDescription();
+        tabPane.setOnMouseClicked(event -> loadDescription());
     }
 
     private void loadDescription() {
-       // description.setText(routeViewModel.getDescription(controllerMediator.getTourID()));
-
-
+       description.setText(routeViewModel.getDescription(mediator.getTourID()));
     }
 
 

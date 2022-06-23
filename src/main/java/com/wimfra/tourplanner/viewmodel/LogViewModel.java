@@ -18,4 +18,8 @@ public class LogViewModel {
     public List<LogModel> getAllLogs() {
         return manageTourLogService.getAllLogs();
     }
+
+    public void deleteLog(int logID) {
+        manageTourLogService.deleteLog(logID);
+    }
 }

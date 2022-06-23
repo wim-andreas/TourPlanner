@@ -9,4 +9,11 @@ public interface ManageTourLogService {
     List<LogModel> getAllLogs();
 
     void addNewLog(List<String> data);
+
+    void deleteLog(int logID);
+
+    List<String> getSingleLog(int tourID);
+
+    void editLogData(List<String> data, int logID);
+
 }
