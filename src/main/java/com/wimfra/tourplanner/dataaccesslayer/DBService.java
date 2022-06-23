@@ -2,7 +2,9 @@ package com.wimfra.tourplanner.dataaccesslayer;
 
 import com.wimfra.tourplanner.businesslayer.parsing.ParserService;
 import com.wimfra.tourplanner.businesslayer.parsing.ParserServiceImpl;
+import com.wimfra.tourplanner.models.LogModel;
 import com.wimfra.tourplanner.models.Tour;
+import lombok.extern.java.Log;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -182,4 +184,57 @@ public class DBService implements DataAccess {
 
         return true;
     }
-}
+
+    @Override
+    public List<LogModel> getLogs() {
+        try{
+            Connection connection = DBService.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT log_id, tour_id , date_, time_, difficulty, rating, comment_,  total_time FROM logs;");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            List<LogModel> allLogs = new ArrayList<>();
+            while (resultSet.next()) {
+                allLogs.add(new LogModel(
+                        resultSet.getInt(1),
+                        resultSet.getInt(2),
+                        getSingleTour(resultSet.getInt(2)).getTour_name(),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getString(5),
+                        resultSet.getInt(6),
+                        resultSet.getString(7),
+                        resultSet.getString(8)
+
+                ));
+            }
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+            return allLogs;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+
+    }
+
+    @Override
+    public LogModel addNewLog(List<String> data) {
+        try {
+            Connection connection = DBService.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO logs(tour_id, date_, time_, comment_, difficulty, total_time, rating) VALUES(?,?,?,?,?,?,?);");
+            preparedStatement.setInt(1, 1);
+            preparedStatement.setString(2, data.get(0));
+            preparedStatement.setString(3, data.get(1));
+            preparedStatement.setString(4, data.get(2));
+            preparedStatement.setString(5, data.get(3));
+            preparedStatement.setString(6, data.get(4));
+            preparedStatement.setString(7, (data.get(5)));
+            preparedStatement.execute();
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException ignored) {
+            ignored.printStackTrace();
+        }
+        return null;
+    }
+    }

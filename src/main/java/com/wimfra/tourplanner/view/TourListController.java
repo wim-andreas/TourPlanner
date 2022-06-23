@@ -111,6 +111,7 @@ public class TourListController implements Initializable {
     }
 
     public void addNewTourWindow()  {
+
         tourListViewModel.addNewTourWindow();
         SetupListView();
         FormatCells();
@@ -129,6 +130,11 @@ public class TourListController implements Initializable {
         SetupListView();
         FormatCells();
         SetCurrentItem();
+    }
+
+    public int getCurrentSelectedTourID(){
+        setCurrentlySelectedTour();
+      return this.mediator.getTourID();
     }
 }
 

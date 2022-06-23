@@ -18,6 +18,7 @@ public class AddLogController implements Initializable {
 
     private final AddLogViewModel addLogViewModel;
 
+
     @FXML
     public ChoiceBox difficultyChoiceBox;
     @FXML
@@ -41,6 +42,15 @@ public class AddLogController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+       // difficultyChoiceBox
+        ratingSpinner.promptTextProperty().bindBidirectional(addLogViewModel.ratingProperty());
+        dateTextField.textProperty().bindBidirectional(addLogViewModel.dateProperty());
+        timeTextField.textProperty().bindBidirectional(addLogViewModel.timeProperty());
+        totalTimeTextField.textProperty().bindBidirectional(addLogViewModel.totalTimeProperty());
+        commentTextArea.textProperty().bindBidirectional(addLogViewModel.commentProperty());
+        commentTextArea.setWrapText(true);
+
+
         setUpChoiceBox();
         setUpSpinner();
         setUpDate();
@@ -50,6 +60,15 @@ public class AddLogController implements Initializable {
         closeWindowBtn.setOnAction(event->closeCurrentWindow());
 
     }
+
+    public void addNewLog() {
+        String dif = difficultyChoiceBox.getSelectionModel().getSelectedItem().toString();
+        String rat = ratingSpinner.getValue().toString();
+        addLogViewModel.addNewLog(dif, rat);
+        closeCurrentWindow();
+    }
+
+
 
     private void setUpDate()
     {
@@ -69,7 +88,7 @@ public class AddLogController implements Initializable {
         timeTextField.setText(formattedTime);
     }
 
-    private void addNewLog() {
+    private void addNewLog1() {
         System.out.println(difficultyChoiceBox.getSelectionModel().getSelectedItem());
         System.out.println(ratingSpinner.getValue());
 
@@ -80,6 +99,8 @@ public class AddLogController implements Initializable {
         difficultyChoiceBox.getItems().add("average");
         difficultyChoiceBox.getItems().add("expert");
         difficultyChoiceBox.getItems().add("GOAT");
+        difficultyChoiceBox.setValue("Choose a difficulty...");
+
     }
 
     private void closeCurrentWindow() {
@@ -98,5 +119,6 @@ public class AddLogController implements Initializable {
     private void setUpSpinner() {
         SpinnerValueFactory.IntegerSpinnerValueFactory integerSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,5,1);
         ratingSpinner.setValueFactory(integerSpinnerValueFactory);
+      //ratingSpinner.getValueFactory().setValue(4);
     }
 }

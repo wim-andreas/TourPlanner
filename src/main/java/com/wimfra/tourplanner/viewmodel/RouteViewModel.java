@@ -27,23 +27,26 @@ public class RouteViewModel {
         return tourService.getTours();
     }
 
-    public Tour getSingleTour(){
-        return tourService.getSingleTour(1);
+    public Tour getSingleTour(int id){
+        return tourService.getSingleTour(id);
     }
 
     // different actions - communication with business and data access layer
 
-    public String getDescription(){
-        Tour tour = getSingleTour();
-        String description = "Tourname: " +tour.getTour_name() + "\n" +
-                             "Description: " +tour.getDescription() + "\n" +
-                             "From: " +tour.getFrom_where() + "\n" +
-                             "To: " +tour.getTo_where() + "\n" +
-                             "Transportation: " +tour.getTransportation() + "\n" +
-                             "Distance: " + tour.getDistance() + "\n" +
-                             "Duration: " + tour.getDuration() + "\n" +
-                             "Info: " + tour.getRoute_info() + "\n";
-        return description;
+    public String getDescription(int id){
+        Tour tour = getSingleTour(id);
+        if(tour != null) {
+            String description = "Tourname: " + tour.getTour_name() + "\n" +
+                    "Description: " + tour.getDescription() + "\n" +
+                    "From: " + tour.getFrom_where() + "\n" +
+                    "To: " + tour.getTo_where() + "\n" +
+                    "Transportation: " + tour.getTransportation() + "\n" +
+                    "Distance: " + tour.getDistance() + "\n" +
+                    "Duration: " + tour.getDuration() + "\n" +
+                    "Info: " + tour.getRoute_info() + "\n";
+            return description;
+        }
+        return null;
 
     }
 }

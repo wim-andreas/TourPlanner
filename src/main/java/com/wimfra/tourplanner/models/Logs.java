@@ -21,7 +21,7 @@ public class Logs {
 
     @Getter
     @Setter
-    private Timestamp timestamp;
+    private String time;
 
     @Getter
     @Setter
@@ -38,6 +38,8 @@ public class Logs {
     @Getter
     @Setter
     private String total_time;
+
+
 
 
 }

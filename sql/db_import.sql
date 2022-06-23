@@ -119,7 +119,7 @@ ALTER TABLE ONLY public.tours ALTER COLUMN tour_id SET DEFAULT nextval('public.t
 -- Data for Name: logs; Type: TABLE DATA; Schema: public; Owner: swe2user
 --
 
-COPY public.logs (log_id, tour_id, date, "time", comment, diffculty, total_time, rating) FROM stdin;
+COPY public.logs (log_id, tour_id, date_, time_, comment_, difficulty, total_time, rating) FROM stdin;
 \.
 
 

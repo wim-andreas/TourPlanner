@@ -63,7 +63,9 @@ public class EditTourController implements Initializable {
         closeTourBtn.setOnAction(event->closeCurrentWindow());
 
         Tour tour = editTourViewModel.getSingleTour(mediator.getTourID());
-        loadTourData(tour);
+        if(null != tour) {
+            loadTourData(tour);
+        }
     }
 
     public void editTourData(){

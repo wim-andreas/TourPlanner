@@ -1,7 +1,6 @@
 package com.wimfra.tourplanner.view;
 
 import com.wimfra.tourplanner.viewmodel.MainWindowViewModel;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -15,6 +14,11 @@ public class MainWindowController implements Initializable {
     @FXML private TourListController tourListController;
     @FXML private AddTourController editTourController;
 
+
+
+
+
+
     @FXML
     public Button addLogBtn;
 
@@ -22,6 +26,7 @@ public class MainWindowController implements Initializable {
 
     public MainWindowController(MainWindowViewModel mainWindowViewModel) {
         this.mainWindowViewModel = mainWindowViewModel;
+
     }
 
     public MainWindowViewModel getMainWindowViewModel() {
@@ -32,6 +37,7 @@ public class MainWindowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         addLogBtn.setOnAction(event->openLogWindow());
+
     }
 
     public void openLogWindow(){
