@@ -4,6 +4,7 @@ import com.wimfra.tourplanner.view.AddTourController;
 import com.wimfra.tourplanner.view.MainWindowController;
 import com.wimfra.tourplanner.view.TourListController;
 import com.wimfra.tourplanner.viewmodel.*;
+import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 
 public class ControllerFactory {
     private final MainWindowViewModel mainWindowViewModel;
@@ -19,7 +20,7 @@ public class ControllerFactory {
         this.routeViewModel = new RouteViewModel();
         this.editTourViewModel = new EditTourViewModel();
         this.addLogViewModel = new AddLogViewModel();
-        this.mainWindowViewModel = new MainWindowViewModel(addTourViewModel, tourListViewModel, editTourViewModel, addLogViewModel);
+        this.mainWindowViewModel = new MainWindowViewModel(addTourViewModel, tourListViewModel, editTourViewModel, addLogViewModel, routeViewModel);
     }
 
     //

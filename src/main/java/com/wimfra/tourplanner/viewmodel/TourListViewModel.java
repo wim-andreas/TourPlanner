@@ -5,6 +5,8 @@ import com.wimfra.tourplanner.businesslayer.JavaAppManagerFactory;
 import com.wimfra.tourplanner.businesslayer.ManageTourService;
 import com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl;
 import com.wimfra.tourplanner.models.Tour;
+import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
+import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -12,10 +14,12 @@ import javafx.collections.ObservableList;
 
 import java.util.List;
 
-public class TourListViewModel {
+public class TourListViewModel implements ViewModel {
+
     // gets the connection to the business layer
     private JavaAppManager appManager = JavaAppManagerFactory.GetManager();
     private ManageTourService tourService = new ManageTourServiceImpl();
+    private Publisher publisher;
 
     // different properties for bindings
     private final StringProperty currentSearchText = new SimpleStringProperty();
@@ -25,15 +29,22 @@ public class TourListViewModel {
     public StringProperty getCurrentSearchText(){
         return this.currentSearchText;
     }
-    public List<Tour> getTourItems(){
-        return tourService.getTours();
+    public void fetchTourItems(){
+        tourItems.clear();
+        tourItems.setAll(tourService.getTours());
     }
 
+    public ObservableList<Tour> getTourItems(){
+        return tourItems;
+    }
+
+    // <---------------------------------------------------------------------------------------------------------------->
+
     // different actions - communication with business and data access layer
-    public List<Tour> searchAction() {
+    public void searchAction() {
         tourItems.clear();
         List<Tour> items = tourService.search(currentSearchText.getValue(), false);
-        return items;
+        tourItems.setAll(items);
     }
 
     public Tour getSingleTour(int id){
@@ -50,5 +61,20 @@ public class TourListViewModel {
 
     public void deleteTour(int tour_id) {
         tourService.deleteTour(tour_id);
+        updateFromDB();
+    }
+
+    // Observer pattern methods
+    @Override
+    public void updateFromDB() {
+        fetchTourItems();
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 }

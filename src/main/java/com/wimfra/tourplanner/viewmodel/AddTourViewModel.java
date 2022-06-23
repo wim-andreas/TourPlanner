@@ -6,12 +6,14 @@ import com.wimfra.tourplanner.businesslayer.ManageTourService;
 import com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl;
 import com.wimfra.tourplanner.businesslayer.parsing.ParserService;
 import com.wimfra.tourplanner.businesslayer.parsing.ParserServiceImpl;
+import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
+import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
 import javafx.beans.property.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddTourViewModel {
+public class AddTourViewModel implements ViewModel {
     // creating the properties for the bidirectional binding
     private final StringProperty name = new SimpleStringProperty();
     private final StringProperty from = new SimpleStringProperty();
@@ -27,6 +29,7 @@ public class AddTourViewModel {
     private JavaAppManager manager = JavaAppManagerFactory.GetManager();
     private ManageTourService tourService = new ManageTourServiceImpl();
     private ParserService parserService = new ParserServiceImpl();
+    private Publisher publisher;
 
     // access to the properties
     public StringProperty nameProperty() {
@@ -63,6 +66,20 @@ public class AddTourViewModel {
         data.add(6, durationProperty().get());
         data.add(7, infoProperty().get());
         tourService.addNewTour(data);
+        publisher.notifySubs();
     }
 
+    // Observer pattern methods
+    @Override
+    public void updateFromDB() {
+
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
 }

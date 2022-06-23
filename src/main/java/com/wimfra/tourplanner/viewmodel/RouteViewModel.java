@@ -5,6 +5,8 @@ import com.wimfra.tourplanner.businesslayer.JavaAppManagerFactory;
 import com.wimfra.tourplanner.businesslayer.ManageTourService;
 import com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl;
 import com.wimfra.tourplanner.models.Tour;
+import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
+import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -13,10 +15,12 @@ import javafx.scene.text.Text;
 
 import java.util.List;
 
-public class RouteViewModel {
+public class RouteViewModel implements ViewModel {
     // gets the connection to the business layer
     private JavaAppManager manager = JavaAppManagerFactory.GetManager();
     private ManageTourService tourService = new ManageTourServiceImpl();
+    private Publisher publisher;
+
 
     // different properties for bindings
     public Text description;
@@ -45,5 +49,19 @@ public class RouteViewModel {
                              "Info: " + tour.getRoute_info() + "\n";
         return description;
 
+    }
+
+    // Observer pattern methods
+    @Override
+    public void updateFromDB() {
+
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 }

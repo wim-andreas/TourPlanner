@@ -36,7 +36,6 @@ public class TourListController implements Initializable {
     public Button clearButton;
 
     public int tour_id;
-    private ObservableList<Tour> tourItems;
     private Tour currentItem;
 
     public TourListController(TourListViewModel tourListViewModel) {
@@ -46,11 +45,11 @@ public class TourListController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        updateTourListView();
         Tooltip tooltip = new Tooltip("Add a new tour");
 
         // Bindings with TourListViewModel
         tourListSearch.textProperty().bindBidirectional(tourListViewModel.getCurrentSearchText());
+        setUpListView();
 
         // Setting events that happen on button press
         addTourBtn.setOnAction(event->addNewTourWindow());
@@ -62,23 +61,23 @@ public class TourListController implements Initializable {
         tourListView.setOnMouseClicked(event-> setCurrentlySelectedTour());
     }
 
+    private void setUpListView() {
+        tourListViewModel.fetchTourItems();
+        //creating the bidirectional binding
+        tourListView.setItems(tourListViewModel.getTourItems());
+        FormatCells();
+        SetCurrentItem();
+    }
+
     public void searchAction() {
-        tourItems.clear();
-        tourItems.addAll(tourListViewModel.searchAction());
+        tourListViewModel.searchAction();
     }
 
     public void clearAction() {
-        tourItems.clear();
         tourListSearch.setText("");
-        tourItems.addAll(tourListViewModel.getTourItems());
-        tourListView.setItems(tourItems);
+        tourListViewModel.updateFromDB();
     }
 
-    private void SetupListView() {
-        tourItems = FXCollections.observableArrayList();
-        tourItems.addAll(tourListViewModel.getTourItems());
-        tourListView.setItems(tourItems);
-    }
 
     private void FormatCells() {
         //format cells to show name
@@ -110,23 +109,14 @@ public class TourListController implements Initializable {
 
     public void addNewTourWindow()  {
         tourListViewModel.addNewTourWindow();
-        updateTourListView();
     }
 
     public void editTourWindow() {
         tourListViewModel.editTourWindow();
-        updateTourListView();
     }
 
     public void deleteTour() {
         tourListViewModel.deleteTour(mediator.getTourID());
-        updateTourListView();
-    }
-
-    private void updateTourListView() {
-        SetupListView();
-        FormatCells();
-        SetCurrentItem();
     }
 }
 
