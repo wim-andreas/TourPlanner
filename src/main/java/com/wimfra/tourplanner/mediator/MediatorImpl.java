@@ -11,6 +11,8 @@ public class MediatorImpl implements Mediator{
 
     private int tour_id;
 
+    private int log_id;
+
     @Override
     public void setTourID(int tour_id) {
         this.tour_id = tour_id;
@@ -19,5 +21,15 @@ public class MediatorImpl implements Mediator{
     @Override
     public int getTourID() {
         return tour_id;
+    }
+
+    @Override
+    public void setLogID(int log_id) {
+        this.log_id = log_id;
+    }
+
+    @Override
+    public int getLogID() {
+        return log_id;
     }
 }

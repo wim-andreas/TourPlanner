@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="250.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wimfra.tourplanner.view.EditLogController">
+    <children>
+        <BorderPane prefHeight="500.0" prefWidth="350.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <VBox prefWidth="350.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+                                        <TextField fx:id="dateTextField" editable="false" focusTraversable="false" prefHeight="26.0" prefWidth="102.0">
+                                            <VBox.margin>
+                                                <Insets bottom="1.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
+                                        <TextField fx:id="timeTextField" editable="false" focusTraversable="false" prefHeight="26.0" prefWidth="102.0">
+                                            <VBox.margin>
+                                                <Insets bottom="2.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets left="40.0" />
+                                    </HBox.margin>
+                                </VBox>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <Text layoutX="20.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty">
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
+                        </Text>
+                        <ChoiceBox fx:id="difficultyChoiceBox" prefWidth="150.0">
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
+                        </ChoiceBox>
+                        <Text layoutX="20.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Time">
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
+                        </Text>
+                        <TextField fx:id="totalTimeTextField" layoutX="20.0" layoutY="42.0">
+                            <VBox.margin>
+                                <Insets bottom="15.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <Text layoutX="20.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating" />
+                        <Spinner fx:id="ratingSpinner" />
+                        <Text layoutX="20.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment">
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
+                        </Text>
+                        <TextArea fx:id="commentTextArea" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                            <VBox.margin>
+                                <Insets bottom="15.0" />
+                            </VBox.margin>
+                        </TextArea>
+                        <HBox alignment="TOP_RIGHT" prefWidth="200.0">
+                            <children>
+                                <Button fx:id="closeWindowBtn" mnemonicParsing="false" text="Cancel">
+                                    <HBox.margin>
+                                        <Insets right="15.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button fx:id="editLogBtn" layoutX="295.0" layoutY="10.0" mnemonicParsing="false" text="Save" />
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

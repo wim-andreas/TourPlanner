@@ -29,29 +29,6 @@
                       </font>
                   </Text>
                       <fx:include source="route-view.fxml"></fx:include>
-                      <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0">
-                          <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tour-Logs:">
-                                  <font>
-                                      <Font name="Calibri" size="14.0" />
-                                  </font>
-                              </Text>
-                              <Region HBox.hgrow="ALWAYS" />
-                              <TextField promptText="Search..." />
-                              <Region HBox.hgrow="ALWAYS" />
-                              <Button  fx:id="addLogBtn" mnemonicParsing="false" text="➕" />
-                              <Button mnemonicParsing="false" text="➖">
-                                  <HBox.margin>
-                                      <Insets left="5.0" />
-                                  </HBox.margin>
-                              </Button>
-                              <Button mnemonicParsing="false" text="🛠">
-                                  <HBox.margin>
-                                      <Insets left="5.0" />
-                                  </HBox.margin>
-                              </Button>
-                          </children>
-                      </HBox>
                        <fx:include source="log-view.fxml"></fx:include>
                   </children>
                   </VBox>

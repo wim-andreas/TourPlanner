@@ -11,17 +11,20 @@ public class MainWindowViewModel implements ViewModel {
     private EditTourViewModel editTourViewModel;
     private AddLogViewModel addLogViewModel;
     private RouteViewModel routeViewModel;
+    private LogViewModel logViewModel;
+    private EditLogViewModel editLogViewModel;
     private final Publisher observable;
-
     private JavaAppManager appManager = JavaAppManagerFactory.GetManager();
 
-    public MainWindowViewModel(AddTourViewModel addTourViewModel, TourListViewModel tourListViewModel, EditTourViewModel editTourViewModel, AddLogViewModel addLogViewModel, RouteViewModel routeViewModel) {
+    public MainWindowViewModel(AddTourViewModel addTourViewModel,TourListViewModel tourListViewModel, EditTourViewModel editTourViewModel, AddLogViewModel addLogViewModel, RouteViewModel routeViewModel, LogViewModel logViewModel, EditLogViewModel editLogViewModel) {
         observable = new Publisher();
         this.addTourViewModel = addTourViewModel;
         this.tourListViewModel = tourListViewModel;
         this.editTourViewModel = editTourViewModel;
         this.addLogViewModel = addLogViewModel;
         this.routeViewModel = routeViewModel;
+        this.logViewModel = logViewModel;
+        this.editLogViewModel = editLogViewModel;
         addObservableToViewModels();
         subscribeToObservable();
     }
@@ -50,6 +53,5 @@ public class MainWindowViewModel implements ViewModel {
 
     @Override
     public void updateFromDB() {
-
     }
 }

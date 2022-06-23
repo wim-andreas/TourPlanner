@@ -20,4 +20,16 @@ public class ParserServiceImpl implements ParserService {
         String newString = String.valueOf(value);
         return newString;
     }
+
+    @Override
+    public Integer parseStringIntoInt(String value) {
+        Integer newInt;
+        if((value.matches("([0-9])*"))){
+            newInt = Integer.parseInt(value);
+        }
+        else{
+            throw new RuntimeException();
+        }
+        return newInt;
+    }
 }

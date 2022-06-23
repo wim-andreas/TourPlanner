@@ -50,7 +50,7 @@ public class JavaAppManagerImpl implements JavaAppManager{
     }
 
     @Override
-    public void openLogWindow() {
+    public void addLogWindow() {
         Scene scene = null;
         Stage stage = new Stage();
         try {
@@ -62,6 +62,23 @@ public class JavaAppManagerImpl implements JavaAppManager{
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
+
+    }
+
+    @Override
+    public void editLogWindow() {
+        Scene scene = null;
+        Stage stage = new Stage();
+        try {
+            scene = new Scene(FXMLDependencyInjection.load("edit-log-view.fxml", Locale.GERMAN));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.setTitle("Edit a tour-log");
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.show();
+
 
     }
 
