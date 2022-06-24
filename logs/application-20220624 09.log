@@ -1,0 +1,6 @@
+2022-06-24 09:51:09.873 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-06-24 09:51:09.975 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-06-24 09:51:12.484 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-06-24 09:51:55.352 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.AddLogController - Setting up 'add-log-view.fxml'
+2022-06-24 09:52:05.061 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.AddLogController - Creating new log in database...
+2022-06-24 09:52:05.091 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.viewmodel.AddLogViewModel - Creating new log finished!
