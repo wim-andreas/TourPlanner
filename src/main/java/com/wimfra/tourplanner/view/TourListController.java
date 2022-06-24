@@ -105,12 +105,13 @@ public class TourListController implements Initializable {
     }
 
     public void setCurrentlySelectedTour() {
-        this.tour_id = tourListView.getSelectionModel().getSelectedItem().getTour_id();
-        this.mediator.setTourID(this.tour_id);
+        if(tourListView.getSelectionModel().getSelectedItem() != null){
+            this.tour_id = tourListView.getSelectionModel().getSelectedItem().getTour_id();
+            this.mediator.setTourID(this.tour_id);
+        }
     }
 
     public void addNewTourWindow() {
-
         tourListViewModel.addNewTourWindow();
     }
 

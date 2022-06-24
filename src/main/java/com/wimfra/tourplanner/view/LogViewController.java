@@ -109,7 +109,6 @@ public class LogViewController implements Initializable {
     private void setUpLogView() {
         logViewModel.fetchLogItems();
         logData.setItems(logViewModel.getLogItems());
-
     }
 
     private void addLogWindow() {
@@ -122,7 +121,6 @@ public class LogViewController implements Initializable {
 
     public void clearAction() {
         logSearch.setText("");
-        // logViewModel.updateFromDB();
         setUpLogView();
     }
 }

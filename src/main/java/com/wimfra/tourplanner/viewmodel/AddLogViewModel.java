@@ -63,6 +63,7 @@ public class AddLogViewModel implements ViewModel {
         data.add(6, String.valueOf(tourID));
         manageTourLogService.addNewLog(data);
         logger.debug("Creating new log finished!");
+        publisher.notifySubs();
     }
 
     // Observer pattern methods

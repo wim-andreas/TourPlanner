@@ -6,6 +6,8 @@ import com.wimfra.tourplanner.businesslayer.ManageTourService;
 import com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl;
 import com.wimfra.tourplanner.logger.ILoggerWrapper;
 import com.wimfra.tourplanner.logger.LoggerFactory;
+import com.wimfra.tourplanner.mediator.Mediator;
+import com.wimfra.tourplanner.mediator.MediatorFactory;
 import com.wimfra.tourplanner.models.Tour;
 import com.wimfra.tourplanner.view.TourListController;
 import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
@@ -24,6 +26,8 @@ public class RouteViewModel implements ViewModel {
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(RouteViewModel.class);
     private ManageTourService tourService = new ManageTourServiceImpl();
     private Publisher publisher;
+    private final Mediator mediator = MediatorFactory.getMediator();
+
 
 
     // different properties for bindings
@@ -61,7 +65,7 @@ public class RouteViewModel implements ViewModel {
     // Observer pattern methods
     @Override
     public void updateFromDB() {
-
+        getDescription(mediator.getTourID());
     }
 
     public Publisher getPublisher() {

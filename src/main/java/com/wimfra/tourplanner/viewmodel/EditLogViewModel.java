@@ -54,6 +54,7 @@ public class EditLogViewModel implements ViewModel {
 
     public void editLogData(List<String> data, int logID) {
         manageTourLogService.editLogData(data, logID);
+        publisher.notifySubs();
     }
 
     // Observer pattern methods

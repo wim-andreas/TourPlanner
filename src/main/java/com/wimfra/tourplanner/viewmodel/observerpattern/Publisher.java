@@ -21,4 +21,11 @@ public class Publisher {
             subscriber.updateFromDB();
         }
     }
+
+    public void notifySingleSub(String string){
+        if(string.equals("AddLog")){
+            ViewModel sub = subscribers.
+        }
+    }
+
 }

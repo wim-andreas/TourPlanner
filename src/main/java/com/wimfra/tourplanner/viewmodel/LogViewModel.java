@@ -2,16 +2,11 @@ package com.wimfra.tourplanner.viewmodel;
 
 import com.wimfra.tourplanner.businesslayer.ManageTourLogService;
 import com.wimfra.tourplanner.businesslayer.ManageTourLogServiceImpl;
-import com.wimfra.tourplanner.businesslayer.ManageTourService;
-import com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl;
 import com.wimfra.tourplanner.logger.ILoggerWrapper;
 import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.models.LogModel;
-import com.wimfra.tourplanner.models.Tour;
-import com.wimfra.tourplanner.view.TourListController;
 import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
-import javafx.beans.property.Property;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -27,7 +22,7 @@ public class LogViewModel implements ViewModel {
 
     private Publisher publisher;
 
-    public List<LogModel> getAllLogs() {
+    public List<LogModel> getAllLogsFromDB() {
         return manageTourLogService.getAllLogs();
     }
 
@@ -41,7 +36,7 @@ public class LogViewModel implements ViewModel {
 
     public void fetchLogItems() {
         logItems.clear();
-        logItems.setAll(manageTourLogService.getAllLogs());
+        logItems.setAll(getAllLogsFromDB());
     }
 
     public void searchAction() {
@@ -54,7 +49,7 @@ public class LogViewModel implements ViewModel {
     // Observer pattern methods
     @Override
     public void updateFromDB() {
-
+        fetchLogItems();
     }
 
     public Publisher getPublisher() {
