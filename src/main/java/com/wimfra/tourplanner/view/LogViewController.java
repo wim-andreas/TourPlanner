@@ -3,6 +3,8 @@ package com.wimfra.tourplanner.view;
 
 import com.wimfra.tourplanner.businesslayer.JavaAppManager;
 import com.wimfra.tourplanner.businesslayer.JavaAppManagerImpl;
+import com.wimfra.tourplanner.logger.ILoggerWrapper;
+import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.mediator.Mediator;
 import com.wimfra.tourplanner.mediator.MediatorFactory;
 import com.wimfra.tourplanner.models.LogModel;
@@ -19,6 +21,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LogViewController implements Initializable {
+
+    private static final ILoggerWrapper logger = LoggerFactory.getLogger(LogViewController.class);
 
     @FXML
     private TableColumn<LogModel, String> tourNameColumn;

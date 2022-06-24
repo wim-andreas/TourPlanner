@@ -1,10 +1,6 @@
 package com.wimfra.tourplanner.view;
 
-import com.wimfra.tourplanner.view.AddTourController;
-import com.wimfra.tourplanner.view.MainWindowController;
-import com.wimfra.tourplanner.view.TourListController;
 import com.wimfra.tourplanner.viewmodel.*;
-import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 
 public class ControllerFactory {
     private final MainWindowViewModel mainWindowViewModel;

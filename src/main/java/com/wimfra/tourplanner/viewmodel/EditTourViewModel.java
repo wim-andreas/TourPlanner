@@ -4,7 +4,10 @@ import com.wimfra.tourplanner.businesslayer.JavaAppManager;
 import com.wimfra.tourplanner.businesslayer.JavaAppManagerFactory;
 import com.wimfra.tourplanner.businesslayer.ManageTourService;
 import com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl;
+import com.wimfra.tourplanner.logger.ILoggerWrapper;
+import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.models.Tour;
+import com.wimfra.tourplanner.view.TourListController;
 import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
 import javafx.beans.property.SimpleStringProperty;
@@ -15,6 +18,7 @@ import java.util.List;
 public class EditTourViewModel implements ViewModel {
     // gets the connection to the business layer
     private JavaAppManager manager = JavaAppManagerFactory.GetManager();
+    private static final ILoggerWrapper logger = LoggerFactory.getLogger(EditTourViewModel.class);
     private ManageTourService tourService = new ManageTourServiceImpl();
     private Publisher publisher;
 

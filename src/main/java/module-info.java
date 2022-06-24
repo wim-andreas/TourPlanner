@@ -3,7 +3,7 @@ module com.wimfra.tourplanner {
     requires javafx.fxml;
     requires lombok;
     requires java.sql;
-
+    requires org.apache.logging.log4j;
 
     opens com.wimfra.tourplanner to javafx.fxml;
     opens com.wimfra.tourplanner.models to javafx.fxml;

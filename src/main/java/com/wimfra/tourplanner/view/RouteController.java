@@ -3,6 +3,8 @@ package com.wimfra.tourplanner.view;
 import com.wimfra.tourplanner.TourPlannerApplication;
 import com.wimfra.tourplanner.businesslayer.JavaAppManager;
 import com.wimfra.tourplanner.businesslayer.JavaAppManagerFactory;
+import com.wimfra.tourplanner.logger.ILoggerWrapper;
+import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.mediator.*;
 import com.wimfra.tourplanner.models.Tour;
 import com.wimfra.tourplanner.viewmodel.RouteViewModel;
@@ -24,8 +26,7 @@ import java.util.ResourceBundle;
 
 public class RouteController implements Initializable {
     private RouteViewModel routeViewModel;
-
-
+    private static final ILoggerWrapper logger = LoggerFactory.getLogger(RouteController.class);
 
     public int tour_id;
 

@@ -1,5 +1,8 @@
 package com.wimfra.tourplanner.view;
 
+import com.wimfra.tourplanner.logger.ILoggerWrapper;
+import com.wimfra.tourplanner.logger.LoggerFactory;
+import com.wimfra.tourplanner.viewmodel.AddLogViewModel;
 import com.wimfra.tourplanner.viewmodel.AddTourViewModel;
 
 import javafx.event.ActionEvent;
@@ -18,6 +21,7 @@ import java.util.ResourceBundle;
 public class AddTourController implements Initializable {
 
     private final AddTourViewModel addTourViewModel;
+    private static final ILoggerWrapper logger = LoggerFactory.getLogger(AddTourController.class);
 
     @FXML
     public Button addNewTourBtn;

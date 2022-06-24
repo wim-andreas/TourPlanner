@@ -78,8 +78,6 @@ public class JavaAppManagerImpl implements JavaAppManager{
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
-
-
     }
 
 

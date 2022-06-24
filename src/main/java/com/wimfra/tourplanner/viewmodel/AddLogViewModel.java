@@ -3,16 +3,18 @@ package com.wimfra.tourplanner.viewmodel;
 import com.wimfra.tourplanner.businesslayer.JavaAppManager;
 import com.wimfra.tourplanner.businesslayer.JavaAppManagerFactory;
 import com.wimfra.tourplanner.businesslayer.ManageTourLogServiceImpl;
+import com.wimfra.tourplanner.logger.ILoggerWrapper;
+import com.wimfra.tourplanner.logger.LoggerFactory;
+import com.wimfra.tourplanner.view.AddLogController;
 import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
-
-public class AddLogViewModel implements ViewModel {
 import javafx.beans.property.*;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddLogViewModel {
+public class AddLogViewModel implements ViewModel {
     private final StringProperty difficulty = new SimpleStringProperty();
     private final StringProperty rating = new SimpleStringProperty();
     private final StringProperty time = new SimpleStringProperty();
@@ -22,27 +24,23 @@ public class AddLogViewModel {
 
     private JavaAppManager appManager = JavaAppManagerFactory.GetManager();
     private ManageTourLogServiceImpl manageTourLogService = new ManageTourLogServiceImpl();
+    private static final ILoggerWrapper logger = LoggerFactory.getLogger(AddLogViewModel.class);
     private Publisher publisher;
 
+    public StringProperty difficultyProperty() { return difficulty;}
 
-    public StringProperty difficultyProperty() {return difficulty;}
-
-    public StringProperty ratingProperty() {return rating;
-    }
+    public StringProperty ratingProperty() { return rating;}
 
     public StringProperty dateProperty() { return date;}
 
     public StringProperty timeProperty() { return time;}
 
-    public StringProperty totalTimeProperty() { return totalTime;
-    }
+    public StringProperty totalTimeProperty() { return totalTime;}
 
 
-    public StringProperty commentProperty() { return comment;
-    }
+    public StringProperty commentProperty() { return comment;}
 
     public void addNewLog(String dif, String rat, int tourID) {
-
             List<String> data = new ArrayList();
             data.add(0, dateProperty().get());
             data.add(1, timeProperty().get());
@@ -52,7 +50,7 @@ public class AddLogViewModel {
             data.add(5, rat);
             data.add(6, String.valueOf(tourID));
             manageTourLogService.addNewLog(data);
-        }
+            logger.debug("Creating new log finished!");
     }
 
     // Observer pattern methods

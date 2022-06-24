@@ -1,5 +1,7 @@
 package com.wimfra.tourplanner.view;
 
+import com.wimfra.tourplanner.logger.ILoggerWrapper;
+import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.mediator.Mediator;
 import com.wimfra.tourplanner.mediator.MediatorFactory;
 import com.wimfra.tourplanner.viewmodel.AddLogViewModel;
@@ -8,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.Logger;
 
 
 import java.net.URL;
@@ -15,10 +19,10 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-
 public class AddLogController implements Initializable {
 
     private final AddLogViewModel addLogViewModel;
+    private static final ILoggerWrapper logger = LoggerFactory.getLogger(AddLogController.class);
 
     @FXML
     public ChoiceBox difficultyChoiceBox;
@@ -46,7 +50,8 @@ public class AddLogController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-       // difficultyChoiceBox
+        logger.debug("Setting up 'add-log-view.fxml'");
+        // difficultyChoiceBox
         ratingSpinner.promptTextProperty().bindBidirectional(addLogViewModel.ratingProperty());
         dateTextField.textProperty().bindBidirectional(addLogViewModel.dateProperty());
         timeTextField.textProperty().bindBidirectional(addLogViewModel.timeProperty());
@@ -61,10 +66,10 @@ public class AddLogController implements Initializable {
         setUpTime();
         addNewLogBtn.setOnAction(event->addNewLog());
         closeWindowBtn.setOnAction(event->closeCurrentWindow());
-
     }
 
     public void addNewLog() {
+        logger.debug("Creating new log in database...");
         String dif = difficultyChoiceBox.getSelectionModel().getSelectedItem().toString();
         String rat = ratingSpinner.getValue().toString();
         addLogViewModel.addNewLog(dif, rat, mediator.getTourID());

@@ -1,5 +1,7 @@
 package com.wimfra.tourplanner.view;
 
+import com.wimfra.tourplanner.logger.ILoggerWrapper;
+import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.mediator.Mediator;
 import com.wimfra.tourplanner.mediator.MediatorFactory;
 import com.wimfra.tourplanner.models.LogModel;
@@ -18,6 +20,7 @@ import java.util.ResourceBundle;
 public class EditLogController implements Initializable {
 
     private final EditLogViewModel editLogViewModel;
+    private static final ILoggerWrapper logger = LoggerFactory.getLogger(EditLogController.class);
     private Mediator mediator;
 
     @FXML

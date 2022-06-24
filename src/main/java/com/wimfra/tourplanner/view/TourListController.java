@@ -1,5 +1,7 @@
 package com.wimfra.tourplanner.view;
 
+import com.wimfra.tourplanner.logger.ILoggerWrapper;
+import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.mediator.Mediator;
 import com.wimfra.tourplanner.mediator.MediatorFactory;
 import com.wimfra.tourplanner.mediator.MediatorImpl;
@@ -17,6 +19,7 @@ import java.util.ResourceBundle;
 public class TourListController implements Initializable {
 
     private final TourListViewModel tourListViewModel;
+    private static final ILoggerWrapper logger = LoggerFactory.getLogger(TourListController.class);
     private final Mediator mediator;
 
     // references used to Setup data binding

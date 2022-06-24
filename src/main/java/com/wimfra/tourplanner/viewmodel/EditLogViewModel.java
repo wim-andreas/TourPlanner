@@ -1,13 +1,18 @@
 package com.wimfra.tourplanner.viewmodel;
 
 import com.wimfra.tourplanner.businesslayer.ManageTourLogServiceImpl;
+import com.wimfra.tourplanner.logger.ILoggerWrapper;
+import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.models.LogModel;
+import com.wimfra.tourplanner.view.TourListController;
+import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
+import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import java.util.List;
 
-public class EditLogViewModel {
+public class EditLogViewModel implements ViewModel {
     private final StringProperty difficulty = new SimpleStringProperty();
     private final StringProperty rating = new SimpleStringProperty();
     private final StringProperty time = new SimpleStringProperty();
@@ -16,6 +21,8 @@ public class EditLogViewModel {
     private final StringProperty comment = new SimpleStringProperty();
 
     private ManageTourLogServiceImpl manageTourLogService = new ManageTourLogServiceImpl();
+    private static final ILoggerWrapper logger = LoggerFactory.getLogger(EditLogViewModel.class);
+    private Publisher publisher;
 
     public StringProperty difficultyProperty() { return difficulty;}
 
@@ -35,5 +42,19 @@ public class EditLogViewModel {
 
     public void editLogData(List<String> data, int logID) {
         manageTourLogService.editLogData(data, logID);
+    }
+
+    // Observer pattern methods
+    @Override
+    public void updateFromDB() {
+
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 }
