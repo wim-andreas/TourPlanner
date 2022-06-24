@@ -108,6 +108,7 @@ public class TourListController implements Initializable {
         if(tourListView.getSelectionModel().getSelectedItem() != null){
             this.tour_id = tourListView.getSelectionModel().getSelectedItem().getTour_id();
             this.mediator.setTourID(this.tour_id);
+            tourListViewModel.updatePublisher();
         }
     }
 

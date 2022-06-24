@@ -22,10 +22,18 @@ public class Publisher {
         }
     }
 
-    public void notifySingleSub(String string){
-        if(string.equals("AddLog")){
-            ViewModel sub = subscribers.
+    public void notifySingleSubscriber(String string){
+        ViewModel searchedModel = searchCorrectSubscriber(string);
+        searchedModel.updateFromDB();
+    }
+
+    private ViewModel searchCorrectSubscriber(String string) {
+        for(ViewModel subscriber: subscribers){
+            if(subscriber.getClass().getName().endsWith(string)){
+                return subscriber;
+            }
         }
+        return null;
     }
 
 }

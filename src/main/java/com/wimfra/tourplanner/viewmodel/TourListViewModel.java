@@ -84,6 +84,6 @@ public class TourListViewModel implements ViewModel {
     }
 
     public void updatePublisher() {
-        publisher.notifySubs();
+        publisher.notifySingleSubscriber("RouteViewModel");
     }
 }

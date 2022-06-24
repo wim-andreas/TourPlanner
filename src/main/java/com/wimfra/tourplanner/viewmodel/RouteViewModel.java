@@ -9,16 +9,10 @@ import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.mediator.Mediator;
 import com.wimfra.tourplanner.mediator.MediatorFactory;
 import com.wimfra.tourplanner.models.Tour;
-import com.wimfra.tourplanner.view.TourListController;
 import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.text.Text;
-
-import java.util.List;
 
 public class RouteViewModel implements ViewModel {
     // gets the connection to the business layer
@@ -28,27 +22,23 @@ public class RouteViewModel implements ViewModel {
     private Publisher publisher;
     private final Mediator mediator = MediatorFactory.getMediator();
 
-
-
     // different properties for bindings
-    public Text description;
+    public final StringProperty description = new SimpleStringProperty();
 
-
-    // getter and setter for the properties
-    public List<Tour> getTourItems() {
-        return tourService.getTours();
-    }
-
+    // different actions - communication with business and data access layer
     public Tour getSingleTour(int id) {
         return tourService.getSingleTour(id);
     }
 
-    // different actions - communication with business and data access layer
+    // different getters and setters
+    public StringProperty getDescriptionProperty(){
+        return this.description;
+    }
 
-    public String getDescription(int id) {
+    public void fetchCurrentDescription(int id) {
         Tour tour = getSingleTour(id);
         if (tour != null) {
-            String description = "Tourname: " + tour.getTour_name() + "\n" +
+            String currentDescription = "Tourname: " + tour.getTour_name() + "\n" +
                     "Description: " + tour.getDescription() + "\n" +
                     "From: " + tour.getFrom_where() + "\n" +
                     "To: " + tour.getTo_where() + "\n" +
@@ -56,16 +46,16 @@ public class RouteViewModel implements ViewModel {
                     "Distance: " + tour.getDistance() + "\n" +
                     "Duration: " + tour.getDuration() + "\n" +
                     "Info: " + tour.getRoute_info() + "\n";
-            return description;
+            description.setValue("");
+            description.setValue(currentDescription);
         }
-        return null;
-
+        return;
     }
 
     // Observer pattern methods
     @Override
     public void updateFromDB() {
-        getDescription(mediator.getTourID());
+        fetchCurrentDescription(mediator.getTourID());
     }
 
     public Publisher getPublisher() {
