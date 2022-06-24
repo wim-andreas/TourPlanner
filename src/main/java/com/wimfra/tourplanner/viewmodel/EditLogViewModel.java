@@ -24,17 +24,29 @@ public class EditLogViewModel implements ViewModel {
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(EditLogViewModel.class);
     private Publisher publisher;
 
-    public StringProperty difficultyProperty() { return difficulty;}
+    public StringProperty difficultyProperty() {
+        return difficulty;
+    }
 
-    public StringProperty ratingProperty() {return rating;}
+    public StringProperty ratingProperty() {
+        return rating;
+    }
 
-    public StringProperty dateProperty() { return date;}
+    public StringProperty dateProperty() {
+        return date;
+    }
 
-    public StringProperty timeProperty() { return time;}
+    public StringProperty timeProperty() {
+        return time;
+    }
 
-    public StringProperty totalTimeProperty() { return totalTime;}
+    public StringProperty totalTimeProperty() {
+        return totalTime;
+    }
 
-    public StringProperty commentProperty() { return comment;}
+    public StringProperty commentProperty() {
+        return comment;
+    }
 
     public List<String> getSingleLog(int logID) {
         return manageTourLogService.getSingleLog(logID);

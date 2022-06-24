@@ -8,13 +8,20 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainWindowController implements Initializable {
-    @FXML private AddLogController addLogController;
-    @FXML private AddTourController addTourController;
-    @FXML private EditLogController editLogController;
-    @FXML private EditTourController editTourController;
-    @FXML private LogViewController logViewController;
-    @FXML private RouteController routeController;
-    @FXML private TourListController tourListController;
+    @FXML
+    private AddLogController addLogController;
+    @FXML
+    private AddTourController addTourController;
+    @FXML
+    private EditLogController editLogController;
+    @FXML
+    private EditTourController editTourController;
+    @FXML
+    private LogViewController logViewController;
+    @FXML
+    private RouteController routeController;
+    @FXML
+    private TourListController tourListController;
 
     private final MainWindowViewModel mainWindowViewModel;
 

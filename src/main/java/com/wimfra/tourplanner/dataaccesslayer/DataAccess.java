@@ -6,10 +6,11 @@ import com.wimfra.tourplanner.models.Tour;
 import java.util.List;
 
 public interface DataAccess {
-     List<Tour> getTours();
-     Tour getSingleTour(int id);
+    List<Tour> getTours();
 
-   Tour addNewTour(List<String> data);
+    Tour getSingleTour(int id);
+
+    Tour addNewTour(List<String> data);
 
     boolean deleteTour(int tour_id);
 

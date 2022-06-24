@@ -36,25 +36,34 @@ public class EditTourViewModel implements ViewModel {
     public StringProperty nameProperty() {
         return name;
     }
+
     public StringProperty fromProperty() {
         return from;
     }
+
     public StringProperty toProperty() {
         return to;
     }
+
     public StringProperty transportationProperty() {
         return transportation;
     }
+
     public StringProperty durationProperty() {
         return duration;
     }
+
     public StringProperty distanceProperty() {
         return distance;
     }
+
     public StringProperty infoProperty() {
         return info;
     }
-    public StringProperty descriptionProperty() { return description; }
+
+    public StringProperty descriptionProperty() {
+        return description;
+    }
 
     public Tour getSingleTour(int id) {
         return tourService.getSingleTour(id);

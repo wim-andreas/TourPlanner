@@ -20,7 +20,7 @@ public class MainWindowViewModel implements ViewModel {
     private JavaAppManager appManager = JavaAppManagerFactory.GetManager();
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(MainWindowViewModel.class);
 
-    public MainWindowViewModel(AddTourViewModel addTourViewModel,TourListViewModel tourListViewModel, EditTourViewModel editTourViewModel, AddLogViewModel addLogViewModel, RouteViewModel routeViewModel, LogViewModel logViewModel, EditLogViewModel editLogViewModel) {
+    public MainWindowViewModel(AddTourViewModel addTourViewModel, TourListViewModel tourListViewModel, EditTourViewModel editTourViewModel, AddLogViewModel addLogViewModel, RouteViewModel routeViewModel, LogViewModel logViewModel, EditLogViewModel editLogViewModel) {
         observable = new Publisher();
         this.addTourViewModel = addTourViewModel;
         this.tourListViewModel = tourListViewModel;
@@ -35,7 +35,7 @@ public class MainWindowViewModel implements ViewModel {
 
     // Observer pattern methods
 
-    private void addObservableToViewModels(){
+    private void addObservableToViewModels() {
         this.addLogViewModel.setPublisher(observable);
         this.addTourViewModel.setPublisher(observable);
         this.editLogViewModel.setPublisher(observable);
@@ -45,7 +45,7 @@ public class MainWindowViewModel implements ViewModel {
         this.tourListViewModel.setPublisher(observable);
     }
 
-    private void subscribeToObservable(){
+    private void subscribeToObservable() {
         observable.subscribe(this.addLogViewModel);
         observable.subscribe(this.addTourViewModel);
         observable.subscribe(this.editLogViewModel);

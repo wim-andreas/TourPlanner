@@ -30,15 +30,16 @@ public class TourListViewModel implements ViewModel {
     private final ObservableList<Tour> tourItems = FXCollections.observableArrayList();
 
     // getter and setter for the properties
-    public StringProperty getCurrentSearchText(){
+    public StringProperty getCurrentSearchText() {
         return this.currentSearchText;
     }
-    public void fetchTourItems(){
+
+    public void fetchTourItems() {
         tourItems.clear();
         tourItems.setAll(tourService.getTours());
     }
 
-    public ObservableList<Tour> getTourItems(){
+    public ObservableList<Tour> getTourItems() {
         return tourItems;
     }
 
@@ -51,11 +52,11 @@ public class TourListViewModel implements ViewModel {
         tourItems.setAll(items);
     }
 
-    public Tour getSingleTour(int id){
+    public Tour getSingleTour(int id) {
         return tourService.getSingleTour(id);
     }
 
-    public void addNewTourWindow(){
+    public void addNewTourWindow() {
         appManager.addTourWindow();
     }
 

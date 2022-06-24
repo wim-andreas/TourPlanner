@@ -39,27 +39,36 @@ public class AddTourViewModel implements ViewModel {
     public StringProperty nameProperty() {
         return name;
     }
+
     public StringProperty fromProperty() {
         return from;
     }
+
     public StringProperty toProperty() {
         return to;
     }
+
     public StringProperty transportationProperty() {
         return transportation;
     }
+
     public StringProperty durationProperty() {
         return duration;
     }
+
     public StringProperty distanceProperty() {
         return distance;
     }
+
     public StringProperty infoProperty() {
         return info;
     }
-    public StringProperty descriptionProperty() { return description; }
 
-    public void addNewTour(){
+    public StringProperty descriptionProperty() {
+        return description;
+    }
+
+    public void addNewTour() {
         List<String> data = new ArrayList();
         data.add(0, nameProperty().get());
         data.add(1, descriptionProperty().get());

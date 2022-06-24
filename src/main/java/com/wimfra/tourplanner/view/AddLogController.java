@@ -19,6 +19,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+
 public class AddLogController implements Initializable {
 
     private final AddLogViewModel addLogViewModel;
@@ -64,8 +65,8 @@ public class AddLogController implements Initializable {
         setUpSpinner();
         setUpDate();
         setUpTime();
-        addNewLogBtn.setOnAction(event->addNewLog());
-        closeWindowBtn.setOnAction(event->closeCurrentWindow());
+        addNewLogBtn.setOnAction(event -> addNewLog());
+        closeWindowBtn.setOnAction(event -> closeCurrentWindow());
     }
 
     public void addNewLog() {
@@ -76,13 +77,10 @@ public class AddLogController implements Initializable {
         closeCurrentWindow();
     }
 
-
-
-    private void setUpDate()
-    {
+    private void setUpDate() {
         LocalDate date = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        String formatted_date =  date.format(formatter);
+        String formatted_date = date.format(formatter);
         dateTextField.setText(formatted_date);
     }
 
@@ -96,9 +94,7 @@ public class AddLogController implements Initializable {
         timeTextField.setText(formattedTime);
     }
 
-
-
-    public void setUpChoiceBox(){
+    public void setUpChoiceBox() {
         difficultyChoiceBox.getItems().add("beginner");
         difficultyChoiceBox.getItems().add("average");
         difficultyChoiceBox.getItems().add("expert");
@@ -121,7 +117,7 @@ public class AddLogController implements Initializable {
     }
 
     private void setUpSpinner() {
-        SpinnerValueFactory.IntegerSpinnerValueFactory integerSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,5,1);
+        SpinnerValueFactory.IntegerSpinnerValueFactory integerSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5, 1);
         ratingSpinner.setValueFactory(integerSpinnerValueFactory);
     }
 }

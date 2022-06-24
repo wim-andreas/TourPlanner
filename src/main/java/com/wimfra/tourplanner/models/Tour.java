@@ -3,6 +3,7 @@ package com.wimfra.tourplanner.models;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+
 @Builder
 public class Tour {
 
@@ -57,10 +58,6 @@ public class Tour {
     @Getter
     @Setter
     private String route_info;
-
-
-
-
 
 
 }

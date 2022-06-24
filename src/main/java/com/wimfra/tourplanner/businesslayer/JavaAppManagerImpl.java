@@ -1,7 +1,6 @@
 package com.wimfra.tourplanner.businesslayer;
 
 
-
 import com.wimfra.tourplanner.FXMLDependencyInjection;
 import com.wimfra.tourplanner.TourPlannerApplication;
 import com.wimfra.tourplanner.dataaccesslayer.TourDAO;
@@ -16,7 +15,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
 
-public class JavaAppManagerImpl implements JavaAppManager{
+public class JavaAppManagerImpl implements JavaAppManager {
     private TourDAO tourDAO = new TourDAO();
 
     @Override

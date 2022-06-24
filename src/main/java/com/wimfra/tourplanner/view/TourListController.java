@@ -39,6 +39,7 @@ public class TourListController implements Initializable {
     public Button clearButton;
 
     public int tour_id;
+
     private Tour currentItem;
 
     public TourListController(TourListViewModel tourListViewModel) {
@@ -48,20 +49,18 @@ public class TourListController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Tooltip tooltip = new Tooltip("Add a new tour");
 
         // Bindings with TourListViewModel
         tourListSearch.textProperty().bindBidirectional(tourListViewModel.getCurrentSearchText());
         setUpListView();
 
         // Setting events that happen on button press
-        addTourBtn.setOnAction(event->addNewTourWindow());
-        addTourBtn.setTooltip(tooltip);
-        editTourBtn.setOnAction(event->editTourWindow());
-        deleteTourBtn.setOnAction(event->deleteTour());
-        searchButton.setOnAction(event->searchAction());
-        clearButton.setOnAction(event->clearAction());
-        tourListView.setOnMouseClicked(event-> setCurrentlySelectedTour());
+        addTourBtn.setOnAction(event -> addNewTourWindow());
+        editTourBtn.setOnAction(event -> editTourWindow());
+        deleteTourBtn.setOnAction(event -> deleteTour());
+        searchButton.setOnAction(event -> searchAction());
+        clearButton.setOnAction(event -> clearAction());
+        tourListView.setOnMouseClicked(event -> setCurrentlySelectedTour());
     }
 
     private void setUpListView() {
@@ -110,7 +109,7 @@ public class TourListController implements Initializable {
         this.mediator.setTourID(this.tour_id);
     }
 
-    public void addNewTourWindow()  {
+    public void addNewTourWindow() {
 
         tourListViewModel.addNewTourWindow();
     }
@@ -123,9 +122,9 @@ public class TourListController implements Initializable {
         tourListViewModel.deleteTour(mediator.getTourID());
     }
 
-    public int getCurrentSelectedTourID(){
+    public int getCurrentSelectedTourID() {
         setCurrentlySelectedTour();
-      return this.mediator.getTourID();
+        return this.mediator.getTourID();
     }
 }
 

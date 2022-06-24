@@ -51,7 +51,7 @@ public class RouteController implements Initializable {
     }
 
     private void loadDescription() {
-       description.setText(routeViewModel.getDescription(mediator.getTourID()));
+        description.setText(routeViewModel.getDescription(mediator.getTourID()));
     }
 
 

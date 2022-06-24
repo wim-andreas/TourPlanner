@@ -31,19 +31,19 @@ public class RouteViewModel implements ViewModel {
 
 
     // getter and setter for the properties
-    public List<Tour> getTourItems(){
+    public List<Tour> getTourItems() {
         return tourService.getTours();
     }
 
-    public Tour getSingleTour(int id){
+    public Tour getSingleTour(int id) {
         return tourService.getSingleTour(id);
     }
 
     // different actions - communication with business and data access layer
 
-    public String getDescription(int id){
+    public String getDescription(int id) {
         Tour tour = getSingleTour(id);
-        if(tour != null) {
+        if (tour != null) {
             String description = "Tourname: " + tour.getTour_name() + "\n" +
                     "Description: " + tour.getDescription() + "\n" +
                     "From: " + tour.getFrom_where() + "\n" +

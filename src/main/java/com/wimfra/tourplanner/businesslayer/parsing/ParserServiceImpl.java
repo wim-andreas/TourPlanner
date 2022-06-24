@@ -6,10 +6,9 @@ public class ParserServiceImpl implements ParserService {
     @Override
     public Double parseStringIntoDouble(String value) {
         Double newDouble;
-        if((value.matches("([0-9])*")) || value.matches("([0-9])*\\.([0-9])+")){
-             newDouble = Double.parseDouble(value);
-        }
-        else{
+        if ((value.matches("([0-9])*")) || value.matches("([0-9])*\\.([0-9])+")) {
+            newDouble = Double.parseDouble(value);
+        } else {
             throw new RuntimeException();
         }
         return newDouble;
@@ -24,10 +23,9 @@ public class ParserServiceImpl implements ParserService {
     @Override
     public Integer parseStringIntoInt(String value) {
         Integer newInt;
-        if((value.matches("([0-9])*"))){
+        if ((value.matches("([0-9])*"))) {
             newInt = Integer.parseInt(value);
-        }
-        else{
+        } else {
             throw new RuntimeException();
         }
         return newInt;

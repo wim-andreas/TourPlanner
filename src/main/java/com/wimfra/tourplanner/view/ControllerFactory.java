@@ -29,29 +29,22 @@ public class ControllerFactory {
 
     // Callback<Class<>, Object>
 
-    public Object create(Class<?> controllerClass){
-        if(controllerClass == MainWindowController.class){
+    public Object create(Class<?> controllerClass) {
+        if (controllerClass == MainWindowController.class) {
             return new MainWindowController(this.mainWindowViewModel);
-        }
-        else if(controllerClass == AddTourController.class){
+        } else if (controllerClass == AddTourController.class) {
             return new AddTourController(this.addTourViewModel);
-        }
-        else if(controllerClass == TourListController.class){
+        } else if (controllerClass == TourListController.class) {
             return new TourListController(this.tourListViewModel);
-        }
-        else if(controllerClass == RouteController.class){
+        } else if (controllerClass == RouteController.class) {
             return new RouteController(this.routeViewModel);
-        }
-        else if(controllerClass == EditTourController.class){
+        } else if (controllerClass == EditTourController.class) {
             return new EditTourController(this.editTourViewModel);
-        }
-        else if(controllerClass == AddLogController.class){
+        } else if (controllerClass == AddLogController.class) {
             return new AddLogController(this.addLogViewModel);
-        }
-        else if(controllerClass == LogViewController.class){
+        } else if (controllerClass == LogViewController.class) {
             return new LogViewController(this.logViewModel);
-        }
-        else if(controllerClass == EditLogController.class){
+        } else if (controllerClass == EditLogController.class) {
             return new EditLogController(this.editLogViewModel);
         }
 
@@ -64,8 +57,9 @@ public class ControllerFactory {
 
     private static ControllerFactory instance = new ControllerFactory();
 
-    public static ControllerFactory getInstance(){ return instance; }
-
+    public static ControllerFactory getInstance() {
+        return instance;
+    }
 
 
 }

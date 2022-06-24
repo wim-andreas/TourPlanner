@@ -8,15 +8,16 @@ import java.util.List;
 public class LogDAO {
     private DataAccess databaseAccess;
 
-    public LogDAO(){
+    public LogDAO() {
         databaseAccess = new DBService();
     }
 
-    public List<LogModel> GetLogs(){
+    public List<LogModel> GetLogs() {
         return databaseAccess.getLogs();
     }
 
-    public void AddNewLog(List<String> data) { databaseAccess.addNewLog(data);
+    public void AddNewLog(List<String> data) {
+        databaseAccess.addNewLog(data);
     }
 
     public void DeleteLog(int logID) {

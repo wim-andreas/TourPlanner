@@ -100,7 +100,7 @@ public class LogModel {
     }
 
 
-    public LogModel( int log_id, int tour_id, String tourname, String date, String time, String difficulty, int rating, String comment, String total_time){
+    public LogModel(int log_id, int tour_id, String tourname, String date, String time, String difficulty, int rating, String comment, String total_time) {
         this.tour_id = new SimpleIntegerProperty(tour_id);
         this.log_id = new SimpleIntegerProperty(log_id);
         this.tourname = new SimpleStringProperty(tourname);

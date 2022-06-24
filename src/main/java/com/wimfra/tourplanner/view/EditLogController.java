@@ -54,18 +54,19 @@ public class EditLogController implements Initializable {
         commentTextArea.textProperty().bindBidirectional(editLogViewModel.commentProperty());
         commentTextArea.setWrapText(true);
 
-        editLogBtn.setOnAction(event->editLogData());
-        closeWindowBtn.setOnAction(event->closeCurrentWindow());
+        editLogBtn.setOnAction(event -> editLogData());
+        closeWindowBtn.setOnAction(event -> closeCurrentWindow());
 
         setUpChoiceBox();
         setUpSpinner();
         List<String> log = editLogViewModel.getSingleLog(mediator.getLogID());
-        if(null != log) {
+        if (null != log) {
             loadLogData(log);
         }
 
     }
-    public void setUpChoiceBox(){
+
+    public void setUpChoiceBox() {
         difficultyChoiceBox.getItems().add("beginner");
         difficultyChoiceBox.getItems().add("average");
         difficultyChoiceBox.getItems().add("expert");
@@ -74,35 +75,36 @@ public class EditLogController implements Initializable {
     }
 
     private void setUpSpinner() {
-        SpinnerValueFactory.IntegerSpinnerValueFactory integerSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,5,1);
+        SpinnerValueFactory.IntegerSpinnerValueFactory integerSpinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5, 1);
         ratingSpinner.setValueFactory(integerSpinnerValueFactory);
         //ratingSpinner.getValueFactory().setValue(4);
     }
 
     private void loadLogData(List<String> log) {
-            dateTextField.setText(log.get(0));
-            timeTextField.setText(log.get(1));
-            difficultyChoiceBox.setValue(log.get(2));
-            ratingSpinner.getValueFactory().setValue(Integer.valueOf(log.get(3)));
-            commentTextArea.setText(log.get(4));
-            totalTimeTextField.setText(log.get(5));
-        }
-
-    private void editLogData() {
-            //Get Selected Tour ID date_, time_, comment_, difficulty, total_time, rating
-            List<String> data = new ArrayList();
-            data.add(0,dateTextField.getText());
-            data.add(1,timeTextField.getText());
-            data.add(2,difficultyChoiceBox.getSelectionModel().getSelectedItem().toString());;
-            data.add(3,ratingSpinner.getValue().toString());
-            data.add(4,commentTextArea.getText());
-            data.add(5,totalTimeTextField.getText());
-
-            editLogViewModel.editLogData(data, mediator.getLogID());
-            closeCurrentWindow();
+        dateTextField.setText(log.get(0));
+        timeTextField.setText(log.get(1));
+        difficultyChoiceBox.setValue(log.get(2));
+        ratingSpinner.getValueFactory().setValue(Integer.valueOf(log.get(3)));
+        commentTextArea.setText(log.get(4));
+        totalTimeTextField.setText(log.get(5));
     }
 
-    public void clearTextFields(){
+    private void editLogData() {
+        //Get Selected Tour ID date_, time_, comment_, difficulty, total_time, rating
+        List<String> data = new ArrayList();
+        data.add(0, dateTextField.getText());
+        data.add(1, timeTextField.getText());
+        data.add(2, difficultyChoiceBox.getSelectionModel().getSelectedItem().toString());
+        ;
+        data.add(3, ratingSpinner.getValue().toString());
+        data.add(4, commentTextArea.getText());
+        data.add(5, totalTimeTextField.getText());
+
+        editLogViewModel.editLogData(data, mediator.getLogID());
+        closeCurrentWindow();
+    }
+
+    public void clearTextFields() {
         dateTextField.clear();
         timeTextField.clear();
         totalTimeTextField.clear();

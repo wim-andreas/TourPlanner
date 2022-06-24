@@ -62,32 +62,32 @@ public class EditTourController implements Initializable {
         descriptionTextArea.textProperty().bindBidirectional(editTourViewModel.descriptionProperty());
         descriptionTextArea.setWrapText(true);
 
-        editTourBtn.setOnAction(event->editTourData());
-        closeTourBtn.setOnAction(event->closeCurrentWindow());
+        editTourBtn.setOnAction(event -> editTourData());
+        closeTourBtn.setOnAction(event -> closeCurrentWindow());
 
         Tour tour = editTourViewModel.getSingleTour(mediator.getTourID());
-        if(null != tour) {
+        if (null != tour) {
             loadTourData(tour);
         }
     }
 
-    public void editTourData(){
+    public void editTourData() {
         //Get Selected Tour ID
         List<String> data = new ArrayList();
-        data.add(0,nameTextField.getText());
-        data.add(1,descriptionTextArea.getText());
-        data.add(2,fromTextField.getText());
-        data.add(3,toTextField.getText());
-        data.add(4,transportationTextField.getText());
-        data.add(5,distanceTextField.getText());
-        data.add(6,durationTextField.getText());
-        data.add(7,infoTextField.getText());
+        data.add(0, nameTextField.getText());
+        data.add(1, descriptionTextArea.getText());
+        data.add(2, fromTextField.getText());
+        data.add(3, toTextField.getText());
+        data.add(4, transportationTextField.getText());
+        data.add(5, distanceTextField.getText());
+        data.add(6, durationTextField.getText());
+        data.add(7, infoTextField.getText());
 
         editTourViewModel.editTourData(data, mediator.getTourID());
         closeCurrentWindow();
     }
 
-    public void loadTourData(Tour tour){
+    public void loadTourData(Tour tour) {
         nameTextField.setText(tour.getTour_name());
         fromTextField.setText(tour.getFrom_where());
         toTextField.setText(tour.getTo_where());
@@ -98,7 +98,7 @@ public class EditTourController implements Initializable {
         descriptionTextArea.setText(tour.getDescription());
     }
 
-    public void clearTextFields(){
+    public void clearTextFields() {
         nameTextField.clear();
         descriptionTextArea.clear();
         fromTextField.clear();

@@ -22,7 +22,7 @@ public class FXMLDependencyInjection {
                 FXMLDependencyInjection.class.getResource("/com/wimfra/tourplanner/" + location),
                 null,
                 new JavaFXBuilderFactory(),
-                controllerClass-> ControllerFactory.getInstance().create(controllerClass)
+                controllerClass -> ControllerFactory.getInstance().create(controllerClass)
         );
     }
 }

@@ -27,30 +27,42 @@ public class AddLogViewModel implements ViewModel {
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(AddLogViewModel.class);
     private Publisher publisher;
 
-    public StringProperty difficultyProperty() { return difficulty;}
+    public StringProperty difficultyProperty() {
+        return difficulty;
+    }
 
-    public StringProperty ratingProperty() { return rating;}
+    public StringProperty ratingProperty() {
+        return rating;
+    }
 
-    public StringProperty dateProperty() { return date;}
+    public StringProperty dateProperty() {
+        return date;
+    }
 
-    public StringProperty timeProperty() { return time;}
+    public StringProperty timeProperty() {
+        return time;
+    }
 
-    public StringProperty totalTimeProperty() { return totalTime;}
+    public StringProperty totalTimeProperty() {
+        return totalTime;
+    }
 
 
-    public StringProperty commentProperty() { return comment;}
+    public StringProperty commentProperty() {
+        return comment;
+    }
 
     public void addNewLog(String dif, String rat, int tourID) {
-            List<String> data = new ArrayList();
-            data.add(0, dateProperty().get());
-            data.add(1, timeProperty().get());
-            data.add(2, commentProperty().get());
-            data.add(3, dif);
-            data.add(4, totalTimeProperty().get());
-            data.add(5, rat);
-            data.add(6, String.valueOf(tourID));
-            manageTourLogService.addNewLog(data);
-            logger.debug("Creating new log finished!");
+        List<String> data = new ArrayList();
+        data.add(0, dateProperty().get());
+        data.add(1, timeProperty().get());
+        data.add(2, commentProperty().get());
+        data.add(3, dif);
+        data.add(4, totalTimeProperty().get());
+        data.add(5, rat);
+        data.add(6, String.valueOf(tourID));
+        manageTourLogService.addNewLog(data);
+        logger.debug("Creating new log finished!");
     }
 
     // Observer pattern methods

@@ -49,8 +49,9 @@ public class AddTourController implements Initializable {
     }
 
     // creating the (bidirectional) databinding
-    @FXML @Override
-    public void initialize(URL url, ResourceBundle resourceBundle){
+    @FXML
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         nameTextField.textProperty().bindBidirectional(addTourViewModel.nameProperty());
         fromTextField.textProperty().bindBidirectional(addTourViewModel.fromProperty());
         toTextField.textProperty().bindBidirectional(addTourViewModel.toProperty());
@@ -60,8 +61,8 @@ public class AddTourController implements Initializable {
         infoTextField.textProperty().bindBidirectional(addTourViewModel.infoProperty());
         descriptionTextArea.textProperty().bindBidirectional(addTourViewModel.descriptionProperty());
         descriptionTextArea.setWrapText(true);
-        addNewTourBtn.setOnAction(event-> addNewTour());
-        closeWindowBtn.setOnAction(event-> closeCurrentWindow());
+        addNewTourBtn.setOnAction(event -> addNewTour());
+        closeWindowBtn.setOnAction(event -> closeCurrentWindow());
     }
 
     public void addNewTour() {
@@ -75,7 +76,7 @@ public class AddTourController implements Initializable {
         stage.close();
     }
 
-    public void clearTextFields(){
+    public void clearTextFields() {
         nameTextField.clear();
         descriptionTextArea.clear();
         fromTextField.clear();

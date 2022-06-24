@@ -16,4 +16,5 @@ public interface ManageTourLogService {
 
     void editLogData(List<String> data, int logID);
 
+    List<LogModel> search(String value, boolean b);
 }

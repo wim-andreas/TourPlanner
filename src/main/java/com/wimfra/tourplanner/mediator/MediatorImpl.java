@@ -3,7 +3,7 @@ package com.wimfra.tourplanner.mediator;
 import lombok.Getter;
 import lombok.Setter;
 
-public class MediatorImpl implements Mediator{
+public class MediatorImpl implements Mediator {
 
     //default constructor
     public MediatorImpl() {

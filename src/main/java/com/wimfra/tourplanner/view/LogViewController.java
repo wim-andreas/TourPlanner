@@ -23,7 +23,8 @@ import java.util.ResourceBundle;
 public class LogViewController implements Initializable {
 
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(LogViewController.class);
-
+    @FXML
+    public TextField logSearch;
     @FXML
     private TableColumn<LogModel, String> tourNameColumn;
     @FXML
@@ -46,6 +47,10 @@ public class LogViewController implements Initializable {
     private Button deleteLogBtn;
     @FXML
     private Button editLogBtn;
+    @FXML
+    private Button searchBtn;
+    @FXML
+    private Button clearBtn;
 
 
     private final LogViewModel logViewModel;
@@ -63,7 +68,8 @@ public class LogViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
+        logSearch.textProperty().bindBidirectional(logViewModel.getCurrentSearchText());
+        //setup table view
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("Date"));
         timeColumn.setCellValueFactory(new PropertyValueFactory<>("Time"));
         commentColumn.setCellValueFactory(new PropertyValueFactory<>("Comment"));
@@ -76,7 +82,9 @@ public class LogViewController implements Initializable {
         addLogBtn.setOnAction(event -> addLogWindow());
         deleteLogBtn.setOnAction(event -> deleteLog());
         editLogBtn.setOnAction(event -> editLogWindow());
-        logData.setOnMouseClicked(event-> setCurrentlySelectedTour());
+        logData.setOnMouseClicked(event -> setCurrentlySelectedTour());
+        searchBtn.setOnAction(event -> searchAction());
+        clearBtn.setOnAction(event -> clearAction());
 
     }
 
@@ -87,27 +95,34 @@ public class LogViewController implements Initializable {
     }
 
     private void deleteLog() {
-            logViewModel.deleteLog(this.mediator.getLogID());
-            setUpLogView();
+        logViewModel.deleteLog(this.mediator.getLogID());
+        setUpLogView();
     }
 
     public void setCurrentlySelectedTour() {
-        if(logData.getSelectionModel().getSelectedItem() != null) {
+        if (logData.getSelectionModel().getSelectedItem() != null) {
             this.logID = logData.getSelectionModel().getSelectedItem().getLogID();
             this.mediator.setLogID(this.logID);
         }
     }
 
-    private void setUpLogView(){
-        logItems = FXCollections.observableArrayList();
-        logItems.addAll(logViewModel.getAllLogs());
-        logData.setItems(logItems);
+    private void setUpLogView() {
+        logViewModel.fetchLogItems();
+        logData.setItems(logViewModel.getLogItems());
 
     }
 
-    private void addLogWindow(){
+    private void addLogWindow() {
         appManager.addLogWindow();
     }
 
-    
+    public void searchAction() {
+        logViewModel.searchAction();
     }
+
+    public void clearAction() {
+        logSearch.setText("");
+        // logViewModel.updateFromDB();
+        setUpLogView();
+    }
+}

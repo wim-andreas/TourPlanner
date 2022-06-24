@@ -275,12 +275,12 @@ public class DBService implements DataAccess {
 
             if (resultSet.next()) {
                 List<String> data = new ArrayList<>();
-                data.add(0,resultSet.getString(1));
+                data.add(0, resultSet.getString(1));
                 data.add(1, resultSet.getString(2));
-                data.add(2,resultSet.getString(3));
+                data.add(2, resultSet.getString(3));
                 data.add(3, String.valueOf(resultSet.getInt(4)));
                 data.add(4, resultSet.getString(5));
-                data.add(5,resultSet.getString(6));
+                data.add(5, resultSet.getString(6));
                 resultSet.close();
                 preparedStatement.close();
                 connection.close();
