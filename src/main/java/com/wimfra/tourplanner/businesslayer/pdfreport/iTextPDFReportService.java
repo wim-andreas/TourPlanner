@@ -23,17 +23,21 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class iTextPDFReportService implements PDFReportService{
     private final ManageTourLogService tourLogService = new ManageTourLogServiceImpl();
     private final ManageTourService tourService = new ManageTourServiceImpl();
     private final ParserService parserService = new ParserServiceImpl();
-    public static final String PDF_TARGET_SUMMARIZE = "./reports/summarized_reports/summarized_tour_report.pdf";
-    public static final String PDF_TARGET_TOUR = "./reports/tour_reports/tour_report.pdf";
+    public static final String PDF_TARGET_SUMMARIZE = "./reports/summarized_reports/summarized_tour_report_";
+    public static final String PDF_TARGET_TOUR = "./reports/tour_reports/tour_report_";
+    public static final String PDF = ".pdf";
+
 
     @Override
     public void generateSummarizeReport() {
-        Document report = createNewPDFFile(PDF_TARGET_SUMMARIZE);
+        String filePath = PDF_TARGET_SUMMARIZE + LocalDate.now() + getCurrentTimeValue() + PDF;
+        Document report = createNewPDFFile(filePath);
         if(report != null){
             try {
                 report.add(generateTableHeader());
@@ -55,25 +59,51 @@ public class iTextPDFReportService implements PDFReportService{
 
     @Override
     public void generateTourReport(int tourID) {
-        Document report = createNewPDFFile(PDF_TARGET_TOUR);
+        String filePath = PDF_TARGET_TOUR + LocalDate.now() + getCurrentTimeValue() + PDF;
+        Document report = createNewPDFFile(filePath);
         if(report != null){
             try {
+                // Setting up the tour table with the sufficient header
                 report.add(generateTourHeader());
-                report.add(new AreaBreak());
-                final var tourList = tourService.getTours();
-                Table table = setupTableForSummarizeReport();
-                for (Tour tour : tourList) {
-                    table.addCell(String.valueOf(tour.getTour_name()));
-                    table.addCell(getAverageTime(tour));
-                    table.addCell(String.valueOf(tour.getDistance()));
-                    table.addCell(String.valueOf(getAverageRating(tour)));
-                }
-                report.add(table);
-               // report.close();
+                final var tour = tourService.getSingleTour(tourID);
+                Table tourTable = setupTableForTourReport();
+                tourTable.addCell(String.valueOf(tour.getTour_name()));
+                tourTable.addCell(getTourDescription(tour));
+                report.add(tourTable);
+
+                // Setting up the tourlog table with the sufficient header
+                report.add(generateTourSecondHeader());
+                Table tourLogTable = setupTableForTourReportWithLogs();
+                final var tourLogs = tourLogService.getAllLogsFromSingleTour(tourID);
+                tourLogs.forEach(logModel -> {
+                    tourLogTable.addCell(String.valueOf(logModel.getDate()));
+                    tourLogTable.addCell(String.valueOf(logModel.getTime()));
+                    tourLogTable.addCell(String.valueOf(logModel.getDifficulty()));
+                    tourLogTable.addCell(String.valueOf(logModel.getComment()));
+                    tourLogTable.addCell(String.valueOf(logModel.getRating()));
+                    tourLogTable.addCell(String.valueOf(logModel.getTotalTime()));
+                });
+                report.add(tourLogTable);
+                report.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    private String getTourDescription(Tour tour) {
+        if(tour != null){
+            String currentDescription = "Tourname: " + tour.getTour_name() + "\n" +
+                    "Description: " + tour.getDescription() + "\n" +
+                    "From: " + tour.getFrom_where() + "\n" +
+                    "To: " + tour.getTo_where() + "\n" +
+                    "Transportation: " + tour.getTransportation() + "\n" +
+                    "Distance: " + tour.getDistance() + "\n" +
+                    "Duration: " + tour.getDuration() + "\n" +
+                    "Info: " + tour.getRoute_info() + "\n";
+            return currentDescription;
+        }
+        return "No tour available!";
     }
 
     @Override
@@ -110,6 +140,26 @@ public class iTextPDFReportService implements PDFReportService{
         return table;
     }
 
+    private Table setupTableForTourReport() {
+        Table table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
+        table.setFontSize(14).setBackgroundColor(ColorConstants.WHITE);
+        table.addHeaderCell(getHeaderCell("Tourname"));
+        table.addHeaderCell(getHeaderCell("Tour description")).setWidth(1000);
+        return table;
+    }
+
+    private Table setupTableForTourReportWithLogs() {
+        Table table = new Table(UnitValue.createPercentArray(6)).useAllAvailableWidth();
+        table.setFontSize(14).setBackgroundColor(ColorConstants.WHITE);
+        table.addHeaderCell(getHeaderCell("Date"));
+        table.addHeaderCell(getHeaderCell("Time"));
+        table.addHeaderCell(getHeaderCell("Difficulty"));
+        table.addHeaderCell(getHeaderCell("Comment"));
+        table.addHeaderCell(getHeaderCell("Rating"));
+        table.addHeaderCell(getHeaderCell("Total time"));
+        return table;
+    }
+
     private static Cell getHeaderCell(String s) {
         return new Cell().add(new Paragraph(s)).setItalic().setBackgroundColor(ColorConstants.GRAY);
     }
@@ -124,9 +174,17 @@ public class iTextPDFReportService implements PDFReportService{
     private Paragraph generateTourHeader() throws IOException {
         return new Paragraph("Tour Report from " + LocalDate.now())
                 .setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA))
-                .setFontSize(26)
-                .setBold()
-                .setFontColor(ColorConstants.BLUE);
+                .setFontSize(20)
+                .setItalic()
+                .setFontColor(ColorConstants.GRAY);
+    }
+
+    private Paragraph generateTourSecondHeader() throws IOException {
+        return new Paragraph("All existing logs from this tour: ")
+                .setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA))
+                .setFontSize(20)
+                .setItalic()
+                .setFontColor(ColorConstants.GRAY);
     }
 
     private String getAverageTime(Tour tour) {
@@ -164,5 +222,23 @@ public class iTextPDFReportService implements PDFReportService{
             }
         }
         return returnValue;
+    }
+
+    public String getCurrentTimeValue(){
+        String currentValue = LocalTime.now().toString();
+        String finalValue = "-";
+
+        for(int i = 0; i < currentValue.length(); i++){
+            if(currentValue.charAt(i) != ':' && currentValue.charAt(i) != '.'){
+                finalValue += currentValue.charAt(i);
+            }
+            else if(currentValue.charAt(i) == ':'){
+                finalValue += "-";
+            }
+            else{
+                break;
+            }
+        }
+        return finalValue;
     }
 }
