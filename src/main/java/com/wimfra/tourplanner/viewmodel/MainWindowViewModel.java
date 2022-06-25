@@ -4,7 +4,6 @@ import com.wimfra.tourplanner.businesslayer.JavaAppManager;
 import com.wimfra.tourplanner.businesslayer.JavaAppManagerFactory;
 import com.wimfra.tourplanner.logger.ILoggerWrapper;
 import com.wimfra.tourplanner.logger.LoggerFactory;
-import com.wimfra.tourplanner.view.TourListController;
 import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
 
@@ -16,11 +15,12 @@ public class MainWindowViewModel implements ViewModel {
     private RouteViewModel routeViewModel;
     private LogViewModel logViewModel;
     private EditLogViewModel editLogViewModel;
+    private MenubarViewModel menubarViewModel;
     private final Publisher observable;
     private JavaAppManager appManager = JavaAppManagerFactory.GetManager();
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(MainWindowViewModel.class);
 
-    public MainWindowViewModel(AddTourViewModel addTourViewModel, TourListViewModel tourListViewModel, EditTourViewModel editTourViewModel, AddLogViewModel addLogViewModel, RouteViewModel routeViewModel, LogViewModel logViewModel, EditLogViewModel editLogViewModel) {
+    public MainWindowViewModel(AddTourViewModel addTourViewModel, TourListViewModel tourListViewModel, EditTourViewModel editTourViewModel, AddLogViewModel addLogViewModel, RouteViewModel routeViewModel, LogViewModel logViewModel, EditLogViewModel editLogViewModel, MenubarViewModel menubarViewModel) {
         observable = new Publisher();
         this.addTourViewModel = addTourViewModel;
         this.tourListViewModel = tourListViewModel;
@@ -29,6 +29,7 @@ public class MainWindowViewModel implements ViewModel {
         this.routeViewModel = routeViewModel;
         this.logViewModel = logViewModel;
         this.editLogViewModel = editLogViewModel;
+        this.menubarViewModel = menubarViewModel;
         addObservableToViewModels();
         subscribeToObservable();
     }
@@ -41,6 +42,7 @@ public class MainWindowViewModel implements ViewModel {
         this.editLogViewModel.setPublisher(observable);
         this.editTourViewModel.setPublisher(observable);
         this.logViewModel.setPublisher(observable);
+        this.menubarViewModel.setPublisher(observable);
         this.routeViewModel.setPublisher(observable);
         this.tourListViewModel.setPublisher(observable);
     }
@@ -51,12 +53,9 @@ public class MainWindowViewModel implements ViewModel {
         observable.subscribe(this.editLogViewModel);
         observable.subscribe(this.editTourViewModel);
         observable.subscribe(this.logViewModel);
+        observable.subscribe(this.menubarViewModel);
         observable.subscribe(this.routeViewModel);
         observable.subscribe(this.tourListViewModel);
-    }
-
-    public void openLogWindow() {
-        //appManager.openLogWindow();
     }
 
     @Override

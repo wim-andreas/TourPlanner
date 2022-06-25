@@ -8,7 +8,7 @@ public class ParserServiceImpl implements ParserService {
         if ((value.matches("([0-9])*")) || value.matches("([0-9])*\\.([0-9])+")) {
             newDouble = Double.parseDouble(value);
         } else {
-            throw new RuntimeException();
+            throw new RuntimeException("Value does not match the wanted 'Double' pattern");
         }
         return newDouble;
     }

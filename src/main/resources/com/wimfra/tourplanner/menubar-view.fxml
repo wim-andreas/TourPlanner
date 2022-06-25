@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<MenuBar BorderPane.alignment="CENTER">
+<MenuBar BorderPane.alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wimfra.tourplanner.view.MenubarController">
     <menus>
         <Menu mnemonicParsing="false" text="File">
             <items>
-                <MenuItem mnemonicParsing="false" text="Import" />
-                <MenuItem mnemonicParsing="false" text="Export" />
+                <MenuItem mnemonicParsing="false" text="Import" fx:id="import_item"/>
+                <MenuItem mnemonicParsing="false" text="Export" fx:id="export_item"/>
             </items>
         </Menu>
         <Menu mnemonicParsing="false" text="PDF">
             <items>
-                <MenuItem mnemonicParsing="false" text="Generate Summarize Report.." />
-                <MenuItem mnemonicParsing="false" text="Generate Tour Report.." />
+                <MenuItem mnemonicParsing="false" text="Generate Summarize Report.." fx:id="summarize_report_item"/>
+                <MenuItem mnemonicParsing="false" text="Generate Tour Report.." fx:id="tour_report_item"/>
             </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Edit">
             <items>
-                <MenuItem mnemonicParsing="false" text="Delete" />
+                <MenuItem mnemonicParsing="false" text="Delete" fx:id="delete_item"/>
             </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
             <items>
-                <MenuItem mnemonicParsing="false" text="About" />
+                <MenuItem mnemonicParsing="false" text="About" fx:id="about_item"/>
             </items>
         </Menu>
     </menus>

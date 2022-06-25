@@ -1,6 +1,5 @@
 package com.wimfra.tourplanner.view;
 
-
 import com.wimfra.tourplanner.businesslayer.JavaAppManager;
 import com.wimfra.tourplanner.businesslayer.JavaAppManagerImpl;
 import com.wimfra.tourplanner.logger.ILoggerWrapper;
@@ -8,9 +7,7 @@ import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.mediator.Mediator;
 import com.wimfra.tourplanner.mediator.MediatorFactory;
 import com.wimfra.tourplanner.models.LogModel;
-import com.wimfra.tourplanner.models.Tour;
 import com.wimfra.tourplanner.viewmodel.LogViewModel;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

@@ -23,15 +23,13 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
 
 public class iTextPDFReportService implements PDFReportService{
     private final ManageTourLogService tourLogService = new ManageTourLogServiceImpl();
     private final ManageTourService tourService = new ManageTourServiceImpl();
     private final ParserService parserService = new ParserServiceImpl();
-    public static final String PDF_TARGET_SUMMARIZE = "summarized_tour_report.pdf";
-    public static final String PDF_TARGET_TOUR = "tour_report.pdf";
+    public static final String PDF_TARGET_SUMMARIZE = "./reports/summarized_reports/summarized_tour_report.pdf";
+    public static final String PDF_TARGET_TOUR = "./reports/tour_reports/tour_report.pdf";
 
     @Override
     public void generateSummarizeReport() {
@@ -39,17 +37,16 @@ public class iTextPDFReportService implements PDFReportService{
         if(report != null){
             try {
                 report.add(generateTableHeader());
-                report.add(new AreaBreak());
                 final var tourList = tourService.getTours();
-                Table table = setupTable();
+                Table table = setupTableForSummarizeReport();
                 for (Tour tour : tourList) {
                     table.addCell(String.valueOf(tour.getTour_name()));
-                    table.addCell(String.valueOf(getAverageTime(tour)));
+                    table.addCell(getAverageTime(tour));
                     table.addCell(String.valueOf(tour.getDistance()));
                     table.addCell(String.valueOf(getAverageRating(tour)));
                 }
                 report.add(table);
-
+                report.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -57,22 +54,22 @@ public class iTextPDFReportService implements PDFReportService{
     }
 
     @Override
-    public void generateTourReport() {
+    public void generateTourReport(int tourID) {
         Document report = createNewPDFFile(PDF_TARGET_TOUR);
         if(report != null){
             try {
                 report.add(generateTourHeader());
                 report.add(new AreaBreak());
                 final var tourList = tourService.getTours();
-                Table table = setupTable();
+                Table table = setupTableForSummarizeReport();
                 for (Tour tour : tourList) {
                     table.addCell(String.valueOf(tour.getTour_name()));
-                    table.addCell(String.valueOf(getAverageTime(tour)));
+                    table.addCell(getAverageTime(tour));
                     table.addCell(String.valueOf(tour.getDistance()));
                     table.addCell(String.valueOf(getAverageRating(tour)));
                 }
                 report.add(table);
-
+               // report.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -84,10 +81,9 @@ public class iTextPDFReportService implements PDFReportService{
         try {
             PdfWriter pdfWriter = new PdfWriter(pdf_target);
             PdfDocument pdf = new PdfDocument(pdfWriter);
-            try(Document document = new Document(pdf)){
-                generateReportHeader(document);
-                return document;
-            }
+            Document document = new Document(pdf);
+            generateReportHeader(document);
+            return document;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -102,10 +98,9 @@ public class iTextPDFReportService implements PDFReportService{
             e.printStackTrace();
         }
         document.add(new Image(imageData));
-        document.add(new AreaBreak());
     }
 
-    private Table setupTable() {
+    private Table setupTableForSummarizeReport() {
         Table table = new Table(UnitValue.createPercentArray(4)).useAllAvailableWidth();
         table.setFontSize(14).setBackgroundColor(ColorConstants.WHITE);
         table.addHeaderCell(getHeaderCell("Name"));
@@ -116,14 +111,14 @@ public class iTextPDFReportService implements PDFReportService{
     }
 
     private static Cell getHeaderCell(String s) {
-        return new Cell().add(new Paragraph(s)).setBold().setBackgroundColor(ColorConstants.GRAY);
+        return new Cell().add(new Paragraph(s)).setItalic().setBackgroundColor(ColorConstants.GRAY);
     }
 
     private Paragraph generateTableHeader() throws IOException {
-        return new Paragraph("Overview of all currently saved Tours:")
-                .setFont(PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN))
+        return new Paragraph("TourPlanner: Overview of all currently saved Tours:")
+                .setFont(PdfFontFactory.createFont(StandardFonts.HELVETICA))
                 .setFontSize(20)
-                .setBold();
+                .setItalic();
     }
 
     private Paragraph generateTourHeader() throws IOException {
@@ -135,30 +130,38 @@ public class iTextPDFReportService implements PDFReportService{
     }
 
     private String getAverageTime(Tour tour) {
-        String returnValue = "";
-        Double timesAdded = Double.valueOf(0);
+        String returnValue;
+        Double timesAdded = (double) 0;
         final var tourLogs = tourLogService.getAllLogsFromSingleTour(tour.getTour_id());
         if(tourLogs == null){
             returnValue = " - ";
         }
         else{
             for (var tourLog: tourLogs) {
-                timesAdded = timesAdded + parserService.parseStringIntoDouble(tourLog.getTime());
+                timesAdded = timesAdded + parserService.parseStringIntoDouble(tourLog.getTotalTime());
             }
             Double result = timesAdded / tourLogs.size();
             returnValue = parserService.parseDoubleIntoString(result);
+            returnValue += " minute(s)";
         }
+
         return returnValue;
     }
 
     private String getAverageRating(Tour tour) {
         String returnValue = "";
         final var tourLogs = tourLogService.getAllLogsFromSingleTour(tour.getTour_id());
-        Double rating = Double.valueOf(0);
-        for (var tourLog: tourLogs) {
-            rating = rating + tourLog.getRating();
-            Double finalValue = rating / tourLogs.size();
-            returnValue = parserService.parseDoubleIntoString(finalValue);
+        Double rating = (double) 0;
+        if(tourLogs == null){
+            returnValue = " - ";
+        }
+        else{
+            for (var tourLog: tourLogs) {
+                rating = rating + tourLog.getRating();
+                Double finalValue = rating / tourLogs.size();
+                returnValue = parserService.parseDoubleIntoString(finalValue);
+                returnValue += " point(s)";
+            }
         }
         return returnValue;
     }
