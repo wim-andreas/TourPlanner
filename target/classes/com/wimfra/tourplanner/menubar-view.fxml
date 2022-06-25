@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -12,6 +9,12 @@
             <items>
                 <MenuItem mnemonicParsing="false" text="Import" />
                 <MenuItem mnemonicParsing="false" text="Export" />
+            </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="PDF">
+            <items>
+                <MenuItem mnemonicParsing="false" text="Generate Summarize Report.." />
+                <MenuItem mnemonicParsing="false" text="Generate Tour Report.." />
             </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Edit">

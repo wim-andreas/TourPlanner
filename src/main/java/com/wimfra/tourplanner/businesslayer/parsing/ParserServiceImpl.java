@@ -1,7 +1,6 @@
 package com.wimfra.tourplanner.businesslayer.parsing;
 
 public class ParserServiceImpl implements ParserService {
-    //TODO: Write functions that parse the Strings from the StringProperties into other values to be stored in the database
 
     @Override
     public Double parseStringIntoDouble(String value) {

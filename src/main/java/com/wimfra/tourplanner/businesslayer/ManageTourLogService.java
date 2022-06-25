@@ -8,11 +8,13 @@ public interface ManageTourLogService {
 
     List<LogModel> getAllLogs();
 
+    List<LogModel> getAllLogsFromSingleTour(int TourID);
+
     void addNewLog(List<String> data);
 
     void deleteLog(int logID);
 
-    List<String> getSingleLog(int tourID);
+    List<String> getSingleLog(int logID);
 
     void editLogData(List<String> data, int logID);
 

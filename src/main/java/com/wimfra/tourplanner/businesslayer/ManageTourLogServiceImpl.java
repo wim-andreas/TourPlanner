@@ -3,6 +3,7 @@ package com.wimfra.tourplanner.businesslayer;
 import com.wimfra.tourplanner.dataaccesslayer.LogDAO;
 import com.wimfra.tourplanner.models.LogModel;
 import com.wimfra.tourplanner.models.Tour;
+import lombok.extern.java.Log;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,6 +14,11 @@ public class ManageTourLogServiceImpl implements ManageTourLogService {
     @Override
     public List<LogModel> getAllLogs() {
         return logDAO.GetLogs();
+    }
+
+    @Override
+    public List<LogModel> getAllLogsFromSingleTour(int tourID){
+        return logDAO.getAllLogsFromSingleTour(tourID);
     }
 
     @Override

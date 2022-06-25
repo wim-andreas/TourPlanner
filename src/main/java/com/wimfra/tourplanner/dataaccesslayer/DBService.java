@@ -36,8 +36,6 @@ public class DBService implements DataAccess {
         return null;
     }
 
-    //TODO: Adjust prepared Statements to the correct datatypes - right now they are not working properly.
-
     @Override
     public List<Tour> getTours() {
         try {
@@ -213,7 +211,6 @@ public class DBService implements DataAccess {
             e.printStackTrace();
         }
         return null;
-
     }
 
     @Override
@@ -323,5 +320,36 @@ public class DBService implements DataAccess {
         }
 
         return true;
+    }
+
+    @Override
+    public List<LogModel> getAllLogsFromSingleTour(int tourID) {
+        try {
+            Connection connection = DBService.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT log_id, tour_id , date_, time_, difficulty, rating, comment_, total_time FROM logs WHERE tour_id = ?;");
+            preparedStatement.setInt(1, tourID);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            List<LogModel> allLogs = new ArrayList<>();
+            while (resultSet.next()) {
+                allLogs.add(new LogModel(
+                        resultSet.getInt(1),
+                        resultSet.getInt(2),
+                        getSingleTour(resultSet.getInt(2)).getTour_name(),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getString(5),
+                        resultSet.getInt(6),
+                        resultSet.getString(7),
+                        resultSet.getString(8)
+                ));
+            }
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+            return allLogs;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

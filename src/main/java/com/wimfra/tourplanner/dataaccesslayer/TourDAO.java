@@ -8,7 +8,7 @@ public class TourDAO {
     private DataAccess databaseAccess;
 
     public TourDAO() {
-        databaseAccess = new DBService();
+        databaseAccess = DBService.getInstance();
     }
 
     public List<Tour> GetTours() {

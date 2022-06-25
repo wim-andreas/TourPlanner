@@ -9,7 +9,7 @@ public class LogDAO {
     private DataAccess databaseAccess;
 
     public LogDAO() {
-        databaseAccess = new DBService();
+        databaseAccess = DBService.getInstance();
     }
 
     public List<LogModel> GetLogs() {
@@ -30,5 +30,9 @@ public class LogDAO {
 
     public void EditLogData(List<String> data, int logID) {
         databaseAccess.editLogData(data, logID);
+    }
+
+    public List<LogModel> getAllLogsFromSingleTour(int tourID) {
+        return databaseAccess.getAllLogsFromSingleTour(tourID);
     }
 }

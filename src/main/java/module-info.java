@@ -4,8 +4,10 @@ module com.wimfra.tourplanner {
     requires lombok;
     requires java.sql;
     requires org.apache.logging.log4j;
+    requires kernel;
+    requires layout;
+    requires io;
 
-    opens com.wimfra.tourplanner to javafx.fxml;
     opens com.wimfra.tourplanner.models to javafx.fxml;
     opens com.wimfra.tourplanner.view to javafx.fxml;
 

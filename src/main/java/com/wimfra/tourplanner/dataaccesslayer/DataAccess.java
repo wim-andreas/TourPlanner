@@ -25,4 +25,6 @@ public interface DataAccess {
     List<String> getSingleLog(int tourID);
 
     boolean editLogData(List<String> data, int logID);
+
+    List<LogModel> getAllLogsFromSingleTour(int tourID);
 }
