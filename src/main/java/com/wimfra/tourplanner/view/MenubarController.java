@@ -8,6 +8,7 @@ import com.wimfra.tourplanner.viewmodel.MenubarViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.MenuItem;
+import lombok.extern.log4j.Log4j2;
 
 import java.net.URL;
 import java.util.ResourceBundle;
