@@ -2,6 +2,8 @@ package com.wimfra.tourplanner.dataaccesslayer;
 
 import com.wimfra.tourplanner.businesslayer.parsing.ParserService;
 import com.wimfra.tourplanner.businesslayer.parsing.ParserServiceImpl;
+import com.wimfra.tourplanner.configuration.AppConfiguration;
+import com.wimfra.tourplanner.configuration.AppConfigurationLoader;
 import com.wimfra.tourplanner.models.LogModel;
 import com.wimfra.tourplanner.models.TourModel;
 
@@ -11,25 +13,28 @@ import java.util.List;
 
 public class DBService implements DataAccess {
     private static DBService instance;
-    private static final String DB_URL = "jdbc:postgresql://localhost:5432/postgres";
-    private static final String USER = "swe2user";
-    private static final String PW = "swe2pw";
+    private final String DB_URL;
+    private final String DB_USER;
+    private final String DB_PW;
     private final ParserService parserService;
 
-    public DBService() {
+    public DBService(AppConfiguration appConfiguration) {
         this.parserService = new ParserServiceImpl();
+        DB_URL = appConfiguration.getDbUrl();
+        DB_USER = appConfiguration.getDbUsername();
+        DB_PW = appConfiguration.getDbPassword();
     }
 
     public static DBService getInstance() {
         if (DBService.instance == null) {
-            DBService.instance = new DBService();
+            DBService.instance = new DBService(AppConfigurationLoader.getInstance().getAppConfiguration());
         }
         return DBService.instance;
     }
 
     public Connection getConnection() {
         try {
-            return DriverManager.getConnection(DB_URL, USER, PW);
+            return DriverManager.getConnection(DB_URL, DB_USER, DB_PW);
         } catch (SQLException e) {
             e.printStackTrace();
         }

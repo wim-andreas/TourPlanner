@@ -6,6 +6,7 @@ import com.wimfra.tourplanner.logger.ILoggerWrapper;
 import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
+import lombok.extern.log4j.Log4j2;
 
 public class MenubarViewModel implements ViewModel {
     // gets the connection to the business layer
