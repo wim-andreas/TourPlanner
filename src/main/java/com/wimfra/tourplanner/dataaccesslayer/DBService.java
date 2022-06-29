@@ -3,7 +3,7 @@ package com.wimfra.tourplanner.dataaccesslayer;
 import com.wimfra.tourplanner.businesslayer.parsing.ParserService;
 import com.wimfra.tourplanner.businesslayer.parsing.ParserServiceImpl;
 import com.wimfra.tourplanner.models.LogModel;
-import com.wimfra.tourplanner.models.Tour;
+import com.wimfra.tourplanner.models.TourModel;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -37,14 +37,14 @@ public class DBService implements DataAccess {
     }
 
     @Override
-    public List<Tour> getTours() {
+    public List<TourModel> getTours() {
         try {
             Connection connection = DBService.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT tour_id, tour_name, description, from_where, to_where, transportation, distance, duration, route_info FROM tours;");
             ResultSet resultSet = preparedStatement.executeQuery();
-            List<Tour> allTours = new ArrayList<>();
+            List<TourModel> allTours = new ArrayList<>();
             while (resultSet.next()) {
-                allTours.add(new Tour(
+                allTours.add(new TourModel(
                         resultSet.getInt(1),
                         resultSet.getString(2),
                         resultSet.getString(3),
@@ -68,7 +68,7 @@ public class DBService implements DataAccess {
     }
 
     @Override
-    public Tour getSingleTour(int id) {
+    public TourModel getSingleTour(int id) {
         try {
             Connection connection = DBService.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT tour_id, tour_name, description, from_where, to_where, transportation, distance, duration, route_info FROM tours where tour_id = ?;");
@@ -76,7 +76,7 @@ public class DBService implements DataAccess {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                Tour tour = Tour.builder()
+                TourModel tour = TourModel.builder()
                         .tour_id(resultSet.getInt(1))
                         .tour_name(resultSet.getString(2))
                         .description(resultSet.getString(3))
@@ -100,7 +100,7 @@ public class DBService implements DataAccess {
     }
 
     @Override
-    public Tour addNewTour(List<String> data) {
+    public TourModel addNewTour(List<String> data) {
         try {
             Connection connection = DBService.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO tours(tour_name, description, from_where, to_where, transportation, distance, duration, route_info) VALUES(?,?,?,?,?,?,?,?);");

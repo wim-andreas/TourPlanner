@@ -1,6 +1,6 @@
 package com.wimfra.tourplanner.dataaccesslayer;
 
-import com.wimfra.tourplanner.models.Tour;
+import com.wimfra.tourplanner.models.TourModel;
 
 import java.util.List;
 
@@ -11,11 +11,11 @@ public class TourDAO {
         databaseAccess = DBService.getInstance();
     }
 
-    public List<Tour> GetTours() {
+    public List<TourModel> GetTours() {
         return databaseAccess.getTours();
     }
 
-    public Tour GetSingleTour(int id) {
+    public TourModel GetSingleTour(int id) {
         return databaseAccess.getSingleTour(id);
     }
 

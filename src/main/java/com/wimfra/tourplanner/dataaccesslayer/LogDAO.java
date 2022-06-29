@@ -1,7 +1,6 @@
 package com.wimfra.tourplanner.dataaccesslayer;
 
 import com.wimfra.tourplanner.models.LogModel;
-import com.wimfra.tourplanner.models.Tour;
 
 import java.util.List;
 

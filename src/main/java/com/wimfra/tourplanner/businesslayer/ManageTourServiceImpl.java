@@ -1,7 +1,7 @@
 package com.wimfra.tourplanner.businesslayer;
 
 import com.wimfra.tourplanner.dataaccesslayer.TourDAO;
-import com.wimfra.tourplanner.models.Tour;
+import com.wimfra.tourplanner.models.TourModel;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,13 +14,13 @@ public class ManageTourServiceImpl implements ManageTourService {
     }
 
     @Override
-    public List<Tour> getTours() {
+    public List<TourModel> getTours() {
         return tourDAO.GetTours();
     }
 
     @Override
-    public List<Tour> search(String tourname, boolean caseSensitive) {
-        List<Tour> items = getTours();
+    public List<TourModel> search(String tourname, boolean caseSensitive) {
+        List<TourModel> items = getTours();
         if (tourname != null) {
             if (caseSensitive) {
                 return items
@@ -37,7 +37,7 @@ public class ManageTourServiceImpl implements ManageTourService {
     }
 
     @Override
-    public Tour getSingleTour(int id) {
+    public TourModel getSingleTour(int id) {
         return tourDAO.GetSingleTour(id);
     }
 

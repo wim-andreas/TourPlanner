@@ -8,7 +8,7 @@ import com.wimfra.tourplanner.logger.ILoggerWrapper;
 import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.mediator.Mediator;
 import com.wimfra.tourplanner.mediator.MediatorFactory;
-import com.wimfra.tourplanner.models.Tour;
+import com.wimfra.tourplanner.models.TourModel;
 import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
 import javafx.beans.property.SimpleStringProperty;
@@ -26,7 +26,7 @@ public class RouteViewModel implements ViewModel {
     public final StringProperty description = new SimpleStringProperty();
 
     // different actions - communication with business and data access layer
-    public Tour getSingleTour(int id) {
+    public TourModel getSingleTour(int id) {
         return tourService.getSingleTour(id);
     }
 
@@ -36,7 +36,7 @@ public class RouteViewModel implements ViewModel {
     }
 
     public void fetchCurrentDescription(int id) {
-        Tour tour = getSingleTour(id);
+        TourModel tour = getSingleTour(id);
         if (tour != null) {
             String currentDescription = "Tourname: " + tour.getTour_name() + "\n" +
                     "Description: " + tour.getDescription() + "\n" +

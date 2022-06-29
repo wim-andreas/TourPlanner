@@ -1,15 +1,15 @@
 package com.wimfra.tourplanner.businesslayer;
 
-import com.wimfra.tourplanner.models.Tour;
+import com.wimfra.tourplanner.models.TourModel;
 
 import java.util.List;
 
 public interface ManageTourService {
-    List<Tour> getTours();
+    List<TourModel> getTours();
 
-    List<Tour> search(String tourname, boolean caseSensitive);
+    List<TourModel> search(String tourname, boolean caseSensitive);
 
-    Tour getSingleTour(int id);
+    TourModel getSingleTour(int id);
 
     void addNewTour(List<String> data);
 

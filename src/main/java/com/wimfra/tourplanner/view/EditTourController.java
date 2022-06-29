@@ -4,7 +4,7 @@ import com.wimfra.tourplanner.logger.ILoggerWrapper;
 import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.mediator.Mediator;
 import com.wimfra.tourplanner.mediator.MediatorFactory;
-import com.wimfra.tourplanner.models.Tour;
+import com.wimfra.tourplanner.models.TourModel;
 import com.wimfra.tourplanner.viewmodel.EditTourViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -65,7 +65,7 @@ public class EditTourController implements Initializable {
         editTourBtn.setOnAction(event -> editTourData());
         closeTourBtn.setOnAction(event -> closeCurrentWindow());
 
-        Tour tour = editTourViewModel.getSingleTour(mediator.getTourID());
+        TourModel tour = editTourViewModel.getSingleTour(mediator.getTourID());
         if (null != tour) {
             loadTourData(tour);
         }
@@ -87,7 +87,7 @@ public class EditTourController implements Initializable {
         closeCurrentWindow();
     }
 
-    public void loadTourData(Tour tour) {
+    public void loadTourData(TourModel tour) {
         nameTextField.setText(tour.getTour_name());
         fromTextField.setText(tour.getFrom_where());
         toTextField.setText(tour.getTo_where());

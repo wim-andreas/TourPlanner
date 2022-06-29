@@ -1,16 +1,16 @@
 package com.wimfra.tourplanner.dataaccesslayer;
 
 import com.wimfra.tourplanner.models.LogModel;
-import com.wimfra.tourplanner.models.Tour;
+import com.wimfra.tourplanner.models.TourModel;
 
 import java.util.List;
 
 public interface DataAccess {
-    List<Tour> getTours();
+    List<TourModel> getTours();
 
-    Tour getSingleTour(int id);
+    TourModel getSingleTour(int id);
 
-    Tour addNewTour(List<String> data);
+    TourModel addNewTour(List<String> data);
 
     boolean deleteTour(int tour_id);
 

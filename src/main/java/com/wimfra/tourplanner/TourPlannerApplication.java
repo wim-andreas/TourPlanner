@@ -2,8 +2,6 @@ package com.wimfra.tourplanner;
 
 import com.wimfra.tourplanner.logger.ILoggerWrapper;
 import com.wimfra.tourplanner.logger.LoggerFactory;
-import com.wimfra.tourplanner.models.Tour;
-import com.wimfra.tourplanner.view.AddLogController;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

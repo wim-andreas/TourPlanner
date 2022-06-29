@@ -16,7 +16,7 @@ import com.wimfra.tourplanner.businesslayer.ManageTourService;
 import com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl;
 import com.wimfra.tourplanner.businesslayer.parsing.ParserService;
 import com.wimfra.tourplanner.businesslayer.parsing.ParserServiceImpl;
-import com.wimfra.tourplanner.models.Tour;
+import com.wimfra.tourplanner.models.TourModel;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -43,7 +43,7 @@ public class iTextPDFReportService implements PDFReportService{
                 report.add(generateTableHeader());
                 final var tourList = tourService.getTours();
                 Table table = setupTableForSummarizeReport();
-                for (Tour tour : tourList) {
+                for (TourModel tour : tourList) {
                     table.addCell(String.valueOf(tour.getTour_name()));
                     table.addCell(getAverageTime(tour));
                     table.addCell(String.valueOf(tour.getDistance()));
@@ -91,7 +91,7 @@ public class iTextPDFReportService implements PDFReportService{
         }
     }
 
-    private String getTourDescription(Tour tour) {
+    private String getTourDescription(TourModel tour) {
         if(tour != null){
             String currentDescription = "Tourname: " + tour.getTour_name() + "\n" +
                     "Description: " + tour.getDescription() + "\n" +
@@ -187,7 +187,7 @@ public class iTextPDFReportService implements PDFReportService{
                 .setFontColor(ColorConstants.GRAY);
     }
 
-    private String getAverageTime(Tour tour) {
+    private String getAverageTime(TourModel tour) {
         String returnValue;
         Double timesAdded = (double) 0;
         final var tourLogs = tourLogService.getAllLogsFromSingleTour(tour.getTour_id());
@@ -206,7 +206,7 @@ public class iTextPDFReportService implements PDFReportService{
         return returnValue;
     }
 
-    private String getAverageRating(Tour tour) {
+    private String getAverageRating(TourModel tour) {
         String returnValue = "";
         final var tourLogs = tourLogService.getAllLogsFromSingleTour(tour.getTour_id());
         Double rating = (double) 0;

@@ -6,8 +6,7 @@ import com.wimfra.tourplanner.businesslayer.ManageTourService;
 import com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl;
 import com.wimfra.tourplanner.logger.ILoggerWrapper;
 import com.wimfra.tourplanner.logger.LoggerFactory;
-import com.wimfra.tourplanner.models.Tour;
-import com.wimfra.tourplanner.view.TourListController;
+import com.wimfra.tourplanner.models.TourModel;
 import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
 import javafx.beans.property.SimpleStringProperty;
@@ -65,7 +64,7 @@ public class EditTourViewModel implements ViewModel {
         return description;
     }
 
-    public Tour getSingleTour(int id) {
+    public TourModel getSingleTour(int id) {
         return tourService.getSingleTour(id);
     }
 

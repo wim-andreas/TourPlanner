@@ -6,8 +6,7 @@ import com.wimfra.tourplanner.businesslayer.ManageTourService;
 import com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl;
 import com.wimfra.tourplanner.logger.ILoggerWrapper;
 import com.wimfra.tourplanner.logger.LoggerFactory;
-import com.wimfra.tourplanner.models.Tour;
-import com.wimfra.tourplanner.view.TourListController;
+import com.wimfra.tourplanner.models.TourModel;
 import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
 import javafx.beans.property.SimpleStringProperty;
@@ -27,7 +26,7 @@ public class TourListViewModel implements ViewModel {
 
     // different properties for bindings
     private final StringProperty currentSearchText = new SimpleStringProperty();
-    private final ObservableList<Tour> tourItems = FXCollections.observableArrayList();
+    private final ObservableList<TourModel> tourItems = FXCollections.observableArrayList();
 
     // getter and setter for the properties
     public StringProperty getCurrentSearchText() {
@@ -39,7 +38,7 @@ public class TourListViewModel implements ViewModel {
         tourItems.setAll(tourService.getTours());
     }
 
-    public ObservableList<Tour> getTourItems() {
+    public ObservableList<TourModel> getTourItems() {
         return tourItems;
     }
 
@@ -48,11 +47,11 @@ public class TourListViewModel implements ViewModel {
     // different actions - communication with business and data access layer
     public void searchAction() {
         tourItems.clear();
-        List<Tour> items = tourService.search(currentSearchText.getValue(), false);
+        List<TourModel> items = tourService.search(currentSearchText.getValue(), false);
         tourItems.setAll(items);
     }
 
-    public Tour getSingleTour(int id) {
+    public TourModel getSingleTour(int id) {
         return tourService.getSingleTour(id);
     }
 

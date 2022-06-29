@@ -4,11 +4,8 @@ import com.wimfra.tourplanner.logger.ILoggerWrapper;
 import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.mediator.Mediator;
 import com.wimfra.tourplanner.mediator.MediatorFactory;
-import com.wimfra.tourplanner.mediator.MediatorImpl;
-import com.wimfra.tourplanner.models.Tour;
+import com.wimfra.tourplanner.models.TourModel;
 import com.wimfra.tourplanner.viewmodel.TourListViewModel;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -24,7 +21,7 @@ public class TourListController implements Initializable {
 
     // references used to Setup data binding
     @FXML
-    public ListView<Tour> tourListView;
+    public ListView<TourModel> tourListView;
     @FXML
     public TextField tourListSearch;
     @FXML
@@ -40,7 +37,7 @@ public class TourListController implements Initializable {
 
     public int tour_id;
 
-    private Tour currentItem;
+    private TourModel currentItem;
 
     public TourListController(TourListViewModel tourListViewModel) {
         this.tourListViewModel = tourListViewModel;
@@ -83,9 +80,9 @@ public class TourListController implements Initializable {
 
     private void FormatCells() {
         //format cells to show name
-        tourListView.setCellFactory((param -> new ListCell<Tour>() {
+        tourListView.setCellFactory((param -> new ListCell<TourModel>() {
             @Override
-            protected void updateItem(Tour item, boolean empty) {
+            protected void updateItem(TourModel item, boolean empty) {
                 super.updateItem(item, empty);
                 if (empty || (item == null) || (item.getTour_name() == null)) {
                     setText(null);
