@@ -7,6 +7,9 @@ module com.wimfra.tourplanner {
     requires kernel;
     requires layout;
     requires io;
+    requires java.net.http;
+    requires com.fasterxml.jackson.databind;
+    requires java.desktop;
 
     opens com.wimfra.tourplanner.models to javafx.fxml;
     opens com.wimfra.tourplanner.view to javafx.fxml;

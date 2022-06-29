@@ -16,4 +16,6 @@ public interface ManageTourService {
     void deleteTour(int tour_id);
 
     void editTourData(List<String> data, int id);
+
+    void createTourImage(String from_where, String to_where, int tour_id);
 }

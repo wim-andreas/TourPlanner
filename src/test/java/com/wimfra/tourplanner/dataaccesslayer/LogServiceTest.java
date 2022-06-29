@@ -1,5 +1,6 @@
 package com.wimfra.tourplanner.dataaccesslayer;
 
+import com.wimfra.tourplanner.configuration.AppConfiguration;
 import com.wimfra.tourplanner.models.LogModel;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -23,7 +24,7 @@ public class LogServiceTest {
 
     @BeforeAll
     public static void setUp() {
-        dbService = new DBService();
+        dbService = DBService.getInstance();
         createLogData();
     }
 

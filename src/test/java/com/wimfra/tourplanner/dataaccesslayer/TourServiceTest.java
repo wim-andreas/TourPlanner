@@ -24,7 +24,7 @@ public class TourServiceTest {
 
     @BeforeAll
     public static void setUp() {
-        dbService = new DBService();
+        dbService = DBService.getInstance();
         createTourData();
     }
 

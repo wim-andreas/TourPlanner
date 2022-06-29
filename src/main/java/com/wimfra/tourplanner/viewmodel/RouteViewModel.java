@@ -65,4 +65,8 @@ public class RouteViewModel implements ViewModel {
     public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
     }
+
+    public void createTourImage(String from_where, String to_where, int tour_id) {
+        tourService.createTourImage(from_where, to_where, tour_id);
+    }
 }

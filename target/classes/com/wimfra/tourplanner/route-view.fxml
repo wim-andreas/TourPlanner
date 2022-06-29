@@ -10,13 +10,13 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
-<TabPane fx:id="tabPane" prefHeight="200.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wimfra.tourplanner.view.RouteController">
+<TabPane fx:id="tabPane" prefHeight="300.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wimfra.tourplanner.view.RouteController">
     <tabs>
         <Tab closable="false" text="Route">
             <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: #C8C8C8; -fx-background-color: #fff;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="220.0" prefWidth="500.0" style="-fx-border-color: #C8C8C8; -fx-background-color: #fff;">
                     <children>
-                        <ImageView fx:id="currentTourImage" fitHeight="150.0" fitWidth="200.0" layoutX="-15.0" layoutY="-23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <ImageView fx:id="currentTourImage" fitHeight="290.0" fitWidth="500.0" layoutX="-15.0" layoutY="-23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                     </children></AnchorPane>
             </content>
         </Tab>
