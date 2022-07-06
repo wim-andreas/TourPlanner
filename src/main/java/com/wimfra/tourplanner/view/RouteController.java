@@ -48,51 +48,22 @@ public class RouteController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //creating the bidirectional databinding for the objects
         description.textProperty().bindBidirectional(routeViewModel.getDescriptionProperty());
-        dbService = DBService.getInstance();
+        currentTourImage.imageProperty().bindBidirectional(routeViewModel.getImageProperty());
 
 
         // setting events on the tab-pane
         tabPane.setOnMouseClicked(event -> loadDescription());
-        tabPane.setOnMouseClicked(event ->
-
-
-                createImage());
-
-
+       tabPane.setOnMouseClicked(event -> loadImage());
     }
-
-    private void createImage() {
-        int cur_id = mediator.getTourID();
-        TourModel tour = dbService.getSingleTour(cur_id);
-        File dir = new File("./src/main/resources/images/");
-
-        FilenameFilter filter = new FilenameFilter() {
-            public boolean accept(File dir, String name) {
-                return name.equals(cur_id + ".jpg");
-            }
-        };
-        String[] files = dir.list(filter);
-        if (files == null) {
-            System.out.println("Either dir does not exist or is not a directory");
-        } else {
-            if (files.length == 0) {
-                System.out.println("File not found");
-                routeViewModel.createTourImage(tour.getFrom_where(), tour.getTo_where(), cur_id);
-            }
-
-        }
-        loadImage();
-    }
-
 
     private void loadDescription() {
         routeViewModel.fetchCurrentDescription(mediator.getTourID());
     }
 
     public void loadImage()  {
-        int cur_id = mediator.getTourID();
-        Image image =  new Image(getClass().getResourceAsStream("/images/" +cur_id + ".jpg"));
-        currentTourImage.setImage(image);
+        routeViewModel.updateFromDB();
+       routeViewModel.fetchImage(mediator.getTourID());
+
     }
 
 }

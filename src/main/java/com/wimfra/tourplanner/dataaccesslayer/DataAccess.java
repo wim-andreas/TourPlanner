@@ -10,7 +10,7 @@ public interface DataAccess {
 
     TourModel getSingleTour(int id);
 
-    TourModel addNewTour(List<String> data);
+    int addNewTour(List<String> data);
 
     boolean deleteTour(int tour_id);
 
@@ -22,9 +22,12 @@ public interface DataAccess {
 
     boolean deleteLog(int logID);
 
+    boolean deleteLogAfterTourDelete(int tourID);
+
     List<String> getSingleLog(int tourID);
 
     boolean editLogData(List<String> data, int logID);
 
     List<LogModel> getAllLogsFromSingleTour(int tourID);
+
 }

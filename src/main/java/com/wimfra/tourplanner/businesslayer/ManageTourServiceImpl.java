@@ -4,9 +4,7 @@ import com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI;
 import com.wimfra.tourplanner.dataaccesslayer.TourDAO;
 import com.wimfra.tourplanner.models.TourModel;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -46,8 +44,8 @@ public class ManageTourServiceImpl implements ManageTourService {
     }
 
     @Override
-    public void addNewTour(List<String> data) {
-        tourDAO.AddNewTour(data);
+    public int addNewTour(List<String> data) {
+       return tourDAO.AddNewTour(data);
     }
 
     @Override
@@ -61,25 +59,48 @@ public class ManageTourServiceImpl implements ManageTourService {
     }
 
     @Override
-    public void createTourImage(String from_where, String to_where, int tour_id) {
-        byte[] image = MapQuestAPI.getStaticMap(from_where, to_where);
-        FileOutputStream fos = null;
-        try {
-            fos = new FileOutputStream("./src/main/resources/images/" +tour_id + ".jpg");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        try {
-            fos.write(image);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                fos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+    public void createImage(int id) {
+        TourModel tour = tourDAO.GetSingleTour(id);
+        File dir = new File("./src/main/resources/images/");
+        FilenameFilter filter = new FilenameFilter() {
+            public boolean accept(File dir, String name) {
+                return name.equals(id + ".jpg");
+            }
+        };
+        String[] files = dir.list(filter);
+        if (files == null) {
+            System.out.println("Either dir does not exist or is not a directory");
+        } else {
+            if (files.length == 0) {
+                byte[] image = MapQuestAPI.getStaticMap(tour.getFrom_where(), tour.getTo_where());
+                FileOutputStream fos = null;
+                try {
+                    fos = new FileOutputStream("./src/main/resources/images/" + id + ".jpg");
+                    System.out.print("Tour erstellt");
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    assert fos != null;
+                    assert image != null;
+                    fos.write(image);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        assert fos != null;
+                        fos.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
             }
         }
+
+
     }
+
+
 
 }
