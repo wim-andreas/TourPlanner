@@ -3,9 +3,9 @@ package com.wimfra.tourplanner.businesslayer;
 public interface JavaAppManager {
     void addTourWindow();
 
-    void editTourWindow();
+    void editTourWindow(int tourID);
 
-    void addLogWindow();
+    void addLogWindow(int tourID);
 
-    void editLogWindow();
+    void editLogWindow(int logID);
 }

@@ -3,6 +3,7 @@ package com.wimfra.tourplanner.dataaccesslayer;
 import com.wimfra.tourplanner.models.TourModel;
 
 import java.util.List;
+import java.util.Optional;
 
 public class TourDAO {
     private DataAccess databaseAccess;

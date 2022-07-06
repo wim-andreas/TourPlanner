@@ -7,9 +7,7 @@ import lombok.Setter;
 @Builder
 public class TourModel {
 
-    public TourModel(String tour_name) {
-        this.tour_name = tour_name;
-    }
+
 
     public TourModel(int tour_id, String tour_name, String description, String from_where, String to_where, String transportation, String distance, String duration, String route_info) {
         this.tour_id = tour_id;

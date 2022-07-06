@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -55,7 +54,7 @@
                                 <Insets bottom="5.0" />
                             </VBox.margin>
                         </ChoiceBox>
-                        <Text layoutX="20.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Time">
+                        <Text layoutX="20.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Time (min)">
                             <VBox.margin>
                                 <Insets bottom="5.0" />
                             </VBox.margin>

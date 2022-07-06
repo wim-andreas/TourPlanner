@@ -51,7 +51,7 @@
                                 <Insets bottom="15.0" />
                             </VBox.margin>
                         </TextField>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Duration">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Duration (min)">
                             <VBox.margin>
                                 <Insets bottom="5.0" />
                             </VBox.margin>
@@ -61,7 +61,7 @@
                                 <Insets bottom="15.0" />
                             </VBox.margin>
                         </TextField>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Distance">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Distance (km)">
                             <VBox.margin>
                                 <Insets bottom="5.0" />
                             </VBox.margin>

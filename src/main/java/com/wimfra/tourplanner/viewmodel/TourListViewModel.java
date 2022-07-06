@@ -59,8 +59,8 @@ public class TourListViewModel implements ViewModel {
         appManager.addTourWindow();
     }
 
-    public void editTourWindow() {
-        appManager.editTourWindow();
+    public void editTourWindow(int tourID) {
+        appManager.editTourWindow(tourID);
     }
 
     public void deleteTour(int tour_id) {

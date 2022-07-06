@@ -87,7 +87,7 @@ public class LogViewController implements Initializable {
 
     private void editLogWindow() {
         setUpLogView();
-        appManager.editLogWindow();
+        appManager.editLogWindow(this.mediator.getLogID());
         setUpLogView();
     }
 
@@ -109,7 +109,7 @@ public class LogViewController implements Initializable {
     }
 
     private void addLogWindow() {
-        appManager.addLogWindow();
+        appManager.addLogWindow(this.mediator.getTourID());
     }
 
     public void searchAction() {

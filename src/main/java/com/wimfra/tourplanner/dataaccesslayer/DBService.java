@@ -271,7 +271,7 @@ public class DBService implements DataAccess {
     public List<String> getSingleLog(int logID) {
         try {
             Connection connection = DBService.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT date_, time_, difficulty, rating, comment_,  total_time FROM logs where log_id = ?;");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT date_, time_, difficulty, rating, comment_,  total_time, tour_id FROM logs where log_id = ?;");
             preparedStatement.setInt(1, logID);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -283,6 +283,7 @@ public class DBService implements DataAccess {
                 data.add(3, String.valueOf(resultSet.getInt(4)));
                 data.add(4, resultSet.getString(5));
                 data.add(5, resultSet.getString(6));
+                data.add(6, resultSet.getString(7));
                 resultSet.close();
                 preparedStatement.close();
                 connection.close();

@@ -114,7 +114,7 @@ public class TourListController implements Initializable {
     }
 
     public void editTourWindow() {
-        tourListViewModel.editTourWindow();
+        tourListViewModel.editTourWindow(mediator.getTourID());
     }
 
     public void deleteTour() {

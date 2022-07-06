@@ -4,35 +4,39 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 public class AppConfigurationTest {
 
     private static AppConfiguration appConfiguration;
 
     @BeforeAll
-    public static void setUp(){
+    public static void setUp() {
         appConfiguration = AppConfigurationLoader.getInstance().getAppConfiguration();
     }
 
     @Test
-    public void getMapKeyTest(){
+    public void getMapKeyTest() {
         assertEquals("QX46KJZxJ9svMGvYSVPiCop9EHGTjUIc", appConfiguration.getMapquestKey());
     }
 
     @Test
-    public void getURLTest(){
+    public void getURLTest() {
         assertEquals("jdbc:postgresql://localhost:5432/postgres", appConfiguration.getDbUrl());
     }
 
     @Test
-    public void getUsernameTest(){
+    public void getUsernameTest() {
         assertEquals("swe2user", appConfiguration.getDbUsername());
     }
 
     @Test
-    public void getPasswordTest(){
+    public void getPasswordTest() {
         assertEquals("swe2pw", appConfiguration.getDbPassword());
     }
 
- 
+    @Test
+    void getInstanceTest() {
+        assertSame(AppConfigurationLoader.getInstance(), AppConfigurationLoader.getInstance());
+    }
 }
