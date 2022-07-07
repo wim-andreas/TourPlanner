@@ -61,7 +61,7 @@ public class RouteController implements Initializable {
     }
 
     public void loadImage()  {
-        routeViewModel.updateFromDB();
+      //routeViewModel.updateFromDB();
        routeViewModel.fetchImage(mediator.getTourID());
 
     }

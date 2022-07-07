@@ -61,7 +61,6 @@ public class RouteViewModel implements ViewModel {
 
     public void fetchImage(int id) {
             Image image =  new Image((getClass().getResourceAsStream("/images/" + id + ".jpg")));
-
             imageProperty.setValue(image);
 
         return;
