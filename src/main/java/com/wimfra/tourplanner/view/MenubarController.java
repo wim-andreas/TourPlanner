@@ -43,9 +43,11 @@ public class MenubarController implements Initializable {
 
     //TODO: write those functions to create functionality of the toolbar!
     private void importItem() {
+        menubarViewModel.importTourItem();
     }
 
     private void exportItem() {
+        menubarViewModel.exportTourItem(mediator.getTourID());
     }
 
     private void generateSummarizeReport() {

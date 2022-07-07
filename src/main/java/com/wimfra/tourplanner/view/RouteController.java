@@ -16,9 +16,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.scene.image.Image;
 
-
-
-import java.awt.*;
 import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -53,12 +50,7 @@ public class RouteController implements Initializable {
 
         // setting events on the tab-pane
         tabPane.setOnMouseClicked(event -> loadDescription());
-        tabPane.setOnMouseClicked(event ->
-
-
-                createImage());
-
-
+        tabPane.setOnMouseClicked(event -> createImage());
     }
 
     private void createImage() {
@@ -91,7 +83,7 @@ public class RouteController implements Initializable {
 
     public void loadImage()  {
         int cur_id = mediator.getTourID();
-        Image image =  new Image(getClass().getResourceAsStream("/images/" +cur_id + ".jpg"));
+        Image image =  new Image(getClass().getResourceAsStream("/images/" + cur_id + ".jpg"));
         currentTourImage.setImage(image);
     }
 

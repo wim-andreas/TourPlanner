@@ -1,5 +1,9 @@
 package com.wimfra.tourplanner.viewmodel;
 
+import com.wimfra.tourplanner.businesslayer.file.CSVFileExport;
+import com.wimfra.tourplanner.businesslayer.file.CSVFileImport;
+import com.wimfra.tourplanner.businesslayer.file.FileExportService;
+import com.wimfra.tourplanner.businesslayer.file.FileImportService;
 import com.wimfra.tourplanner.businesslayer.pdfreport.PDFReportService;
 import com.wimfra.tourplanner.businesslayer.pdfreport.iTextPDFReportService;
 import com.wimfra.tourplanner.logger.ILoggerWrapper;
@@ -10,6 +14,8 @@ import lombok.extern.log4j.Log4j2;
 
 public class MenubarViewModel implements ViewModel {
     // gets the connection to the business layer
+    private static final FileExportService csvFileExport = new CSVFileExport();
+    private static final FileImportService csvFileImport = new CSVFileImport();
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(MenubarViewModel.class);
     private PDFReportService pdfReportService = new iTextPDFReportService();
     private Publisher publisher;
@@ -36,4 +42,12 @@ public class MenubarViewModel implements ViewModel {
         this.publisher = publisher;
     }
 
+    public void importTourItem() {
+        csvFileImport.importOneTour();
+        publisher.notifySubs();
+    }
+
+    public void exportTourItem(int tourID) {
+        csvFileExport.exportOneTour(tourID);
+    }
 }
