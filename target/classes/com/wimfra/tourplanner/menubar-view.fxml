@@ -21,14 +21,9 @@
                 <MenuItem mnemonicParsing="false" text="Generate Tour Report.." fx:id="tour_report_item"/>
             </items>
         </Menu>
-        <Menu mnemonicParsing="false" text="Edit">
+        <Menu mnemonicParsing="false" text="About">
             <items>
-                <MenuItem mnemonicParsing="false" text="Delete" fx:id="delete_item"/>
-            </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-            <items>
-                <MenuItem mnemonicParsing="false" text="About" fx:id="about_item"/>
+                <MenuItem mnemonicParsing="false" text="Click me" fx:id="click_me_item"/>
             </items>
         </Menu>
     </menus>

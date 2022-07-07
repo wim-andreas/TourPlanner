@@ -8,4 +8,6 @@ public interface JavaAppManager {
     void addLogWindow(int tourID);
 
     void editLogWindow(int logID);
+
+    void clickMeWindow();
 }

@@ -1,5 +1,7 @@
 package com.wimfra.tourplanner.viewmodel;
 
+import com.wimfra.tourplanner.businesslayer.JavaAppManager;
+import com.wimfra.tourplanner.businesslayer.JavaAppManagerImpl;
 import com.wimfra.tourplanner.businesslayer.pdfreport.PDFReportService;
 import com.wimfra.tourplanner.businesslayer.pdfreport.iTextPDFReportService;
 import com.wimfra.tourplanner.logger.ILoggerWrapper;
@@ -13,6 +15,7 @@ public class MenubarViewModel implements ViewModel {
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(MenubarViewModel.class);
     private PDFReportService pdfReportService = new iTextPDFReportService();
     private Publisher publisher;
+    private final JavaAppManager appManager = new JavaAppManagerImpl();
 
     public void generateSummarizeReport() {
         pdfReportService.generateSummarizeReport();
@@ -36,4 +39,7 @@ public class MenubarViewModel implements ViewModel {
         this.publisher = publisher;
     }
 
+    public void clickMeWindow() {
+        appManager.clickMeWindow();
+    }
 }

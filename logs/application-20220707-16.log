@@ -1,0 +1,28 @@
+2022-07-07 16:20:58.182 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-07 16:20:58.280 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-07 16:20:58.334 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-07 16:21:01.184 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-07 16:29:19.679 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-07 16:29:19.804 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-07 16:29:19.884 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-07 16:29:23.129 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-07 16:33:32.066 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-07 16:33:32.192 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-07 16:33:32.256 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-07 16:33:34.686 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-07 16:44:05.298 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-07 16:44:05.400 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-07 16:44:05.460 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-07 16:44:07.984 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-07 16:53:31.741 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-07 16:53:31.860 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-07 16:53:31.914 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-07 16:53:34.437 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-07 16:55:54.644 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-07 16:55:54.740 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-07 16:55:54.783 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-07 16:55:57.619 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-07 16:59:29.596 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-07 16:59:29.701 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-07 16:59:29.754 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-07 16:59:32.580 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!

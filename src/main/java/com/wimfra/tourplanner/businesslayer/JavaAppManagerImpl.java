@@ -84,5 +84,20 @@ public class JavaAppManagerImpl implements JavaAppManager {
         stage.show();
     }
 
+    @Override
+    public void clickMeWindow() {
+        Scene scene = null;
+        Stage stage = new Stage();
+        try {
+            scene = new Scene(FXMLDependencyInjection.load("click-me.fxml", Locale.GERMAN));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.setTitle("Secret Feature༼ つ ◕_◕ ༽つ");
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.show();
+    }
+
 
 }

@@ -27,9 +27,7 @@ public class MenubarController implements Initializable {
     @FXML
     public MenuItem tour_report_item;
     @FXML
-    public MenuItem delete_item;
-    @FXML
-    public MenuItem about_item;
+    public MenuItem click_me_item;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -37,8 +35,7 @@ public class MenubarController implements Initializable {
         export_item.setOnAction(actionEvent -> exportItem());
         summarize_report_item.setOnAction(actionEvent -> generateSummarizeReport());
         tour_report_item.setOnAction(actionEvent -> generateTourReport());
-        delete_item.setOnAction(actionEvent -> deleteItem());
-        about_item.setOnAction(actionEvent -> aboutItem());
+        click_me_item.setOnAction(actionEvent -> clickMeItem());
     }
 
     //TODO: write those functions to create functionality of the toolbar!
@@ -57,10 +54,8 @@ public class MenubarController implements Initializable {
         menubarViewModel.generateTourReport(mediator.getTourID());
     }
 
-    private void deleteItem() {
-    }
-
-    private void aboutItem() {
+    private void clickMeItem() {
+        menubarViewModel.clickMeWindow();
     }
 
     public MenubarController(MenubarViewModel menubarViewModel) {

@@ -166,3 +166,731 @@
   "threadId" : 18,
   "threadPriority" : 5
 }
+{
+  "instant" : {
+    "epochSecond" : 1657203658,
+    "nanoOfSecond" : 182789900
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Program is starting",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657203658,
+    "nanoOfSecond" : 280787300
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading stage...",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657203658,
+    "nanoOfSecond" : 334787700
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.configuration.PropertyConfigurationReader",
+  "message" : "Reading properties from file",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657203661,
+    "nanoOfSecond" : 184162600
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading completed!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657204159,
+    "nanoOfSecond" : 679952500
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Program is starting",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657204159,
+    "nanoOfSecond" : 804953300
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading stage...",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657204159,
+    "nanoOfSecond" : 884955300
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.configuration.PropertyConfigurationReader",
+  "message" : "Reading properties from file",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657204163,
+    "nanoOfSecond" : 129832200
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading completed!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657204412,
+    "nanoOfSecond" : 66485300
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Program is starting",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657204412,
+    "nanoOfSecond" : 192485600
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading stage...",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657204412,
+    "nanoOfSecond" : 256479600
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.configuration.PropertyConfigurationReader",
+  "message" : "Reading properties from file",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657204414,
+    "nanoOfSecond" : 686374000
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading completed!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205045,
+    "nanoOfSecond" : 298309900
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Program is starting",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205045,
+    "nanoOfSecond" : 400313200
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading stage...",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205045,
+    "nanoOfSecond" : 460302200
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.configuration.PropertyConfigurationReader",
+  "message" : "Reading properties from file",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205047,
+    "nanoOfSecond" : 984222300
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading completed!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205611,
+    "nanoOfSecond" : 741068700
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Program is starting",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205611,
+    "nanoOfSecond" : 860063400
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading stage...",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205611,
+    "nanoOfSecond" : 914053700
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.configuration.PropertyConfigurationReader",
+  "message" : "Reading properties from file",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205614,
+    "nanoOfSecond" : 437837400
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading completed!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205754,
+    "nanoOfSecond" : 644505500
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Program is starting",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205754,
+    "nanoOfSecond" : 740508500
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading stage...",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205754,
+    "nanoOfSecond" : 783504400
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.configuration.PropertyConfigurationReader",
+  "message" : "Reading properties from file",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205757,
+    "nanoOfSecond" : 619252200
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading completed!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205969,
+    "nanoOfSecond" : 596006300
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Program is starting",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205969,
+    "nanoOfSecond" : 701021600
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading stage...",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205969,
+    "nanoOfSecond" : 754004800
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.configuration.PropertyConfigurationReader",
+  "message" : "Reading properties from file",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657205972,
+    "nanoOfSecond" : 580636500
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading completed!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206159,
+    "nanoOfSecond" : 478466800
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Program is starting",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206159,
+    "nanoOfSecond" : 627479100
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading stage...",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206159,
+    "nanoOfSecond" : 714467600
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.configuration.PropertyConfigurationReader",
+  "message" : "Reading properties from file",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206163,
+    "nanoOfSecond" : 374149300
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading completed!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206260,
+    "nanoOfSecond" : 881308600
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Program is starting",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206260,
+    "nanoOfSecond" : 992311000
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading stage...",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206261,
+    "nanoOfSecond" : 44315300
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.configuration.PropertyConfigurationReader",
+  "message" : "Reading properties from file",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206263,
+    "nanoOfSecond" : 877424000
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading completed!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206371,
+    "nanoOfSecond" : 367134900
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Program is starting",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206371,
+    "nanoOfSecond" : 519137300
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading stage...",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206371,
+    "nanoOfSecond" : 583138400
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.configuration.PropertyConfigurationReader",
+  "message" : "Reading properties from file",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206374,
+    "nanoOfSecond" : 349837800
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading completed!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206522,
+    "nanoOfSecond" : 808741500
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Program is starting",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206523,
+    "nanoOfSecond" : 39283900
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading stage...",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206523,
+    "nanoOfSecond" : 107269200
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.configuration.PropertyConfigurationReader",
+  "message" : "Reading properties from file",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206526,
+    "nanoOfSecond" : 454425000
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading completed!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206538,
+    "nanoOfSecond" : 808997800
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Program is starting",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206539,
+    "nanoOfSecond" : 12549500
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading stage...",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206539,
+    "nanoOfSecond" : 60538700
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.configuration.PropertyConfigurationReader",
+  "message" : "Reading properties from file",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206541,
+    "nanoOfSecond" : 712835300
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading completed!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206614,
+    "nanoOfSecond" : 455705600
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Program is starting",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206614,
+    "nanoOfSecond" : 564713000
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading stage...",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206614,
+    "nanoOfSecond" : 615708200
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.configuration.PropertyConfigurationReader",
+  "message" : "Reading properties from file",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1657206617,
+    "nanoOfSecond" : 349421900
+  },
+  "thread" : "JavaFX Application Thread",
+  "level" : "DEBUG",
+  "loggerName" : "com.wimfra.tourplanner.TourPlannerApplication",
+  "message" : "Loading completed!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 18,
+  "threadPriority" : 5
+}

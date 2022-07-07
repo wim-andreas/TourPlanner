@@ -22,6 +22,8 @@ public class MainWindowController implements Initializable {
     private RouteController routeController;
     @FXML
     private TourListController tourListController;
+    @FXML
+    private ClickMeController clickMeController;
 
     private final MainWindowViewModel mainWindowViewModel;
 

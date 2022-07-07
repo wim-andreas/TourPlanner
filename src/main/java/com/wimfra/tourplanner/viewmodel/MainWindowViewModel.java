@@ -16,11 +16,12 @@ public class MainWindowViewModel implements ViewModel {
     private LogViewModel logViewModel;
     private EditLogViewModel editLogViewModel;
     private MenubarViewModel menubarViewModel;
+    private ClickMeViewModel clickMeViewModel;
     private final Publisher observable;
     private JavaAppManager appManager = JavaAppManagerFactory.GetManager();
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(MainWindowViewModel.class);
 
-    public MainWindowViewModel(AddTourViewModel addTourViewModel, TourListViewModel tourListViewModel, EditTourViewModel editTourViewModel, AddLogViewModel addLogViewModel, RouteViewModel routeViewModel, LogViewModel logViewModel, EditLogViewModel editLogViewModel, MenubarViewModel menubarViewModel) {
+    public MainWindowViewModel(AddTourViewModel addTourViewModel, TourListViewModel tourListViewModel, EditTourViewModel editTourViewModel, AddLogViewModel addLogViewModel, RouteViewModel routeViewModel, LogViewModel logViewModel, EditLogViewModel editLogViewModel, MenubarViewModel menubarViewModel, ClickMeViewModel clickMeViewModel) {
         observable = new Publisher();
         this.addTourViewModel = addTourViewModel;
         this.tourListViewModel = tourListViewModel;
@@ -30,6 +31,7 @@ public class MainWindowViewModel implements ViewModel {
         this.logViewModel = logViewModel;
         this.editLogViewModel = editLogViewModel;
         this.menubarViewModel = menubarViewModel;
+        this.clickMeViewModel = clickMeViewModel;
         addObservableToViewModels();
         subscribeToObservable();
     }
