@@ -68,7 +68,7 @@ public class AddTourViewModel implements ViewModel {
         return description;
     }
 
-    public void addNewTour() {
+    public int addNewTour() {
         List<String> data = new ArrayList();
         data.add(0, nameProperty().get());
         data.add(1, descriptionProperty().get());
@@ -78,8 +78,9 @@ public class AddTourViewModel implements ViewModel {
         data.add(5, distanceProperty().get());
         data.add(6, durationProperty().get());
         data.add(7, infoProperty().get());
-        tourService.addNewTour(data);
+       int id =  tourService.addNewTour(data);
         publisher.notifySubs();
+        return id;
     }
 
     // Observer pattern methods
@@ -94,5 +95,9 @@ public class AddTourViewModel implements ViewModel {
 
     public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
+    }
+
+    public void createImage(int id) {
+        tourService.createImage(id);
     }
 }

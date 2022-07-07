@@ -2,6 +2,7 @@ package com.wimfra.tourplanner.view;
 
 import com.wimfra.tourplanner.logger.ILoggerWrapper;
 import com.wimfra.tourplanner.logger.LoggerFactory;
+import com.wimfra.tourplanner.models.TourModel;
 import com.wimfra.tourplanner.viewmodel.AddLogViewModel;
 import com.wimfra.tourplanner.viewmodel.AddTourViewModel;
 
@@ -13,6 +14,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FilenameFilter;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +69,8 @@ public class AddTourController implements Initializable {
     }
 
     public void addNewTour() {
-        addTourViewModel.addNewTour();
+        int id = addTourViewModel.addNewTour();
+        createImage(id);
         closeCurrentWindow();
     }
 
@@ -85,5 +89,9 @@ public class AddTourController implements Initializable {
         distanceTextField.clear();
         durationTextField.clear();
         infoTextField.clear();
+    }
+
+    private void createImage(int id) {
+        addTourViewModel.createImage(id);
     }
 }

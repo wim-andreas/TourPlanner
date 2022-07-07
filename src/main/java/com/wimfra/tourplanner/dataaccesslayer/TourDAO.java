@@ -3,7 +3,6 @@ package com.wimfra.tourplanner.dataaccesslayer;
 import com.wimfra.tourplanner.models.TourModel;
 
 import java.util.List;
-import java.util.Optional;
 
 public class TourDAO {
     private DataAccess databaseAccess;
@@ -20,8 +19,9 @@ public class TourDAO {
         return databaseAccess.getSingleTour(id);
     }
 
-    public void AddNewTour(List<String> data) {
-        databaseAccess.addNewTour(data);
+    public int AddNewTour(List<String> data) {
+        return databaseAccess.addNewTour(data);
+
     }
 
     public void DeleteTour(int tour_id) {
@@ -31,4 +31,6 @@ public class TourDAO {
     public void EditTourData(List<String> data, int id) {
         databaseAccess.editTourData(data, id);
     }
+
+
 }

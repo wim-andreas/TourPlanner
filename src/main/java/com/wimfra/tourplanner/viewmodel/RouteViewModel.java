@@ -11,8 +11,10 @@ import com.wimfra.tourplanner.mediator.MediatorFactory;
 import com.wimfra.tourplanner.models.TourModel;
 import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
+import javafx.scene.image.Image;
+
+import java.util.Objects;
 
 public class RouteViewModel implements ViewModel {
     // gets the connection to the business layer
@@ -24,6 +26,7 @@ public class RouteViewModel implements ViewModel {
 
     // different properties for bindings
     public final StringProperty description = new SimpleStringProperty();
+    public final ObjectProperty<Image> imageProperty = new SimpleObjectProperty<>();
 
     // different actions - communication with business and data access layer
     public TourModel getSingleTour(int id) {
@@ -33,6 +36,10 @@ public class RouteViewModel implements ViewModel {
     // different getters and setters
     public StringProperty getDescriptionProperty(){
         return this.description;
+    }
+
+    public  ObjectProperty<Image> getImageProperty() {
+        return this.imageProperty;
     }
 
     public void fetchCurrentDescription(int id) {
@@ -52,10 +59,20 @@ public class RouteViewModel implements ViewModel {
         return;
     }
 
+    public void fetchImage(int id) {
+            Image image =  new Image((getClass().getResourceAsStream("/images/" + id + ".jpg")));
+            imageProperty.setValue(image);
+
+        return;
+    }
+
+
+
     // Observer pattern methods
     @Override
     public void updateFromDB() {
         fetchCurrentDescription(mediator.getTourID());
+        fetchImage(mediator.getTourID());
     }
 
     public Publisher getPublisher() {
@@ -66,7 +83,6 @@ public class RouteViewModel implements ViewModel {
         this.publisher = publisher;
     }
 
-    public void createTourImage(String from_where, String to_where, int tour_id) {
-        tourService.createTourImage(from_where, to_where, tour_id);
-    }
+
+
 }
