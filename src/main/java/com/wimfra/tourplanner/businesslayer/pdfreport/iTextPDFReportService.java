@@ -112,7 +112,7 @@ public class iTextPDFReportService implements PDFReportService{
             PdfWriter pdfWriter = new PdfWriter(pdf_target);
             PdfDocument pdf = new PdfDocument(pdfWriter);
             Document document = new Document(pdf);
-            generateReportHeader(document);
+          generateReportHeader(document);
             return document;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -121,9 +121,9 @@ public class iTextPDFReportService implements PDFReportService{
     }
 
     private void generateReportHeader(Document document){
-        ImageData imageData = null;
+        ImageData imageData = null; //https://htw.wien/wp-content/uploads/2018/06/fhtw-logo.png
         try {
-            imageData = ImageDataFactory.create(new URL("https://www.technikum-wien.at/sites/default/files/logo-300x160.png"));
+            imageData = ImageDataFactory.create(new URL("https://upload.wikimedia.org/wikipedia/commons/d/db/Logo_FH_Technikum_Wien.jpg"));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -135,7 +135,7 @@ public class iTextPDFReportService implements PDFReportService{
         table.setFontSize(14).setBackgroundColor(ColorConstants.WHITE);
         table.addHeaderCell(getHeaderCell("Name"));
         table.addHeaderCell(getHeaderCell("Average Time"));
-        table.addHeaderCell(getHeaderCell("Distance"));
+        table.addHeaderCell(getHeaderCell("Distance(km)"));
         table.addHeaderCell(getHeaderCell("Rating"));
         return table;
     }

@@ -33,10 +33,6 @@ public class EditTourController implements Initializable {
     @FXML
     public TextField transportationTextField;
     @FXML
-    public TextField durationTextField;
-    @FXML
-    public TextField distanceTextField;
-    @FXML
     public TextField infoTextField;
     @FXML
     public TextArea descriptionTextArea;
@@ -56,8 +52,6 @@ public class EditTourController implements Initializable {
         fromTextField.textProperty().bindBidirectional(editTourViewModel.fromProperty());
         toTextField.textProperty().bindBidirectional(editTourViewModel.toProperty());
         transportationTextField.textProperty().bindBidirectional(editTourViewModel.transportationProperty());
-        durationTextField.textProperty().bindBidirectional(editTourViewModel.durationProperty());
-        distanceTextField.textProperty().bindBidirectional(editTourViewModel.distanceProperty());
         infoTextField.textProperty().bindBidirectional(editTourViewModel.infoProperty());
         descriptionTextArea.textProperty().bindBidirectional(editTourViewModel.descriptionProperty());
         descriptionTextArea.setWrapText(true);
@@ -79,9 +73,7 @@ public class EditTourController implements Initializable {
         data.add(2, fromTextField.getText());
         data.add(3, toTextField.getText());
         data.add(4, transportationTextField.getText());
-        data.add(5, distanceTextField.getText());
-        data.add(6, durationTextField.getText());
-        data.add(7, infoTextField.getText());
+        data.add(5, infoTextField.getText());
 
         editTourViewModel.editTourData(data, mediator.getTourID());
         closeCurrentWindow();
@@ -92,8 +84,6 @@ public class EditTourController implements Initializable {
         fromTextField.setText(tour.getFrom_where());
         toTextField.setText(tour.getTo_where());
         transportationTextField.setText(tour.getTransportation());
-        durationTextField.setText(tour.getDuration());
-        distanceTextField.setText(tour.getDistance());
         infoTextField.setText(tour.getRoute_info());
         descriptionTextArea.setText(tour.getDescription());
     }
@@ -104,8 +94,6 @@ public class EditTourController implements Initializable {
         fromTextField.clear();
         toTextField.clear();
         transportationTextField.clear();
-        distanceTextField.clear();
-        durationTextField.clear();
         infoTextField.clear();
     }
 

@@ -44,6 +44,9 @@ public class MapQuestAPI {
                 // Distance
                 directions.put("distance", obj.get("route").get("distance").floatValue());
 
+                //Time
+                directions.put("time", obj.get("route").get("time").doubleValue());
+
                 // Session
                 directions.put("session", obj.get("route").get("sessionId").textValue());
 
@@ -66,7 +69,7 @@ public class MapQuestAPI {
                 assert directions != null;
                 String params = "?key=" + appConfiguration.getMapquestKey()
                         + "&size=640,480"
-                        + "&defaultMarker=none"
+                        + "&defaultMarker=marker-sm"
                         + "&session=" + directions.get("session")
                         + "&boundingBox=" + directions.get("boundingBox")
                         + "&to=" + to;

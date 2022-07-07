@@ -26,8 +26,6 @@ public class EditTourViewModel implements ViewModel {
     private final StringProperty from = new SimpleStringProperty();
     private final StringProperty to = new SimpleStringProperty();
     private final StringProperty transportation = new SimpleStringProperty();
-    private final StringProperty duration = new SimpleStringProperty();
-    private final StringProperty distance = new SimpleStringProperty();
     private final StringProperty info = new SimpleStringProperty();
     private final StringProperty description = new SimpleStringProperty();
 
@@ -46,14 +44,6 @@ public class EditTourViewModel implements ViewModel {
 
     public StringProperty transportationProperty() {
         return transportation;
-    }
-
-    public StringProperty durationProperty() {
-        return duration;
-    }
-
-    public StringProperty distanceProperty() {
-        return distance;
     }
 
     public StringProperty infoProperty() {

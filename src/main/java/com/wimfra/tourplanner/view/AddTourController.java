@@ -38,10 +38,7 @@ public class AddTourController implements Initializable {
     public TextField toTextField;
     @FXML
     public TextField transportationTextField;
-    @FXML
-    public TextField durationTextField;
-    @FXML
-    public TextField distanceTextField;
+
     @FXML
     public TextField infoTextField;
     @FXML
@@ -59,8 +56,6 @@ public class AddTourController implements Initializable {
         fromTextField.textProperty().bindBidirectional(addTourViewModel.fromProperty());
         toTextField.textProperty().bindBidirectional(addTourViewModel.toProperty());
         transportationTextField.textProperty().bindBidirectional(addTourViewModel.transportationProperty());
-        durationTextField.textProperty().bindBidirectional(addTourViewModel.durationProperty());
-        distanceTextField.textProperty().bindBidirectional(addTourViewModel.distanceProperty());
         infoTextField.textProperty().bindBidirectional(addTourViewModel.infoProperty());
         descriptionTextArea.textProperty().bindBidirectional(addTourViewModel.descriptionProperty());
         descriptionTextArea.setWrapText(true);
@@ -86,8 +81,6 @@ public class AddTourController implements Initializable {
         fromTextField.clear();
         toTextField.clear();
         transportationTextField.clear();
-        distanceTextField.clear();
-        durationTextField.clear();
         infoTextField.clear();
     }
 

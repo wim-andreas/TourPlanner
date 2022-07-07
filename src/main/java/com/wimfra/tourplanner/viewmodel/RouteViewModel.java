@@ -14,6 +14,7 @@ import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
 import javafx.beans.property.*;
 import javafx.scene.image.Image;
 
+import javax.print.DocFlavor;
 import java.util.Objects;
 
 public class RouteViewModel implements ViewModel {
@@ -50,8 +51,8 @@ public class RouteViewModel implements ViewModel {
                     "From: " + tour.getFrom_where() + "\n" +
                     "To: " + tour.getTo_where() + "\n" +
                     "Transportation: " + tour.getTransportation() + "\n" +
-                    "Distance: " + tour.getDistance() + "\n" +
-                    "Duration: " + tour.getDuration() + "\n" +
+                    "Distance(km): " + tour.getDistance() + "\n" +
+                    "Duration(min): " + tour.getDuration() + "\n" +
                     "Info: " + tour.getRoute_info() + "\n";
             description.setValue("");
             description.setValue(currentDescription);
@@ -60,8 +61,12 @@ public class RouteViewModel implements ViewModel {
     }
 
     public void fetchImage(int id) {
+
+        if(getClass().getResourceAsStream("/images/" + id + ".jpg") != null){
             Image image =  new Image((getClass().getResourceAsStream("/images/" + id + ".jpg")));
             imageProperty.setValue(image);
+        }
+
 
         return;
     }

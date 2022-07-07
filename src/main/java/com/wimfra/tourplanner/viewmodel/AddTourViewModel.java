@@ -4,6 +4,7 @@ import com.wimfra.tourplanner.businesslayer.JavaAppManager;
 import com.wimfra.tourplanner.businesslayer.JavaAppManagerFactory;
 import com.wimfra.tourplanner.businesslayer.ManageTourService;
 import com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl;
+import com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI;
 import com.wimfra.tourplanner.businesslayer.parsing.ParserService;
 import com.wimfra.tourplanner.businesslayer.parsing.ParserServiceImpl;
 import com.wimfra.tourplanner.logger.ILoggerWrapper;
@@ -15,6 +16,7 @@ import javafx.beans.property.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class AddTourViewModel implements ViewModel {
     // creating the properties for the bidirectional binding
@@ -22,8 +24,6 @@ public class AddTourViewModel implements ViewModel {
     private final StringProperty from = new SimpleStringProperty();
     private final StringProperty to = new SimpleStringProperty();
     private final StringProperty transportation = new SimpleStringProperty();
-    private final StringProperty duration = new SimpleStringProperty();
-    private final StringProperty distance = new SimpleStringProperty();
     private final StringProperty info = new SimpleStringProperty();
     private final StringProperty description = new SimpleStringProperty();
 
@@ -52,14 +52,6 @@ public class AddTourViewModel implements ViewModel {
         return transportation;
     }
 
-    public StringProperty durationProperty() {
-        return duration;
-    }
-
-    public StringProperty distanceProperty() {
-        return distance;
-    }
-
     public StringProperty infoProperty() {
         return info;
     }
@@ -70,13 +62,17 @@ public class AddTourViewModel implements ViewModel {
 
     public int addNewTour() {
         List<String> data = new ArrayList();
+        Map directions = MapQuestAPI.getDirections(fromProperty().get(), toProperty().get());
+        double time = Double.parseDouble(directions.get("time").toString());
+        double minutes = time / 60;
+        System.out.println(directions);
         data.add(0, nameProperty().get());
         data.add(1, descriptionProperty().get());
         data.add(2, fromProperty().get());
         data.add(3, toProperty().get());
         data.add(4, transportationProperty().get());
-        data.add(5, distanceProperty().get());
-        data.add(6, durationProperty().get());
+        data.add(5, directions.get("distance").toString());
+        data.add(6, String.format("%.2f", minutes));
         data.add(7, infoProperty().get());
        int id =  tourService.addNewTour(data);
         publisher.notifySubs();

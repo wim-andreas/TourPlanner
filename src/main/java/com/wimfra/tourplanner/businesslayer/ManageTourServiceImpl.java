@@ -1,11 +1,13 @@
 package com.wimfra.tourplanner.businesslayer;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI;
 import com.wimfra.tourplanner.dataaccesslayer.TourDAO;
 import com.wimfra.tourplanner.models.TourModel;
 
 import java.io.*;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ManageTourServiceImpl implements ManageTourService {
@@ -60,7 +62,10 @@ public class ManageTourServiceImpl implements ManageTourService {
 
     @Override
     public void createImage(int id) {
+        System.out.print("Bin ich hier?");
+
         TourModel tour = tourDAO.GetSingleTour(id);
+
         File dir = new File("./src/main/resources/images/");
         FilenameFilter filter = new FilenameFilter() {
             public boolean accept(File dir, String name) {
