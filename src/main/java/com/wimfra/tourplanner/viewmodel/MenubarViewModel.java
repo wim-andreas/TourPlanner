@@ -10,6 +10,7 @@ import com.wimfra.tourplanner.logger.ILoggerWrapper;
 import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
+import javafx.stage.Window;
 import lombok.extern.log4j.Log4j2;
 
 public class MenubarViewModel implements ViewModel {
@@ -42,8 +43,8 @@ public class MenubarViewModel implements ViewModel {
         this.publisher = publisher;
     }
 
-    public void importTourItem() {
-        csvFileImport.importOneTour();
+    public void importTourItem(Window currentWindow) {
+        csvFileImport.importOneTour(currentWindow, getPublisher());
         publisher.notifySubs();
     }
 

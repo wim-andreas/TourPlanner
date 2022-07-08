@@ -78,7 +78,7 @@ public class AddTourViewModel implements ViewModel {
         data.add(5, distanceProperty().get());
         data.add(6, durationProperty().get());
         data.add(7, infoProperty().get());
-       int id =  tourService.addNewTour(data);
+        int id =  tourService.addNewTour(data);
         publisher.notifySubs();
         return id;
     }

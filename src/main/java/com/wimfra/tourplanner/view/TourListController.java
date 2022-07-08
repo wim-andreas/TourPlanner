@@ -120,11 +120,6 @@ public class TourListController implements Initializable {
     public void deleteTour() {
         tourListViewModel.deleteTour(mediator.getTourID());
     }
-
-    public int getCurrentSelectedTourID() {
-        setCurrentlySelectedTour();
-        return this.mediator.getTourID();
-    }
 }
 
 
