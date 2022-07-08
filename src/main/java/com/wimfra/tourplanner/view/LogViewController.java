@@ -65,6 +65,7 @@ public class LogViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        logger.debug("Setting up 'log-view.fxml'");
         logSearch.textProperty().bindBidirectional(logViewModel.getCurrentSearchText());
         //setup table view
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("Date"));

@@ -1,0 +1,16 @@
+2022-07-08 20:49:59.966 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-08 20:49:59.969 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-08 20:49:59.995 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-08 20:50:01.555 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-08 20:52:52.866 [JavaFX Application Thread] INFO  com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl - Tour image created
+2022-07-08 20:59:16.119 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-08 20:59:16.121 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-08 20:59:16.142 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-08 20:59:16.332 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.MenubarController - Setting up 'menubar-view.fxml'..
+2022-07-08 20:59:16.495 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.TourListController - Setting up 'tour-list-view.fxml'..
+2022-07-08 20:59:16.863 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.RouteController - Setting up 'route-view.fxml'..
+2022-07-08 20:59:16.894 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.LogViewController - Setting up 'log-view.fxml'..
+2022-07-08 20:59:17.459 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-08 20:59:54.873 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.AddTourController - Setting up 'add-tour-view.fxml'..
+2022-07-08 21:00:09.990 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.EditTourController - Setting up 'edit-tour-view.fxml'..
+2022-07-08 21:00:12.246 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.EditTourController - Setting up 'edit-tour-view.fxml'..

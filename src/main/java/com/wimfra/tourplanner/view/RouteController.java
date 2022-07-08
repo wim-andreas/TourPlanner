@@ -39,6 +39,7 @@ public class RouteController implements Initializable {
 
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        logger.debug("Setting up 'route-view.fxml'");
         //creating the bidirectional databinding for the objects
         description.textProperty().bindBidirectional(routeViewModel.getDescriptionProperty());
         currentTourImage.imageProperty().bindBidirectional(routeViewModel.getImageProperty());
@@ -53,9 +54,6 @@ public class RouteController implements Initializable {
     }
 
     public void loadImage()  {
-        int cur_id = mediator.getTourID();
-            Image image =  new Image(getClass().getResourceAsStream("/images/" + cur_id + ".jpg"));
-            currentTourImage.setImage(image);
         routeViewModel.fetchImage(mediator.getTourID());
     }
 

@@ -65,6 +65,7 @@ public class TourListViewModel implements ViewModel {
 
     public void deleteTour(int tour_id) {
         tourService.deleteTour(tour_id);
+        publisher.notifySubs();
         updateFromDB();
     }
 

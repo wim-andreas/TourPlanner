@@ -29,10 +29,8 @@ public class AddTourViewModel implements ViewModel {
 
 
     // gets the connection to the business layer
-    private JavaAppManager manager = JavaAppManagerFactory.GetManager();
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(AddTourViewModel.class);
     private ManageTourService tourService = new ManageTourServiceImpl();
-    private ParserService parserService = new ParserServiceImpl();
     private Publisher publisher;
 
     // access to the properties
@@ -65,7 +63,6 @@ public class AddTourViewModel implements ViewModel {
         Map directions = MapQuestAPI.getDirections(fromProperty().get(), toProperty().get());
         double time = Double.parseDouble(directions.get("time").toString());
         double minutes = time / 60;
-        System.out.println(directions);
         data.add(0, nameProperty().get());
         data.add(1, descriptionProperty().get());
         data.add(2, fromProperty().get());
@@ -83,6 +80,10 @@ public class AddTourViewModel implements ViewModel {
     @Override
     public void updateFromDB() {
 
+    }
+
+    public void updateTourView(){
+        publisher.notifySingleSubscriber("RouteViewModel");
     }
 
     public Publisher getPublisher() {

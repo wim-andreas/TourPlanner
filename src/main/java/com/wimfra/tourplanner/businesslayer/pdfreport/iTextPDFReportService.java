@@ -84,6 +84,7 @@ public class iTextPDFReportService implements PDFReportService{
                     tourLogTable.addCell(String.valueOf(logModel.getTotalTime()));
                 });
                 report.add(tourLogTable);
+                addTourImageToReport(tourID, report);
                 report.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -112,7 +113,7 @@ public class iTextPDFReportService implements PDFReportService{
             PdfWriter pdfWriter = new PdfWriter(pdf_target);
             PdfDocument pdf = new PdfDocument(pdfWriter);
             Document document = new Document(pdf);
-          generateReportHeader(document);
+            generateReportHeader(document);
             return document;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -127,6 +128,18 @@ public class iTextPDFReportService implements PDFReportService{
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
+        document.add(new Image(imageData));
+    }
+
+    private void addTourImageToReport(int tourID, Document document){
+        ImageData imageData = null; // here the image of the tour from the mapQuest API will be added.
+
+        try {
+            imageData = ImageDataFactory.create("src/main/resources/images/" + tourID + ".jpg");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        document.add(new AreaBreak());
         document.add(new Image(imageData));
     }
 

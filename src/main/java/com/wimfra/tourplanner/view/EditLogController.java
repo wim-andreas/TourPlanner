@@ -45,6 +45,7 @@ public class EditLogController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        logger.debug("Setting up 'edit-log-view.fxml'");
         ratingSpinner.promptTextProperty().bindBidirectional(editLogViewModel.ratingProperty());
         dateTextField.textProperty().bindBidirectional(editLogViewModel.dateProperty());
         timeTextField.textProperty().bindBidirectional(editLogViewModel.timeProperty());

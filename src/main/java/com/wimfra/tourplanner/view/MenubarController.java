@@ -31,6 +31,7 @@ public class MenubarController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        logger.debug("Setting up 'menubar-view.fxml'");
         import_item.setOnAction(actionEvent -> importItem());
         export_item.setOnAction(actionEvent -> exportItem());
         summarize_report_item.setOnAction(actionEvent -> generateSummarizeReport());

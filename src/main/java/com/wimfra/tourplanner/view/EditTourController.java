@@ -48,6 +48,7 @@ public class EditTourController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        logger.debug("Setting up 'edit-tour-view.fxml'");
         nameTextField.textProperty().bindBidirectional(editTourViewModel.nameProperty());
         fromTextField.textProperty().bindBidirectional(editTourViewModel.fromProperty());
         toTextField.textProperty().bindBidirectional(editTourViewModel.toProperty());

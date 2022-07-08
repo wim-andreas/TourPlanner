@@ -58,13 +58,10 @@ public class RouteViewModel implements ViewModel {
     }
 
     public void fetchImage(int id) {
-
-        if(getClass().getResourceAsStream("/images/" + id + ".jpg") != null){
-            Image image =  new Image((getClass().getResourceAsStream("/images/" + id + ".jpg")));
-            imageProperty.setValue(image);
-
-        }
-
+            if(this.getClass().getResourceAsStream("/images/" + id + ".jpg") != null){
+                Image image = new Image((this.getClass().getResourceAsStream("/images/" + id + ".jpg")));
+                imageProperty.setValue(image);
+            }
         return;
     }
 
@@ -72,7 +69,9 @@ public class RouteViewModel implements ViewModel {
     @Override
     public void updateFromDB() {
         fetchCurrentDescription(mediator.getTourID());
-        fetchImage(mediator.getTourID());
+        if(mediator.getTourID() != 0){
+            fetchImage(mediator.getTourID());
+        }
     }
 
     public Publisher getPublisher() {

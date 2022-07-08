@@ -46,6 +46,7 @@ public class TourListController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        logger.debug("Setting up 'tour-list-view.fxml'");
 
         // Bindings with TourListViewModel
         tourListSearch.textProperty().bindBidirectional(tourListViewModel.getCurrentSearchText());
@@ -76,7 +77,6 @@ public class TourListController implements Initializable {
         tourListSearch.setText("");
         tourListViewModel.updateFromDB();
     }
-
 
     private void FormatCells() {
         //format cells to show name
@@ -110,6 +110,7 @@ public class TourListController implements Initializable {
     }
 
     public void addNewTourWindow() {
+        this.mediator.setTourID(0);
         tourListViewModel.addNewTourWindow();
     }
 
@@ -119,6 +120,7 @@ public class TourListController implements Initializable {
 
     public void deleteTour() {
         tourListViewModel.deleteTour(mediator.getTourID());
+        tourListViewModel.updatePublisher();
     }
 }
 
