@@ -26,6 +26,12 @@ public class UninitializedState extends LoggerStateBase {
         return;
     }
 
+    @Override
+    public void info(String message) {
+        this.printUninitializedWarning();
+        return;
+    }
+
     private void printUninitializedWarning() {
         System.out.println("Operation was called in state uninitialized.");
     }

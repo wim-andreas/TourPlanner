@@ -1,8 +1,11 @@
 package com.wimfra.tourplanner.businesslayer;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.wimfra.tourplanner.TourPlannerApplication;
 import com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI;
 import com.wimfra.tourplanner.dataaccesslayer.TourDAO;
+import com.wimfra.tourplanner.logger.ILoggerWrapper;
+import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.models.TourModel;
 
 import java.io.*;
@@ -13,6 +16,8 @@ import java.util.stream.Collectors;
 public class ManageTourServiceImpl implements ManageTourService {
 
     private TourDAO tourDAO = new TourDAO();
+
+    private static final ILoggerWrapper logger = LoggerFactory.getLogger(ManageTourServiceImpl.class);
 
     public ManageTourServiceImpl() {
     }
@@ -62,7 +67,6 @@ public class ManageTourServiceImpl implements ManageTourService {
 
     @Override
     public void createImage(int id) {
-        System.out.print("Bin ich hier?");
 
         TourModel tour = tourDAO.GetSingleTour(id);
 
@@ -74,14 +78,14 @@ public class ManageTourServiceImpl implements ManageTourService {
         };
         String[] files = dir.list(filter);
         if (files == null) {
-            System.out.println("Either dir does not exist or is not a directory");
+            logger.error("Either dir does not exist or is not a directory");
         } else {
             if (files.length == 0) {
                 byte[] image = MapQuestAPI.getStaticMap(tour.getFrom_where(), tour.getTo_where());
                 FileOutputStream fos = null;
                 try {
                     fos = new FileOutputStream("./src/main/resources/images/" + id + ".jpg");
-                    System.out.print("Tour erstellt");
+                    logger.info("Tour image created");
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }

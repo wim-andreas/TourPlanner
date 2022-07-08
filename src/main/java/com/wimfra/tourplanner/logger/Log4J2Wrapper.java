@@ -28,6 +28,11 @@ public class Log4J2Wrapper implements ILoggerWrapper {
         this.state.warn(message);
     }
 
+    @Override
+    public void info(String message) {
+        this.state.info(message);
+    }
+
     public void initialize(String name) {
         this.state = new InitializedState(LogManager.getLogger(name));
     }

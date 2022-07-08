@@ -8,4 +8,6 @@ public interface ILoggerWrapper {
     void error(String message);
 
     void warn(String message);
+
+    void info(String message);
 }
