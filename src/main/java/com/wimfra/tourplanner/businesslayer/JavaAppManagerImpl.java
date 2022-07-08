@@ -4,7 +4,6 @@ package com.wimfra.tourplanner.businesslayer;
 import com.wimfra.tourplanner.FXMLDependencyInjection;
 import com.wimfra.tourplanner.dataaccesslayer.LogDAO;
 import com.wimfra.tourplanner.dataaccesslayer.TourDAO;
-import com.wimfra.tourplanner.models.LogModel;
 import com.wimfra.tourplanner.models.TourModel;
 import javafx.scene.Scene;
 import javafx.stage.Modality;

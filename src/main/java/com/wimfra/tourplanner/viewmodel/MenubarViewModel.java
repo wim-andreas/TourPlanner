@@ -1,17 +1,27 @@
 package com.wimfra.tourplanner.viewmodel;
 
+
 import com.wimfra.tourplanner.businesslayer.JavaAppManager;
 import com.wimfra.tourplanner.businesslayer.JavaAppManagerImpl;
+
+import com.wimfra.tourplanner.businesslayer.file.CSVFileExport;
+import com.wimfra.tourplanner.businesslayer.file.CSVFileImport;
+import com.wimfra.tourplanner.businesslayer.file.FileExportService;
+import com.wimfra.tourplanner.businesslayer.file.FileImportService;
+
 import com.wimfra.tourplanner.businesslayer.pdfreport.PDFReportService;
 import com.wimfra.tourplanner.businesslayer.pdfreport.iTextPDFReportService;
 import com.wimfra.tourplanner.logger.ILoggerWrapper;
 import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
+import javafx.stage.Window;
 import lombok.extern.log4j.Log4j2;
 
 public class MenubarViewModel implements ViewModel {
     // gets the connection to the business layer
+    private static final FileExportService csvFileExport = new CSVFileExport();
+    private static final FileImportService csvFileImport = new CSVFileImport();
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(MenubarViewModel.class);
     private PDFReportService pdfReportService = new iTextPDFReportService();
     private Publisher publisher;
@@ -39,7 +49,18 @@ public class MenubarViewModel implements ViewModel {
         this.publisher = publisher;
     }
 
+
     public void clickMeWindow() {
         appManager.clickMeWindow();
+    }
+
+    public void importTourItem(Window currentWindow) {
+        csvFileImport.importOneTour(currentWindow, getPublisher());
+        publisher.notifySubs();
+    }
+
+    public void exportTourItem(int tourID) {
+        csvFileExport.exportOneTour(tourID);
+
     }
 }

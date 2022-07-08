@@ -14,9 +14,6 @@ import com.wimfra.tourplanner.viewmodel.observerpattern.ViewModel;
 import javafx.beans.property.*;
 import javafx.scene.image.Image;
 
-import javax.print.DocFlavor;
-import java.util.Objects;
-
 public class RouteViewModel implements ViewModel {
     // gets the connection to the business layer
     private JavaAppManager manager = JavaAppManagerFactory.GetManager();
@@ -65,13 +62,11 @@ public class RouteViewModel implements ViewModel {
         if(getClass().getResourceAsStream("/images/" + id + ".jpg") != null){
             Image image =  new Image((getClass().getResourceAsStream("/images/" + id + ".jpg")));
             imageProperty.setValue(image);
-        }
 
+        }
 
         return;
     }
-
-
 
     // Observer pattern methods
     @Override

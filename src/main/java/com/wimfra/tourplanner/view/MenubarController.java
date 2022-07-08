@@ -38,11 +38,12 @@ public class MenubarController implements Initializable {
         click_me_item.setOnAction(actionEvent -> clickMeItem());
     }
 
-    //TODO: write those functions to create functionality of the toolbar!
     private void importItem() {
+        menubarViewModel.importTourItem(import_item.getParentPopup().getScene().getWindow());
     }
 
     private void exportItem() {
+        menubarViewModel.exportTourItem(mediator.getTourID());
     }
 
     private void generateSummarizeReport() {
