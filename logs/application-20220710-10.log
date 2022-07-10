@@ -332,3 +332,230 @@
 2022-07-10 10:46:22.655 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
 2022-07-10 10:46:22.655 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single log from the database..
 2022-07-10 10:46:22.677 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:57.526 [main] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 10:48:57.740 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:57.786 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:57.908 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:57.909 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Editing a single log in the database..
+2022-07-10 10:48:57.911 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:48:57.931 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:57.931 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single log from the database..
+2022-07-10 10:48:57.958 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:57.961 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:48:57.978 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:57.979 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:48:58.208 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:48:58.209 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:48:58.241 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:58.259 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:58.320 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:58.320 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a specific log from the database..
+2022-07-10 10:48:58.322 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:48:58.336 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:58.336 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 10:48:58.340 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:48:58.357 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:58.359 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:48:58.372 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:58.372 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:48:58.421 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:48:58.421 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:48:58.445 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:58.460 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:58.528 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:58.529 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single log from the database..
+2022-07-10 10:48:58.546 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:58.548 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:48:58.561 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:48:58.561 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:48:58.610 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:48:58.610 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:48:58.631 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.020 [main] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 10:49:55.244 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.289 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.315 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.316 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Editing a single log in the database..
+2022-07-10 10:49:55.320 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.342 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.343 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single log from the database..
+2022-07-10 10:49:55.370 [main] ERROR com.wimfra.tourplanner.dataaccesslayer.DBService - [Ljava.lang.StackTraceElement;@67af833b
+2022-07-10 10:49:55.392 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.396 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.397 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.415 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.416 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:49:55.420 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.420 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.450 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.470 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.489 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.489 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a specific log from the database..
+2022-07-10 10:49:55.493 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.493 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.510 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.511 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 10:49:55.514 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.531 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.533 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.546 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.547 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:49:55.550 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.550 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.568 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.584 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.601 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.601 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single log from the database..
+2022-07-10 10:49:55.603 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.617 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.620 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.620 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.634 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:49:55.635 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:49:55.638 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.638 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:49:55.653 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.116 [main] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 10:51:10.358 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.397 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.423 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.423 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Editing a single log in the database..
+2022-07-10 10:51:10.427 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.444 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.444 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single log from the database..
+2022-07-10 10:51:10.460 [main] ERROR com.wimfra.tourplanner.dataaccesslayer.DBService - [Ljava.lang.StackTraceElement;@48f5bde6
+2022-07-10 10:51:10.481 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.484 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.484 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.500 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.500 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:51:10.503 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.503 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.532 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.549 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.569 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.569 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a specific log from the database..
+2022-07-10 10:51:10.572 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.573 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.587 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.587 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single log from the database..
+2022-07-10 10:51:10.606 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.608 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.621 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.621 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:51:10.624 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.625 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.640 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.655 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.672 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.672 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single log from the database..
+2022-07-10 10:51:10.675 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.689 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.692 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.692 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.705 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:51:10.705 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:51:10.708 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.708 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:51:10.724 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:52:47.875 [main] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 10:52:48.087 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:52:48.117 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:52:48.120 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:52:48.137 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:52:48.137 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:52:48.139 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:52:48.174 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:52:48.191 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:52:48.194 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:52:48.212 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:52:48.212 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:52:48.215 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:52:48.237 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:52:48.255 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:52:48.258 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:52:48.275 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:52:48.276 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:52:48.278 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:52:48.303 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.008 [main] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 10:53:25.223 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.266 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.293 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.293 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Editing a single log in the database..
+2022-07-10 10:53:25.298 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.318 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.318 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single log from the database..
+2022-07-10 10:53:25.336 [main] ERROR com.wimfra.tourplanner.dataaccesslayer.DBService - [Ljava.lang.StackTraceElement;@1c65121
+2022-07-10 10:53:25.357 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.360 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.360 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.375 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.375 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:53:25.379 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.379 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.406 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.423 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.444 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.444 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a specific log from the database..
+2022-07-10 10:53:25.448 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.448 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.463 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.463 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single log from the database..
+2022-07-10 10:53:25.481 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.483 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.498 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.498 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:53:25.502 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.502 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.517 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.533 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.549 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.549 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single log from the database..
+2022-07-10 10:53:25.551 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.565 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.568 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.568 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.581 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.581 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:53:25.584 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.584 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.600 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.642 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.659 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.659 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 10:53:25.661 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.674 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.677 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.689 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.689 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:53:25.693 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.693 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.709 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.726 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.728 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.742 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.742 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:53:25.745 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.745 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.760 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.761 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 10:53:25.776 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.778 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.792 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.793 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:53:25.794 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.810 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.827 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.827 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Editing a specific single tour in the database..
+2022-07-10 10:53:25.830 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.843 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.844 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 10:53:25.846 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.859 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.862 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.877 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 10:53:25.877 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 10:53:25.880 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.881 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 10:53:25.895 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
