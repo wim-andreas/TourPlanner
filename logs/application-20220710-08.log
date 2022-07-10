@@ -1,0 +1,56 @@
+2022-07-10 08:28:45.519 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-10 08:28:45.521 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-10 08:28:45.560 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 08:28:45.802 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.MenubarController - Setting up 'menubar-view.fxml'
+2022-07-10 08:28:46.019 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.TourListController - Setting up 'tour-list-view.fxml'
+2022-07-10 08:28:46.583 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.RouteController - Setting up 'route-view.fxml'
+2022-07-10 08:28:46.619 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.LogViewController - Setting up 'log-view.fxml'
+2022-07-10 08:28:47.181 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-10 08:28:48.784 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.AddTourController - Setting up 'add-tour-view.fxml'
+2022-07-10 08:28:59.282 [JavaFX Application Thread] ERROR com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl - Either dir does not exist or is not a directory
+2022-07-10 08:29:48.308 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-10 08:29:48.310 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-10 08:29:48.338 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 08:29:48.475 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.MenubarController - Setting up 'menubar-view.fxml'
+2022-07-10 08:29:48.636 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.TourListController - Setting up 'tour-list-view.fxml'
+2022-07-10 08:29:48.972 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.RouteController - Setting up 'route-view.fxml'
+2022-07-10 08:29:49.003 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.LogViewController - Setting up 'log-view.fxml'
+2022-07-10 08:29:49.515 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-10 08:30:20.689 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.AddTourController - Setting up 'add-tour-view.fxml'
+2022-07-10 08:30:38.400 [JavaFX Application Thread] INFO  com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl - Tour image created
+2022-07-10 08:31:22.762 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-10 08:31:22.764 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-10 08:31:22.793 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 08:31:22.929 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.MenubarController - Setting up 'menubar-view.fxml'
+2022-07-10 08:31:23.094 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.TourListController - Setting up 'tour-list-view.fxml'
+2022-07-10 08:31:23.420 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.RouteController - Setting up 'route-view.fxml'
+2022-07-10 08:31:23.451 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.LogViewController - Setting up 'log-view.fxml'
+2022-07-10 08:31:23.870 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-10 08:31:25.789 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.AddTourController - Setting up 'add-tour-view.fxml'
+2022-07-10 08:31:39.939 [JavaFX Application Thread] INFO  com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl - Tour image created
+2022-07-10 08:32:46.268 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-10 08:32:46.270 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-10 08:32:46.300 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 08:32:46.439 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.MenubarController - Setting up 'menubar-view.fxml'
+2022-07-10 08:32:46.612 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.TourListController - Setting up 'tour-list-view.fxml'
+2022-07-10 08:32:46.938 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.RouteController - Setting up 'route-view.fxml'
+2022-07-10 08:32:46.971 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.LogViewController - Setting up 'log-view.fxml'
+2022-07-10 08:32:47.411 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-10 08:34:51.426 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-10 08:34:51.428 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-10 08:34:51.460 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 08:34:51.606 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.MenubarController - Setting up 'menubar-view.fxml'
+2022-07-10 08:34:51.768 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.TourListController - Setting up 'tour-list-view.fxml'
+2022-07-10 08:34:52.119 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.RouteController - Setting up 'route-view.fxml'
+2022-07-10 08:34:52.155 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.LogViewController - Setting up 'log-view.fxml'
+2022-07-10 08:34:52.623 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-10 08:35:03.611 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.ClickMeController - Setting up 'add-log-view.fxml'
+2022-07-10 08:35:28.058 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-10 08:35:28.060 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-10 08:35:28.079 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 08:35:28.225 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.MenubarController - Setting up 'menubar-view.fxml'
+2022-07-10 08:35:28.391 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.TourListController - Setting up 'tour-list-view.fxml'
+2022-07-10 08:35:28.733 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.RouteController - Setting up 'route-view.fxml'
+2022-07-10 08:35:28.764 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.LogViewController - Setting up 'log-view.fxml'
+2022-07-10 08:35:29.248 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-10 08:35:30.975 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.ClickMeController - Setting up 'click-me-view.fxml'

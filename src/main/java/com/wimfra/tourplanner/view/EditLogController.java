@@ -80,6 +80,7 @@ public class EditLogController implements Initializable {
     }
 
     private void loadLogData(List<String> log) {
+        logger.debug("Loading selected log data...");
         dateTextField.setText(log.get(0));
         timeTextField.setText(log.get(1));
         difficultyChoiceBox.setValue(log.get(2));
@@ -89,6 +90,7 @@ public class EditLogController implements Initializable {
     }
 
     private void editLogData() {
+        logger.debug("Editing the selected log...");
         //Get Selected Tour ID date_, time_, comment_, difficulty, total_time, rating
         List<String> data = new ArrayList();
         data.add(0, dateTextField.getText());

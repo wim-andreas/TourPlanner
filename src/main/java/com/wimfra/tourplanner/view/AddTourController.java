@@ -62,6 +62,7 @@ public class AddTourController implements Initializable {
     }
 
     public void addNewTour() {
+        logger.debug("Creating a new tour...");
         int id = addTourViewModel.addNewTour();
         createImage(id);
         closeCurrentWindow();

@@ -2,10 +2,7 @@ package com.wimfra.tourplanner.dataaccesslayer;
 
 
 import com.wimfra.tourplanner.models.TourModel;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -68,6 +65,11 @@ public class TourServiceTest {
         } catch (SQLException ignored) {
             ignored.printStackTrace();
         }
+    }
+
+    @AfterEach
+    public void deleteTestTour(){
+        dbService.deleteTour(-1);
     }
 
 

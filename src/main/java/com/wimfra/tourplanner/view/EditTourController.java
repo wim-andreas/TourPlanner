@@ -67,6 +67,7 @@ public class EditTourController implements Initializable {
     }
 
     public void editTourData() {
+        logger.debug("Editing the selected tour...");
         //Get Selected Tour ID
         List<String> data = new ArrayList();
         data.add(0, nameTextField.getText());
@@ -81,6 +82,7 @@ public class EditTourController implements Initializable {
     }
 
     public void loadTourData(TourModel tour) {
+        logger.debug("Loading selected tour data...");
         nameTextField.setText(tour.getTour_name());
         fromTextField.setText(tour.getFrom_where());
         toTextField.setText(tour.getTo_where());

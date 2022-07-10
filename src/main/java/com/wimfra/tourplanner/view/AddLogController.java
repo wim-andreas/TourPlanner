@@ -70,7 +70,7 @@ public class AddLogController implements Initializable {
     }
 
     public void addNewLog() {
-        logger.debug("Creating new log in database...");
+        logger.debug("Creating a new log...");
         String dif = difficultyChoiceBox.getSelectionModel().getSelectedItem().toString();
         String rat = ratingSpinner.getValue().toString();
         addLogViewModel.addNewLog(dif, rat, mediator.getTourID());

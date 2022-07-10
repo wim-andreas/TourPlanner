@@ -27,7 +27,7 @@ public class ClickMeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        logger.debug("Setting up 'add-log-view.fxml'");
+        logger.debug("Setting up 'click-me-view.fxml'");
         textArea.textProperty().bindBidirectional(clickMeViewModel.textAreaProperty());
         textArea.setWrapText(true);
 
@@ -35,6 +35,7 @@ public class ClickMeController implements Initializable {
     }
 
     private void loadSecret() {
+        logger.debug("Loading the secret information...");
         clickMeViewModel.loadSecret();
     }
 }

@@ -4,8 +4,11 @@ import com.wimfra.tourplanner.businesslayer.parsing.ParserService;
 import com.wimfra.tourplanner.businesslayer.parsing.ParserServiceImpl;
 import com.wimfra.tourplanner.configuration.AppConfiguration;
 import com.wimfra.tourplanner.configuration.AppConfigurationLoader;
+import com.wimfra.tourplanner.logger.ILoggerWrapper;
+import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.models.LogModel;
 import com.wimfra.tourplanner.models.TourModel;
+import com.wimfra.tourplanner.view.AddLogController;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,9 +20,10 @@ public class DBService implements DataAccess {
     private final String DB_USER;
     private final String DB_PW;
     private final ParserService parserService;
+    private static final ILoggerWrapper logger = LoggerFactory.getLogger(DBService.class);
 
-    public DBService(AppConfiguration appConfiguration) {
-        this.parserService = new ParserServiceImpl();
+    public DBService(AppConfiguration appConfiguration, ParserService parserService) {
+        this.parserService = parserService;
         DB_URL = appConfiguration.getDbUrl();
         DB_USER = appConfiguration.getDbUsername();
         DB_PW = appConfiguration.getDbPassword();
@@ -27,24 +31,38 @@ public class DBService implements DataAccess {
 
     public static DBService getInstance() {
         if (DBService.instance == null) {
-            DBService.instance = new DBService(AppConfigurationLoader.getInstance().getAppConfiguration());
+            DBService.instance = new DBService(AppConfigurationLoader.getInstance().getAppConfiguration(), new ParserServiceImpl());
         }
         return DBService.instance;
     }
 
     public Connection getConnection() {
         try {
-            return DriverManager.getConnection(DB_URL, DB_USER, DB_PW);
+            Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PW);
+            logger.debug("Database connection successfully established!");
+            return connection;
         } catch (SQLException e) {
+            logger.fatal(e.getStackTrace().toString());
             e.printStackTrace();
         }
         return null;
     }
 
+    private void closeConnection(Connection connection){
+        try {
+            connection.close();
+            logger.debug("Database connection successfully closed!");
+        } catch (SQLException e) {
+            logger.fatal(e.getStackTrace().toString());
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public List<TourModel> getTours() {
         try {
-            Connection connection = DBService.getInstance().getConnection();
+            Connection connection = getConnection();
+            logger.debug("Getting all tours from the database..");
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT tour_id, tour_name, description, from_where, to_where, transportation, distance, duration, route_info FROM tours;");
             ResultSet resultSet = preparedStatement.executeQuery();
             List<TourModel> allTours = new ArrayList<>();
@@ -63,19 +81,22 @@ public class DBService implements DataAccess {
             }
             resultSet.close();
             preparedStatement.close();
-            connection.close();
+            closeConnection(connection);
             return allTours;
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace().toString());
         }
         return null;
 
     }
 
+
+
     @Override
     public TourModel getSingleTour(int id) {
         try {
-            Connection connection = DBService.getInstance().getConnection();
+            Connection connection = getConnection();
+            logger.debug("Getting a (specific) single tour from the database..");
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT tour_id, tour_name, description, from_where, to_where, transportation, distance, duration, route_info FROM tours where tour_id = ?;");
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -94,12 +115,11 @@ public class DBService implements DataAccess {
                         .build();
                 resultSet.close();
                 preparedStatement.close();
-                connection.close();
+                closeConnection(connection);
                 return tour;
             }
-
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace().toString());
         }
         return null;
     }
@@ -109,7 +129,8 @@ public class DBService implements DataAccess {
         int id = 0;
 
         try {
-            Connection connection = DBService.getInstance().getConnection();
+            Connection connection = getConnection();
+            logger.debug("Creating new tour in the database..");
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO tours(tour_name, description, from_where, to_where, transportation, distance, duration, route_info) VALUES(?,?,?,?,?,?,?,?) ", PreparedStatement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, data.get(0));
             preparedStatement.setString(2, data.get(1));
@@ -126,11 +147,11 @@ public class DBService implements DataAccess {
             int id1 = resultSet.getInt(1);
 
             preparedStatement.close();
-            connection.close();
+            closeConnection(connection);
 
             return id1;
-        } catch (SQLException ignored) {
-            ignored.printStackTrace();
+        } catch (SQLException e) {
+            logger.error(e.getStackTrace().toString());
         }
         return id;
     }
@@ -139,25 +160,26 @@ public class DBService implements DataAccess {
     public boolean deleteTour(int tour_id) {
         deleteLogAfterTourDelete(tour_id);
         try {
-            Connection connection = DBService.getInstance().getConnection();
+            Connection connection = getConnection();
+            logger.debug("Deleting a single tour from the database..");
             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM tours WHERE tour_id = ?;");
             preparedStatement.setInt(1, tour_id);
 
             int rows = preparedStatement.executeUpdate();
 
             preparedStatement.close();
-            connection.close();
+            closeConnection(connection);
 
             if (rows == 0) {
                 return false;
             }
 
             preparedStatement.close();
-            connection.close();
+            closeConnection(connection);
 
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace().toString());
         }
         return false;
 
@@ -166,7 +188,8 @@ public class DBService implements DataAccess {
     @Override
     public boolean editTourData(List<String> data, int id) {
         try {
-            Connection connection = DBService.getInstance().getConnection();
+            Connection connection = getConnection();
+            logger.debug("Editing a specific single tour in the database..");
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE tours SET tour_name = ?, description= ?, from_where = ?, to_where = ?, transportation = ?,  route_info = ?  WHERE tour_id = ?;");
 
             preparedStatement.setString(1, data.get(0));
@@ -181,7 +204,7 @@ public class DBService implements DataAccess {
             int rows = preparedStatement.executeUpdate();
 
             preparedStatement.close();
-            connection.close();
+            closeConnection(connection);
 
             if (rows == 0) {
                 return false;
@@ -189,7 +212,7 @@ public class DBService implements DataAccess {
 
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace().toString());
         }
 
         return true;
@@ -198,7 +221,8 @@ public class DBService implements DataAccess {
     @Override
     public List<LogModel> getLogs() {
         try {
-            Connection connection = DBService.getInstance().getConnection();
+            Connection connection = getConnection();
+            logger.debug("Getting all logs from the database..");
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT log_id, tour_id , date_, time_, difficulty, rating, comment_,  total_time FROM logs;");
             ResultSet resultSet = preparedStatement.executeQuery();
             List<LogModel> allLogs = new ArrayList<>();
@@ -218,10 +242,10 @@ public class DBService implements DataAccess {
             }
             resultSet.close();
             preparedStatement.close();
-            connection.close();
+            closeConnection(connection);
             return allLogs;
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace().toString());
         }
         return null;
     }
@@ -229,7 +253,8 @@ public class DBService implements DataAccess {
     @Override
     public LogModel addNewLog(List<String> data) {
         try {
-            Connection connection = DBService.getInstance().getConnection();
+            Connection connection = getConnection();
+            logger.debug("Creating a new log in the database..");
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO logs(tour_id, date_, time_, comment_, difficulty, total_time, rating) VALUES(?,?,?,?,?,?,?);");
             preparedStatement.setInt(1, Integer.parseInt(data.get(6)));
             preparedStatement.setString(2, data.get(0));
@@ -240,7 +265,7 @@ public class DBService implements DataAccess {
             preparedStatement.setString(7, (data.get(5)));
             preparedStatement.execute();
             preparedStatement.close();
-            connection.close();
+            closeConnection(connection);
         } catch (SQLException ignored) {
             ignored.printStackTrace();
         }
@@ -251,25 +276,26 @@ public class DBService implements DataAccess {
     @Override
     public boolean deleteLog(int logID) {
         try {
-            Connection connection = DBService.getInstance().getConnection();
+            Connection connection = getConnection();
+            logger.debug("Deleting a specific log from the database..");
             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM logs WHERE log_id = ?;");
             preparedStatement.setInt(1, logID);
 
             int rows = preparedStatement.executeUpdate();
 
             preparedStatement.close();
-            connection.close();
+            closeConnection(connection);
 
             if (rows == 0) {
                 return false;
             }
 
             preparedStatement.close();
-            connection.close();
+            closeConnection(connection);
 
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace().toString());
         }
         return false;
 
@@ -278,25 +304,26 @@ public class DBService implements DataAccess {
     @Override
     public boolean deleteLogAfterTourDelete(int tourID) {
         try {
-            Connection connection = DBService.getInstance().getConnection();
+            //TODO: Pascal fragen, ob diese Funktion tatsächlich notwendig ist -> ON DELETE CASCADE IS ACTIVATED
+            Connection connection = getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM logs WHERE tour_id = ?;");
             preparedStatement.setInt(1, tourID);
 
             int rows = preparedStatement.executeUpdate();
 
             preparedStatement.close();
-            connection.close();
+            closeConnection(connection);
 
             if (rows == 0) {
                 return false;
             }
 
             preparedStatement.close();
-            connection.close();
+            closeConnection(connection);
 
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace().toString());
         }
         return false;
 
@@ -305,7 +332,8 @@ public class DBService implements DataAccess {
     @Override
     public List<String> getSingleLog(int logID) {
         try {
-            Connection connection = DBService.getInstance().getConnection();
+            Connection connection = getConnection();
+            logger.debug("Getting a (specific) single log from the database..");
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT date_, time_, difficulty, rating, comment_,  total_time, tour_id FROM logs where log_id = ?;");
             preparedStatement.setInt(1, logID);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -321,12 +349,12 @@ public class DBService implements DataAccess {
                 data.add(6, resultSet.getString(7));
                 resultSet.close();
                 preparedStatement.close();
-                connection.close();
+                closeConnection(connection);
                 return data;
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace().toString());
         }
         return null;
     }
@@ -334,7 +362,8 @@ public class DBService implements DataAccess {
     @Override
     public boolean editLogData(List<String> data, int logID) {
         try {
-            Connection connection = DBService.getInstance().getConnection();
+            Connection connection = getConnection();
+            logger.debug("Editing a single log in the database..");
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE logs SET date_ = ?, time_= ?, difficulty = ?, rating = ?, comment_ = ?, total_time = ?  WHERE log_id = ?;");
 
             preparedStatement.setString(1, data.get(0));
@@ -349,7 +378,7 @@ public class DBService implements DataAccess {
             int rows = preparedStatement.executeUpdate();
 
             preparedStatement.close();
-            connection.close();
+            closeConnection(connection);
 
             if (rows == 0) {
                 return false;
@@ -357,7 +386,7 @@ public class DBService implements DataAccess {
 
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace().toString());
         }
 
         return true;
@@ -366,7 +395,8 @@ public class DBService implements DataAccess {
     @Override
     public List<LogModel> getAllLogsFromSingleTour(int tourID) {
         try {
-            Connection connection = DBService.getInstance().getConnection();
+            Connection connection = getConnection();
+            logger.debug("Getting all logs for a specific tour from the database..");
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT log_id, tour_id , date_, time_, difficulty, rating, comment_, total_time FROM logs WHERE tour_id = ?;");
             preparedStatement.setInt(1, tourID);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -386,10 +416,10 @@ public class DBService implements DataAccess {
             }
             resultSet.close();
             preparedStatement.close();
-            connection.close();
+            closeConnection(connection);
             return allLogs;
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error(e.getStackTrace().toString());
         }
         return null;
     }
