@@ -11,24 +11,23 @@ public class TourDAO {
         databaseAccess = DBService.getInstance();
     }
 
-    public List<TourModel> GetTours() {
+    public List<TourModel> getTours() {
         return databaseAccess.getTours();
     }
 
-    public TourModel GetSingleTour(int id) {
+    public TourModel getSingleTour(int id) {
         return databaseAccess.getSingleTour(id);
     }
 
-    public int AddNewTour(List<String> data) {
+    public int addNewTour(List<String> data) {
         return databaseAccess.addNewTour(data);
-
     }
 
-    public void DeleteTour(int tour_id) {
+    public void deleteTour(int tour_id) {
         databaseAccess.deleteTour(tour_id);
     }
 
-    public void EditTourData(List<String> data, int id) {
+    public void editTourData(List<String> data, int id) {
         databaseAccess.editTourData(data, id);
     }
 

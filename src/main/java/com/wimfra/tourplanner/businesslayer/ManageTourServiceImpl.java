@@ -1,7 +1,5 @@
 package com.wimfra.tourplanner.businesslayer;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.wimfra.tourplanner.TourPlannerApplication;
 import com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI;
 import com.wimfra.tourplanner.dataaccesslayer.TourDAO;
 import com.wimfra.tourplanner.logger.ILoggerWrapper;
@@ -10,7 +8,6 @@ import com.wimfra.tourplanner.models.TourModel;
 
 import java.io.*;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ManageTourServiceImpl implements ManageTourService {
@@ -24,12 +21,12 @@ public class ManageTourServiceImpl implements ManageTourService {
 
     @Override
     public List<TourModel> getTours() {
-        return tourDAO.GetTours();
+        return tourDAO.getTours();
     }
 
     @Override
     public List<TourModel> search(String tourname, boolean caseSensitive) {
-        List<TourModel> items = getTours();
+        List<TourModel> items = tourDAO.getTours();
         if (tourname != null) {
             if (caseSensitive) {
                 return items
@@ -47,28 +44,28 @@ public class ManageTourServiceImpl implements ManageTourService {
 
     @Override
     public TourModel getSingleTour(int id) {
-        return tourDAO.GetSingleTour(id);
+        return tourDAO.getSingleTour(id);
     }
 
     @Override
     public int addNewTour(List<String> data) {
-       return tourDAO.AddNewTour(data);
+       return tourDAO.addNewTour(data);
     }
 
     @Override
     public void deleteTour(int tour_id) {
-        tourDAO.DeleteTour(tour_id);
+        tourDAO.deleteTour(tour_id);
     }
 
     @Override
     public void editTourData(List<String> data, int id) {
-        tourDAO.EditTourData(data, id);
+        tourDAO.editTourData(data, id);
     }
 
     @Override
     public void createImage(int id) {
 
-        TourModel tour = tourDAO.GetSingleTour(id);
+        TourModel tour = tourDAO.getSingleTour(id);
 
         File dir = new File("./src/main/resources/images/");
         FilenameFilter filter = new FilenameFilter() {

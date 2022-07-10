@@ -11,7 +11,7 @@ public class ManageTourLogServiceImpl implements ManageTourLogService {
 
     @Override
     public List<LogModel> getAllLogs() {
-        return logDAO.GetLogs();
+        return logDAO.getLogs();
     }
 
     @Override
@@ -21,22 +21,22 @@ public class ManageTourLogServiceImpl implements ManageTourLogService {
 
     @Override
     public void addNewLog(List<String> data) {
-        logDAO.AddNewLog(data);
+        logDAO.addNewLog(data);
     }
 
     @Override
     public void deleteLog(int logID) {
-        logDAO.DeleteLog(logID);
+        logDAO.deleteLog(logID);
     }
 
     @Override
     public List<String> getSingleLog(int logID) {
-        return logDAO.GetSingleLog(logID);
+        return logDAO.getSingleLog(logID);
     }
 
     @Override
     public void editLogData(List<String> data, int logID) {
-        logDAO.EditLogData(data, logID);
+        logDAO.editLogData(data, logID);
     }
 
     @Override

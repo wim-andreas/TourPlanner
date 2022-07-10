@@ -37,10 +37,10 @@ public class LogServiceTest {
 
         data2.add(0, "03-05-2021");
         data2.add(1, "12:23:33");
-        data2.add(2, "OWO");
-        data2.add(3, "easy");
-        data2.add(4, "12");
-        data2.add(5, "1");
+        data2.add(2, "easy");
+        data2.add(3, "1");
+        data2.add(4, "OWO");
+        data2.add(5, "12");
     }
 
     public static void createTourData() {

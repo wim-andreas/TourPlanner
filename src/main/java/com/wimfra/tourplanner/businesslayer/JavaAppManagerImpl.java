@@ -34,7 +34,7 @@ public class JavaAppManagerImpl implements JavaAppManager {
 
     @Override
     public void editTourWindow(int tourID) {
-        TourModel tour = tourDAO.GetSingleTour(tourID);
+        TourModel tour = tourDAO.getSingleTour(tourID);
         Scene scene = null;
         Stage stage = new Stage();
         try {
@@ -50,7 +50,7 @@ public class JavaAppManagerImpl implements JavaAppManager {
 
     @Override
     public void addLogWindow(int tourID) {
-        TourModel tour = tourDAO.GetSingleTour(tourID);
+        TourModel tour = tourDAO.getSingleTour(tourID);
         Scene scene = null;
         Stage stage = new Stage();
         try {
@@ -67,8 +67,8 @@ public class JavaAppManagerImpl implements JavaAppManager {
 
     @Override
     public void editLogWindow(int logID) {
-        List<String> log = logDAO.GetSingleLog(logID);
-        TourModel tour = tourDAO.GetSingleTour(Integer.parseInt(log.get(6)));
+        List<String> log = logDAO.getSingleLog(logID);
+        TourModel tour = tourDAO.getSingleTour(Integer.parseInt(log.get(6)));
 
         Scene scene = null;
         Stage stage = new Stage();
