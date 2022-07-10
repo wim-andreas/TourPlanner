@@ -11,23 +11,23 @@ public class LogDAO {
         databaseAccess = DBService.getInstance();
     }
 
-    public List<LogModel> GetLogs() {
+    public List<LogModel> getLogs() {
         return databaseAccess.getLogs();
     }
 
-    public void AddNewLog(List<String> data) {
+    public void addNewLog(List<String> data) {
         databaseAccess.addNewLog(data);
     }
 
-    public void DeleteLog(int logID) {
+    public void deleteLog(int logID) {
         databaseAccess.deleteLog(logID);
     }
 
-    public List<String> GetSingleLog(int logID) {
+    public List<String> getSingleLog(int logID) {
         return databaseAccess.getSingleLog(logID);
     }
 
-    public void EditLogData(List<String> data, int logID) {
+    public void editLogData(List<String> data, int logID) {
         databaseAccess.editLogData(data, logID);
     }
 

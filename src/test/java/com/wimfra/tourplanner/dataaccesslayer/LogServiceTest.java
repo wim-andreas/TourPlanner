@@ -43,9 +43,6 @@ public class LogServiceTest {
         data2.add(3, "1");
         data2.add(4, "OWO");
         data2.add(5, "12");
-
-
-
     }
 
 
