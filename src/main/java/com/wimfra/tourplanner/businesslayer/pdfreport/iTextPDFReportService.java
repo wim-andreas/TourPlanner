@@ -14,8 +14,11 @@ import com.wimfra.tourplanner.businesslayer.ManageTourLogService;
 import com.wimfra.tourplanner.businesslayer.ManageTourLogServiceImpl;
 import com.wimfra.tourplanner.businesslayer.ManageTourService;
 import com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl;
+import com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI;
 import com.wimfra.tourplanner.businesslayer.parsing.ParserService;
 import com.wimfra.tourplanner.businesslayer.parsing.ParserServiceImpl;
+import com.wimfra.tourplanner.logger.ILoggerWrapper;
+import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.models.TourModel;
 
 import java.io.FileNotFoundException;
@@ -26,6 +29,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class iTextPDFReportService implements PDFReportService{
+    private static final ILoggerWrapper logger = LoggerFactory.getLogger(MapQuestAPI.class);
     private final ManageTourLogService tourLogService = new ManageTourLogServiceImpl();
     private final ManageTourService tourService = new ManageTourServiceImpl();
     private final ParserService parserService = new ParserServiceImpl();
@@ -36,6 +40,7 @@ public class iTextPDFReportService implements PDFReportService{
 
     @Override
     public void generateSummarizeReport() {
+        logger.debug("Generating a summarized tour report...");
         String filePath = PDF_TARGET_SUMMARIZE + LocalDate.now() + getCurrentTimeValue() + PDF;
         Document report = createNewPDFFile(filePath);
         if(report != null){
@@ -51,6 +56,7 @@ public class iTextPDFReportService implements PDFReportService{
                 }
                 report.add(table);
                 report.close();
+                logger.debug("Generating a summarized tour report finished!");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -60,6 +66,7 @@ public class iTextPDFReportService implements PDFReportService{
     @Override
     public void generateTourReport(int tourID) {
         String filePath = PDF_TARGET_TOUR + LocalDate.now() + getCurrentTimeValue() + PDF;
+        logger.debug("Generating a report of a single tour..");
         Document report = createNewPDFFile(filePath);
         if(report != null){
             try {
@@ -86,6 +93,7 @@ public class iTextPDFReportService implements PDFReportService{
                 report.add(tourLogTable);
                 addTourImageToReport(tourID, report);
                 report.close();
+                logger.debug("Generating a report of a single tour finished!");
             } catch (IOException e) {
                 e.printStackTrace();
             }

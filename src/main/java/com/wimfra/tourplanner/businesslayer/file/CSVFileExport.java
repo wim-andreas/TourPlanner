@@ -2,7 +2,10 @@ package com.wimfra.tourplanner.businesslayer.file;
 
 import com.wimfra.tourplanner.businesslayer.ManageTourService;
 import com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl;
+import com.wimfra.tourplanner.logger.ILoggerWrapper;
+import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.models.TourModel;
+import com.wimfra.tourplanner.view.AddTourController;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,6 +13,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class CSVFileExport implements FileExportService {
+    private static final ILoggerWrapper logger = LoggerFactory.getLogger(CSVFileExport.class);
     private final ManageTourService tourService = new ManageTourServiceImpl();
     private final static String DELIMITER = ";";
     private final static String SEPARATOR = "\n";
@@ -21,6 +25,7 @@ public class CSVFileExport implements FileExportService {
     @Override
     public void exportOneTour(int tourID) {
         if(tourID >= 0){
+            logger.debug("Starting the export of a single tour into a csv file...");
             FileWriter file = null;
             TourModel exportedTour = tourService.getSingleTour(tourID);
             try {
@@ -45,9 +50,9 @@ public class CSVFileExport implements FileExportService {
                 file.append(DELIMITER);
                 file.append(exportedTour.getRoute_info());
                 file.close();
-
+                logger.debug("Export of tour into csv file finished successfully!");
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.error(e.getStackTrace().toString());
             }
         }
     }

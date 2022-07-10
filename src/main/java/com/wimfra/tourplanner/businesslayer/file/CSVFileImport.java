@@ -2,6 +2,8 @@ package com.wimfra.tourplanner.businesslayer.file;
 
 import com.wimfra.tourplanner.businesslayer.ManageTourService;
 import com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl;
+import com.wimfra.tourplanner.logger.ILoggerWrapper;
+import com.wimfra.tourplanner.logger.LoggerFactory;
 import com.wimfra.tourplanner.viewmodel.observerpattern.Publisher;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
@@ -16,6 +18,7 @@ import java.util.List;
 
 public class CSVFileImport implements FileImportService {
     private final ManageTourService tourService = new ManageTourServiceImpl();
+    private static final ILoggerWrapper logger = LoggerFactory.getLogger(CSVFileImport.class);
     private final static String DELIMITER = ";";
 
     public CSVFileImport() {
@@ -25,14 +28,16 @@ public class CSVFileImport implements FileImportService {
     public void importOneTour(Window currentWindow, Publisher publisher) {
         String filepath = getChoseFileName(currentWindow);
         if("no file selected".equals(filepath)){
-            //TODO: write logger message
+            logger.debug("Not file was selected, so therefore no input happened");
         }
         else{
+            logger.debug("Starting import of a new tour...");
             List<String> newTour = getTourDataFromFile(filepath);
             int id = tourService.addNewTour(newTour);
             tourService.createImage(id);
             publisher.notifySingleSubscriber("TourListViewModel");
             publisher.notifySingleSubscriber("RouteViewModel");
+            logger.debug("Import of new tour finished successfully!");
         }
     }
 
@@ -51,6 +56,7 @@ public class CSVFileImport implements FileImportService {
     }
 
     private List<String> getTourDataFromFile(String filepath){
+        logger.debug("Reading tourdata from chosen file..");
         List<List<String>> entrys = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filepath))) {
             String line;
@@ -71,7 +77,7 @@ public class CSVFileImport implements FileImportService {
         tourData.add(0, entrys.get(1).get(2));
         tourData.add(0, entrys.get(1).get(1));
         tourData.add(0, entrys.get(1).get(0));
-
+        logger.debug("Reading tourdata finsihed!");
         return tourData;
     }
 
