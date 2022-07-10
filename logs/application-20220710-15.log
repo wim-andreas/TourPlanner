@@ -1,0 +1,6 @@
+2022-07-10 15:24:26.943 [main] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 15:24:55.555 [main] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 15:28:29.777 [main] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 15:28:35.654 [main] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 15:36:09.216 [main] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 15:39:24.110 [main] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file

@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 public class ControllerFactoryTest {
 
     private static ControllerFactory controllerFactory;
-
     private static AddTourViewModel addTourViewModel;
     private static TourListViewModel tourListViewModel;
     private static RouteViewModel routeViewModel;
@@ -22,7 +21,7 @@ public class ControllerFactoryTest {
 
     @BeforeAll
     public static void setUp(){
-        controllerFactory = new ControllerFactory();
+        controllerFactory = ControllerFactory.getInstance();
         addTourViewModel = new AddTourViewModel();
         tourListViewModel = new TourListViewModel();
         routeViewModel = new RouteViewModel();

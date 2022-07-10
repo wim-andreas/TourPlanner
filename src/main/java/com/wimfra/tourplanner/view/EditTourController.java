@@ -12,6 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -19,7 +21,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class EditTourController implements Initializable {
-
+    @Getter
+    @Setter
     private final EditTourViewModel editTourViewModel;
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(EditTourController.class);
     private final Mediator mediator;

@@ -36,4 +36,7 @@ public class Publisher {
         return null;
     }
 
+    public List<ViewModel> getSubscribers() {
+        return subscribers;
+    }
 }

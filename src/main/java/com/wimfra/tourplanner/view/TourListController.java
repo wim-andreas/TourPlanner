@@ -9,12 +9,16 @@ import com.wimfra.tourplanner.viewmodel.TourListViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class TourListController implements Initializable {
 
+    @Getter
+    @Setter
     private final TourListViewModel tourListViewModel;
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(TourListController.class);
     private final Mediator mediator;

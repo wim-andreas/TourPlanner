@@ -15,11 +15,15 @@ import javafx.scene.control.TabPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.scene.image.Image;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RouteController implements Initializable {
+    @Getter
+    @Setter
     private RouteViewModel routeViewModel;
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(RouteController.class);
     private final Mediator mediator;

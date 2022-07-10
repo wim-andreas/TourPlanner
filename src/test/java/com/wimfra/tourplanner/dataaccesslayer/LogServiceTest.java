@@ -1,7 +1,5 @@
 package com.wimfra.tourplanner.dataaccesslayer;
 
-import com.wimfra.tourplanner.configuration.AppConfiguration;
-import com.wimfra.tourplanner.models.LogModel;
 import org.junit.jupiter.api.*;
 
 import java.sql.Connection;

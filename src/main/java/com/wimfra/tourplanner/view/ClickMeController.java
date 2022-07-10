@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +16,8 @@ import java.util.ResourceBundle;
 public class ClickMeController implements Initializable {
 
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(ClickMeController.class);
-
+    @Getter
+    @Setter
     private final ClickMeViewModel clickMeViewModel;
     @FXML
     public Button clickMeBtn;

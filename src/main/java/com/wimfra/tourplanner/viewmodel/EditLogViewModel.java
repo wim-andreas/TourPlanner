@@ -24,10 +24,6 @@ public class EditLogViewModel implements ViewModel {
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(EditLogViewModel.class);
     private Publisher publisher;
 
-    public StringProperty difficultyProperty() {
-        return difficulty;
-    }
-
     public StringProperty ratingProperty() {
         return rating;
     }

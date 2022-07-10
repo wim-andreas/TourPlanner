@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.apache.logging.log4j.Logger;
 
@@ -22,6 +24,7 @@ import java.util.*;
 
 public class AddLogController implements Initializable {
 
+    @Getter @Setter
     private final AddLogViewModel addLogViewModel;
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(AddLogController.class);
 

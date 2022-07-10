@@ -12,12 +12,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AddTourController implements Initializable {
-
+    @Getter
+    @Setter
     private final AddTourViewModel addTourViewModel;
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(AddTourController.class);
     private final Mediator mediator;

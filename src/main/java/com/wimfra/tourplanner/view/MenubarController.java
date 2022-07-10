@@ -8,12 +8,16 @@ import com.wimfra.tourplanner.viewmodel.MenubarViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.MenuItem;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MenubarController implements Initializable {
+    @Getter
+    @Setter
     private final MenubarViewModel menubarViewModel;
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(MenubarController.class);
     private final Mediator mediator;

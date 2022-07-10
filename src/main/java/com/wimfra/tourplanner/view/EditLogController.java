@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -16,7 +18,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class EditLogController implements Initializable {
-
+    @Getter
+    @Setter
     private final EditLogViewModel editLogViewModel;
     private static final ILoggerWrapper logger = LoggerFactory.getLogger(EditLogController.class);
     private Mediator mediator;

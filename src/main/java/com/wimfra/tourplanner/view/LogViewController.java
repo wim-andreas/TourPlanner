@@ -13,6 +13,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -49,7 +51,8 @@ public class LogViewController implements Initializable {
     @FXML
     private Button clearBtn;
 
-
+    @Getter
+    @Setter
     private final LogViewModel logViewModel;
     private final JavaAppManager appManager = new JavaAppManagerImpl();
     private int logID;
