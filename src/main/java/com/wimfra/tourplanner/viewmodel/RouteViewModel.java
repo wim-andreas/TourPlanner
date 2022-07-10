@@ -43,14 +43,14 @@ public class RouteViewModel implements ViewModel {
     public void fetchCurrentDescription(int id) {
         TourModel tour = getSingleTour(id);
         if (tour != null) {
-            String currentDescription = "Tourname: " + tour.getTour_name() + "\n" +
-                    "Description: " + tour.getDescription() + "\n" +
-                    "From: " + tour.getFrom_where() + "\n" +
-                    "To: " + tour.getTo_where() + "\n" +
-                    "Transportation: " + tour.getTransportation() + "\n" +
-                    "Distance(km): " + tour.getDistance() + "\n" +
-                    "Duration(min): " + tour.getDuration() + "\n" +
-                    "Info: " + tour.getRoute_info() + "\n";
+            String currentDescription = "Tourname: " + tour.getTour_name() + "\n\n" +
+                    "Description: " + tour.getDescription() + "\n\n" +
+                    "From: " + tour.getFrom_where() + "\n\n" +
+                    "To: " + tour.getTo_where() + "\n\n" +
+                    "Transportation: " + tour.getTransportation() + "\n\n" +
+                    "Distance(km): " + tour.getDistance() + "\n\n" +
+                    "Duration(min): " + tour.getDuration() + "\n\n" +
+                    "Info: " + tour.getRoute_info() + "\n\n";
             description.setValue("");
             description.setValue(currentDescription);
         }
@@ -58,10 +58,12 @@ public class RouteViewModel implements ViewModel {
     }
 
     public void fetchImage(int id) {
-            if(this.getClass().getResourceAsStream("/images/" + id + ".jpg") != null){
-                Image image = new Image((this.getClass().getResourceAsStream("/images/" + id + ".jpg")));
-                imageProperty.setValue(image);
-            }
+
+        if(getClass().getResourceAsStream("/images/" + id + ".jpg") != null){
+            Image image =  new Image((getClass().getResourceAsStream("/images/" + id + ".jpg")));
+            imageProperty.setValue(image);
+        }
+
         return;
     }
 
