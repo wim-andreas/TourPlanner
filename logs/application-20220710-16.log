@@ -80,3 +80,146 @@
 2022-07-10 16:35:29.833 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
 2022-07-10 16:35:29.834 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
 2022-07-10 16:35:29.848 [main] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:22.839 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-10 16:58:22.841 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-10 16:58:22.871 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 16:58:23.020 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.MenubarController - Setting up 'menubar-view.fxml'
+2022-07-10 16:58:23.191 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.TourListController - Setting up 'tour-list-view.fxml'
+2022-07-10 16:58:23.515 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:23.515 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all tours from the database..
+2022-07-10 16:58:23.529 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:58:23.558 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.RouteController - Setting up 'route-view.fxml'
+2022-07-10 16:58:23.591 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.LogViewController - Setting up 'log-view.fxml'
+2022-07-10 16:58:23.607 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:23.607 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all logs from the database..
+2022-07-10 16:58:23.610 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:58:24.027 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-10 16:58:26.612 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.AddTourController - Setting up 'add-tour-view.fxml'
+2022-07-10 16:58:41.186 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.AddTourController - Creating a new tour...
+2022-07-10 16:58:41.187 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI - Getting directions from MapQuestAPI...
+2022-07-10 16:58:42.422 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI - Received directions from MapQuestAPI successfully!
+2022-07-10 16:58:42.443 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:42.443 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Creating new tour in the database..
+2022-07-10 16:58:42.450 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:58:42.466 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:42.466 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all logs from the database..
+2022-07-10 16:58:42.468 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:58:42.483 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:42.484 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 16:58:42.500 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:42.500 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all tours from the database..
+2022-07-10 16:58:42.502 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:58:42.517 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:42.517 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 16:58:42.520 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:58:42.521 [JavaFX Application Thread] ERROR com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl - Either dir does not exist or is not a directory
+2022-07-10 16:58:42.553 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:42.553 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 16:58:42.555 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:58:58.937 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:58.937 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 16:58:58.940 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:58:59.463 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:59.466 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:58:59.480 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:59.480 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 16:58:59.484 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:58:59.485 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:58:59.499 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:59.499 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all logs from the database..
+2022-07-10 16:58:59.501 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:58:59.515 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:59.515 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 16:58:59.530 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:59.531 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all tours from the database..
+2022-07-10 16:58:59.533 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:58:59.547 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:59.547 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all tours from the database..
+2022-07-10 16:58:59.549 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:58:59.563 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:58:59.564 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 16:59:02.919 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.AddTourController - Setting up 'add-tour-view.fxml'
+2022-07-10 16:59:30.980 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Program is starting
+2022-07-10 16:59:30.982 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading stage...
+2022-07-10 16:59:31.001 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.configuration.PropertyConfigurationReader - Reading properties from file
+2022-07-10 16:59:31.144 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.MenubarController - Setting up 'menubar-view.fxml'
+2022-07-10 16:59:31.300 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.TourListController - Setting up 'tour-list-view.fxml'
+2022-07-10 16:59:31.617 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:59:31.617 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all tours from the database..
+2022-07-10 16:59:31.629 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:59:31.657 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.RouteController - Setting up 'route-view.fxml'
+2022-07-10 16:59:31.688 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.LogViewController - Setting up 'log-view.fxml'
+2022-07-10 16:59:31.703 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:59:31.704 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all logs from the database..
+2022-07-10 16:59:31.706 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:59:32.154 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.TourPlannerApplication - Loading completed!
+2022-07-10 16:59:39.047 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.AddTourController - Setting up 'add-tour-view.fxml'
+2022-07-10 16:59:50.649 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.AddTourController - Creating a new tour...
+2022-07-10 16:59:50.650 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI - Getting directions from MapQuestAPI...
+2022-07-10 16:59:51.840 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI - Received directions from MapQuestAPI successfully!
+2022-07-10 16:59:51.863 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:59:51.863 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Creating new tour in the database..
+2022-07-10 16:59:51.869 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:59:51.886 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:59:51.886 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all logs from the database..
+2022-07-10 16:59:51.889 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:59:51.903 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:59:51.904 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 16:59:51.920 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:59:51.920 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all tours from the database..
+2022-07-10 16:59:51.923 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:59:51.937 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:59:51.937 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 16:59:51.939 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 16:59:51.940 [JavaFX Application Thread] ERROR com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl - Either dir does not exist or is not a directory
+2022-07-10 16:59:51.971 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 16:59:51.971 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 16:59:51.974 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 17:00:21.461 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 17:00:21.461 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 17:00:21.463 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 17:00:21.932 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 17:00:21.934 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 17:00:21.946 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 17:00:21.947 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Deleting a single tour from the database..
+2022-07-10 17:00:21.950 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 17:00:21.950 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 17:00:21.963 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 17:00:21.963 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all logs from the database..
+2022-07-10 17:00:21.965 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 17:00:21.978 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 17:00:21.978 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 17:00:21.994 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 17:00:21.994 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all tours from the database..
+2022-07-10 17:00:21.996 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 17:00:22.009 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 17:00:22.010 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all tours from the database..
+2022-07-10 17:00:22.011 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 17:00:22.026 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 17:00:22.026 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 17:00:23.088 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.AddTourController - Setting up 'add-tour-view.fxml'
+2022-07-10 17:00:33.027 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.view.AddTourController - Creating a new tour...
+2022-07-10 17:00:33.027 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI - Getting directions from MapQuestAPI...
+2022-07-10 17:00:33.946 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI - Received directions from MapQuestAPI successfully!
+2022-07-10 17:00:33.961 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 17:00:33.962 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Creating new tour in the database..
+2022-07-10 17:00:33.968 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 17:00:33.981 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 17:00:33.981 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all logs from the database..
+2022-07-10 17:00:33.983 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 17:00:33.994 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 17:00:33.995 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 17:00:34.009 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 17:00:34.009 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting all tours from the database..
+2022-07-10 17:00:34.011 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 17:00:34.024 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 17:00:34.024 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 17:00:34.027 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!
+2022-07-10 17:00:34.027 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI - Getting directions from MapQuestAPI...
+2022-07-10 17:00:34.835 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI - Received directions from MapQuestAPI successfully!
+2022-07-10 17:00:34.836 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI - Getting map from MapQuestAPI...
+2022-07-10 17:00:35.929 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.businesslayer.mapquest.MapQuestAPI - Received map from MapQuestAPI successfully!
+2022-07-10 17:00:35.930 [JavaFX Application Thread] INFO  com.wimfra.tourplanner.businesslayer.ManageTourServiceImpl - Tour image created
+2022-07-10 17:00:35.959 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully established!
+2022-07-10 17:00:35.959 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Getting a (specific) single tour from the database..
+2022-07-10 17:00:35.962 [JavaFX Application Thread] DEBUG com.wimfra.tourplanner.dataaccesslayer.DBService - Database connection successfully closed!

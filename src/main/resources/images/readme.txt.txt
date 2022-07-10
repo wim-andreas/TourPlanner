@@ -1,0 +1,1 @@
+This file just exists so that GitHub does not delete the images folder.
